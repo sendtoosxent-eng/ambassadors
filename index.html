@@ -63,10 +63,89 @@ body{font-family:'Poppins',system-ui,sans-serif}
 .login-role-tab:hover{color:#131b2e}.login-role-tab.active{background:#fff;color:#131b2e;box-shadow:0 5px 16px rgba(19,27,46,.1)}
 .login-field{width:100%;height:3.25rem;border:1px solid #d9d7d2;background:#fff;border-radius:.85rem;padding:0 .95rem;color:#1b1c1a;outline:none;transition:.2s}.login-field::placeholder{color:#a3a3a3}.login-field:focus{border-color:#fe932c;box-shadow:0 0 0 4px rgba(254,147,44,.12)}
 .login-submit{width:100%;min-height:3.35rem;border-radius:.9rem;background:#131b2e;color:#fff;font-weight:700;box-shadow:0 10px 24px rgba(19,27,46,.18);transition:.2s}.login-submit:hover{background:#222d46;transform:translateY(-1px);box-shadow:0 14px 28px rgba(19,27,46,.22)}
+.sermon-modal{width:min(860px,calc(100vw - 2rem));max-height:calc(100dvh - 2rem);overflow-y:auto;border:1px solid rgba(255,255,255,.14);border-radius:1.5rem;background:#f8f7f4;box-shadow:0 28px 80px rgba(8,13,27,.32)}
+.sermon-player-wrap{position:relative;background:#0b101d}.sermon-player-wrap video{display:block;width:100%;aspect-ratio:16/9;max-height:430px;background:#05070c;object-fit:contain}
+.sermon-action{display:inline-flex;min-height:2.65rem;align-items:center;justify-content:center;gap:.45rem;border:1px solid #e2e0dc;border-radius:.8rem;background:#fff;padding:.55rem .85rem;color:#4d4f54;font-size:.78rem;font-weight:700;transition:.2s}.sermon-action:hover{border-color:#cac7c0;color:#131b2e}.sermon-action.liked{border-color:#f3b47b;background:#fff5e9;color:#9b4c06}
+.sermon-detail-row{display:flex;align-items:flex-start;gap:.7rem;padding:.75rem 0;border-bottom:1px solid #eeece7}.sermon-detail-row:last-child{border-bottom:0}.sermon-detail-row .ic{margin-top:.1rem;color:#d66d0d}
+.sermon-comment{display:flex;gap:.7rem;padding:.85rem 0;border-bottom:1px solid #eeece7}.sermon-comment:last-child{border-bottom:0}.comment-avatar{display:grid;width:2rem;height:2rem;flex:0 0 auto;place-items:center;border-radius:999px;background:#131b2e;color:#fff;font-size:.65rem;font-weight:800}
 @media(max-width:767px){.login-dialog{display:block;width:min(100%,440px);max-height:calc(100dvh - 1.5rem);overflow-y:auto;border-radius:1.35rem}.login-visual{display:none}.login-form-panel{padding:1.25rem!important}.login-form-panel h3{font-size:1.65rem}.login-demo{font-size:.72rem}}
+@media(max-width:640px){.sermon-modal{width:100%;max-height:calc(100dvh - 1rem);border-radius:1.1rem}.sermon-player-wrap video{aspect-ratio:16/10}.sermon-modal-body{padding:1rem!important}}
 @media(max-width:1023px){#portalSidebar{position:fixed;left:-285px;top:0;bottom:0;width:270px;z-index:120;transition:.25s}#portalSidebar.open{left:0}.portal-overlay{display:none;position:fixed;inset:0;background:rgba(19,27,46,.5);z-index:110}.portal-overlay.open{display:block}}
 
+/*============== Public site patments  ===== */
+.payment-option {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 4.75rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem;
+  border: 1px solid transparent;
+  border-radius: 0.8rem;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
 
+.payment-option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(19, 27, 46, 0.1);
+}
+
+.payment-option:focus-visible {
+  outline: 3px solid #fe932c;
+  outline-offset: 2px;
+}
+
+.payment-option img {
+  display: block;
+  width: 100%;
+  height: 2.45rem;
+  object-fit: contain;
+  object-position: center;
+}
+
+.payment-option[data-v="MTN MoMo"] img {
+  height: 2.75rem;
+  border-radius: 0.35rem;
+}
+
+.payment-option[aria-pressed="true"] {
+  border-color: #fe932c;
+  box-shadow:
+    0 0 0 2px rgba(254, 147, 44, 0.16),
+    0 8px 20px rgba(19, 27, 46, 0.08);
+}
+
+.payment-option[aria-pressed="true"]::after {
+  content: "";
+  position: absolute;
+  top: 0.45rem;
+  right: 0.45rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: #fe932c;
+  box-shadow: 0 0 0 3px #fff;
+}
+
+@media (max-width: 767px) {
+  .payment-option {
+    min-height: 4.25rem;
+    padding: 0.5rem;
+  }
+
+  .payment-option img {
+    height: 2rem;
+  }
+
+  .payment-option[data-v="MTN MoMo"] img {
+    height: 2.3rem;
+  }
+}
 /* ===== Public site polish: floating nav + mobile first ===== */
 #siteHeader{background:transparent!important;box-shadow:none!important;pointer-events:none;padding:0 .75rem}
 #siteHeader>.nav-shell{pointer-events:auto;max-width:80rem;margin:.75rem auto 0;height:4.25rem;border:1px solid rgba(228,226,222,.9);border-radius:1.15rem;background:rgba(251,249,245,.92);backdrop-filter:blur(18px);box-shadow:0 12px 36px rgba(19,27,46,.12)}
@@ -683,12 +762,83 @@ button,a{min-height:44px}
           </div>
           <div>
             <label class="block text-label-caps lowercase text-on-surface-variant mb-1">Payment Method</label>
-            <div class="grid grid-cols-2 gap-1" id="payTabs">
-              <button type="button" data-v="MTN MoMo" class="pay flex items-center justify-center gap-1 py-2 rounded-lg text-label-md bg-secondary-fixed text-on-secondary-fixed font-bold"><svg class="ic" style="width:1em;height:1em"><use href="#mobile"/></svg>MTN MoMo</button>
-              <button type="button" data-v="Airtel Money" class="pay flex items-center justify-center gap-1 py-2 rounded-lg text-label-md bg-surface-container"><svg class="ic" style="width:1em;height:1em"><use href="#mobile"/></svg>Airtel Money</button>
-              <button type="button" data-v="Card" class="pay flex items-center justify-center gap-1 py-2 rounded-lg text-label-md bg-surface-container"><svg class="ic" style="width:1em;height:1em"><use href="#card"/></svg>Card</button>
-              <button type="button" data-v="Bank Transfer" class="pay flex items-center justify-center gap-1 py-2 rounded-lg text-label-md bg-surface-container"><svg class="ic" style="width:1em;height:1em"><use href="#bank"/></svg>Bank</button>
-            </div>
+            <div>
+  <label
+    class="block text-label-caps lowercase text-on-surface-variant mb-1"
+  >
+  </label>
+
+  <div
+    class="grid grid-cols-2 gap-2"
+    id="payTabs"
+    aria-label="Choose a payment method"
+  >
+    <button
+      type="button"
+      data-v="MTN MoMo"
+      aria-pressed="true"
+      aria-label="Pay with MTN MoMo"
+      class="pay payment-option bg-secondary-fixed text-on-secondary-fixed font-bold"
+    >
+      <img
+        src="/assets/momo.webp"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
+    </button>
+
+    <button
+      type="button"
+      data-v="Airtel Money"
+      aria-pressed="false"
+      aria-label="Pay with Airtel Money"
+      class="pay payment-option bg-surface-container"
+    >
+      <img
+        src="/assets/Airtel_Uganda-Logo.wine.svg"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
+    </button>
+
+    <button
+      type="button"
+      data-v="Visa"
+      aria-pressed="false"
+      aria-label="Pay with Visa"
+      class="pay payment-option bg-surface-container"
+    >
+      <img
+        src="/assets/visa.png"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
+    </button>
+
+    <button
+      type="button"
+      data-v="Mastercard"
+      aria-pressed="false"
+      aria-label="Pay with Mastercard"
+      class="pay payment-option bg-surface-container"
+    >
+      <img
+        src="/assets/Mastercard-Logo.wine.png"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
+    </button>
+  </div>
+
+  <p class="mt-2 text-[0.7rem] leading-relaxed text-outline">
+    Mobile Money and major card options shown for the client demo.
+    Secure gateway integration will be connected for production.
+  </p>
+</div>
           </div>
           <div><label class="block text-label-caps lowercase text-on-surface-variant mb-1">Note (optional)</label><textarea id="dNote" rows="2" class="w-full px-3 py-2 rounded-xl bg-surface-container-low outline-none focus:ring-2 focus:ring-secondary-container" placeholder="Pledge, project or testimony..."></textarea></div>
           <p id="dMsg" class="hidden text-body-sm rounded-xl p-3"></p>
@@ -1257,7 +1407,30 @@ button,a{min-height:44px}
   </div>
   <div id="signupModal" class="app-modal hidden fixed inset-0 z-[135] modal-backdrop items-center justify-center p-4"><div class="demo-modal w-full max-w-xl bg-white rounded-2xl shadow-2xl p-6"><div class="flex justify-between"><div><span class="text-label-caps text-secondary lowercase">Member Registration</span><h3 class="text-headline-md">Join the Church Portal</h3></div><button class="modal-close text-2xl">×</button></div><form id="signupForm" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5"><input class="portal-input" placeholder="Full name" required><input class="portal-input" placeholder="Phone number" required><input class="portal-input" type="email" placeholder="Email"><select class="portal-input"><option>Youth</option><option>Men</option><option>Women</option><option>Married Couples</option><option>Sunday School Parent</option><option>Visitor</option></select><textarea class="portal-input sm:col-span-2" rows="3" placeholder="Tell us briefly how you are connected to the church"></textarea><button class="portal-btn accent-btn sm:col-span-2">Submit Membership Request</button></form></div></div>
   <div id="forgotModal" class="app-modal hidden fixed inset-0 z-[140] modal-backdrop items-center justify-center p-4"><div class="demo-modal w-full max-w-sm bg-white rounded-2xl shadow-2xl p-6"><div class="flex justify-between"><h3 class="text-headline-sm">Reset Password</h3><button class="modal-close text-2xl">×</button></div><p class="text-body-sm text-on-surface-variant mt-2">Enter your email or Member ID and the church office will send reset instructions.</p><form id="forgotForm" class="space-y-3 mt-4"><input class="portal-input" placeholder="Email or Member ID" required><button class="portal-btn accent-btn w-full">Send Instructions</button></form></div></div>
-  <div id="sermonLibraryModal" class="app-modal hidden fixed inset-0 z-[135] modal-backdrop items-center justify-center p-4"><div class="demo-modal w-full max-w-5xl max-h-[90vh] overflow-auto bg-white rounded-2xl shadow-2xl"><div class="flex justify-between items-center p-5 border-b"><div><span class="text-label-caps text-secondary lowercase">Sermon Player</span><h3 id="sermonTitle" class="text-headline-sm">Walking in Victorious Faith</h3></div><button class="modal-close text-2xl">×</button></div><div class="grid lg:grid-cols-3 gap-0"><div class="lg:col-span-2 p-5 bg-primary-container"><video id="sermonVideo" class="w-full aspect-video rounded-xl bg-black" controls poster="https://lh3.googleusercontent.com/aida-public/AB6AXuA5TCbqE2FB3geekja1eXlN3PSdQosCi00CXmQvXdLO4Z1TY3ooMmOwHdYPHJrH2ygSFni2wMND-Yje8Y3hRUvaJ9q46wj658KDcmChEdMliybjC6nQrw2MstAkyOtAVRYZNM3DS7TY7VHA3AhffPsUCS12hfxv8VInBW0o_NE_ez46PJqHZ_4a8XCvXpuDG07_7VCW29UFMPXfwA6GtG_ivPoZm03Pu-AgQtP0MLQ"><source src="assets/hero-service.mp4" type="video/mp4"></video><div class="text-white mt-4"><p id="sermonMeta" class="font-semibold">Pastor Daniel Kato • John 15:1-8 • 6 Oct 2026</p><p class="text-white/70 text-sm mt-2">Demo media player. Church administrators can upload or attach sermon video/audio from the admin dashboard.</p></div></div><div class="p-5 space-y-3"><h4 class="font-bold">Recent uploads</h4><button class="sermon-queue w-full text-left p-3 rounded-xl bg-surface-container-low" data-title="Walking in Victorious Faith" data-preacher="Pastor Daniel Kato" data-scripture="John 15:1-8" data-date="6 Oct 2026"><b>Walking in Victorious Faith</b><span class="block text-xs text-outline">6 Oct 2026</span></button><button class="sermon-queue w-full text-left p-3 rounded-xl hover:bg-surface-container-low" data-title="A Life of Prayer" data-preacher="Pr. Sarah Kato" data-scripture="Luke 11:1-13" data-date="29 Sep 2026"><b>A Life of Prayer</b><span class="block text-xs text-outline">29 Sep 2026</span></button><button class="sermon-queue w-full text-left p-3 rounded-xl hover:bg-surface-container-low" data-title="Building a Christ-Centred Family" data-preacher="Pastor Daniel Kato" data-scripture="Joshua 24:15" data-date="21 Sep 2026"><b>Building a Christ-Centred Family</b><span class="block text-xs text-outline">21 Sep 2026</span></button></div></div></div></div>
+  <div id="sermonLibraryModal" class="app-modal hidden fixed inset-0 z-[135] modal-backdrop items-center justify-center p-2 sm:p-4">
+    <div class="demo-modal sermon-modal">
+      <div class="sermon-player-wrap">
+        <video id="sermonVideo" controls poster="https://lh3.googleusercontent.com/aida-public/AB6AXuA5TCbqE2FB3geekja1eXlN3PSdQosCi00CXmQvXdLO4Z1TY3ooMmOwHdYPHJrH2ygSFni2wMND-Yje8Y3hRUvaJ9q46wj658KDcmChEdMliybjC6nQrw2MstAkyOtAVRYZNM3DS7TY7VHA3AhffPsUCS12hfxv8VInBW0o_NE_ez46PJqHZ_4a8XCvXpuDG07_7VCW29UFMPXfwA6GtG_ivPoZm03Pu-AgQtP0MLQ"><source src="assets/hero-service.mp4" type="video/mp4"></video>
+        <button class="modal-close absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-black/55 text-xl text-white backdrop-blur-md hover:bg-black/75">×</button>
+      </div>
+      <div class="sermon-modal-body p-5 sm:p-6">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <div class="min-w-0"><span class="text-xs font-bold uppercase tracking-[.16em] text-secondary">Sunday message</span><h3 id="sermonTitle" class="mt-1 text-2xl font-bold tracking-tight text-on-surface">Walking in Victorious Faith</h3><p id="sermonMeta" class="mt-2 text-sm text-on-surface-variant">Pastor Daniel Kato • John 15:1-8 • 6 Oct 2026</p></div>
+          <div class="flex shrink-0 flex-wrap gap-2"><button id="sermonLike" type="button" class="sermon-action" aria-pressed="false"><svg class="ic"><use href="#heart"/></svg><span>Like</span><span id="sermonLikeCount">128</span></button><button id="sermonShare" type="button" class="sermon-action"><svg class="ic"><use href="#share"/></svg>Share</button><button id="sermonSave" type="button" class="sermon-action" aria-pressed="false"><svg class="ic"><use href="#bookmark"/></svg><span>Save</span></button></div>
+        </div>
+
+        <div class="mt-5 grid gap-5 md:grid-cols-[1fr_280px]">
+          <div class="space-y-5">
+            <section class="rounded-2xl border border-surface-variant bg-white p-4"><h4 class="font-bold">About this message</h4><p id="sermonDescription" class="mt-2 text-sm leading-6 text-on-surface-variant">Discover how abiding in Christ produces steady faith, spiritual fruit, and courage for every season of life.</p><details class="mt-3 group"><summary class="cursor-pointer list-none text-sm font-bold text-secondary">More details <span class="inline-block transition group-open:rotate-90">›</span></summary><div class="mt-3 rounded-xl bg-surface-container-low px-4"><div class="sermon-detail-row"><svg class="ic"><use href="#mic"/></svg><div><b class="block text-xs uppercase tracking-wider text-outline">Speaker</b><span id="sermonSpeaker" class="text-sm">Pastor Daniel Kato</span></div></div><div class="sermon-detail-row"><svg class="ic"><use href="#book"/></svg><div><b class="block text-xs uppercase tracking-wider text-outline">Main scripture</b><span id="sermonScripture" class="text-sm">John 15:1-8</span></div></div><div class="sermon-detail-row"><svg class="ic"><use href="#calendar"/></svg><div><b class="block text-xs uppercase tracking-wider text-outline">Published</b><span id="sermonDate" class="text-sm">6 Oct 2026</span></div></div><div class="sermon-detail-row"><svg class="ic"><use href="#clock"/></svg><div><b class="block text-xs uppercase tracking-wider text-outline">Duration</b><span class="text-sm">54 minutes • Sunday Morning Glory</span></div></div></div></details></section>
+
+            <section class="rounded-2xl border border-surface-variant bg-white p-4"><div class="flex items-center justify-between"><h4 class="font-bold">Comments</h4><span id="sermonCommentCount" class="text-xs font-semibold text-outline">2 comments</span></div><form id="sermonCommentForm" class="mt-3 flex gap-2"><label class="sr-only" for="sermonCommentInput">Write a comment</label><input id="sermonCommentInput" class="portal-input min-w-0" placeholder="Share what spoke to you…" required maxlength="240"><button class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-secondary-container text-on-secondary-container" type="submit" aria-label="Post comment"><svg class="ic"><use href="#send"/></svg></button></form><div id="sermonComments" class="mt-3"><div class="sermon-comment"><span class="comment-avatar">RN</span><div><div class="flex items-center gap-2"><b class="text-sm">Ruth N.</b><span class="text-[11px] text-outline">2 hours ago</span></div><p class="mt-1 text-sm leading-5 text-on-surface-variant">This message reminded me to remain rooted in Christ even when the season feels uncertain. Amen!</p></div></div><div class="sermon-comment"><span class="comment-avatar">PM</span><div><div class="flex items-center gap-2"><b class="text-sm">Peter M.</b><span class="text-[11px] text-outline">Yesterday</span></div><p class="mt-1 text-sm leading-5 text-on-surface-variant">The teaching on bearing fruit was powerful. Thank you, Pastor.</p></div></div></div></section>
+          </div>
+
+          <aside><h4 class="text-sm font-bold">Continue watching</h4><div class="mt-2 space-y-2"><button class="sermon-queue w-full rounded-xl bg-white p-3 text-left ring-1 ring-surface-variant transition hover:ring-secondary" data-title="Walking in Victorious Faith" data-preacher="Pastor Daniel Kato" data-scripture="John 15:1-8" data-date="6 Oct 2026" data-description="Discover how abiding in Christ produces steady faith, spiritual fruit, and courage for every season of life."><b class="block text-sm">Walking in Victorious Faith</b><span class="mt-1 block text-xs text-outline">Pastor Daniel • 54 min</span></button><button class="sermon-queue w-full rounded-xl bg-white p-3 text-left ring-1 ring-surface-variant transition hover:ring-secondary" data-title="A Life of Prayer" data-preacher="Pr. Sarah Kato" data-scripture="Luke 11:1-13" data-date="29 Sep 2026" data-description="A practical teaching on building a consistent, honest, and powerful prayer life."><b class="block text-sm">A Life of Prayer</b><span class="mt-1 block text-xs text-outline">Pr. Sarah • 42 min</span></button><button class="sermon-queue w-full rounded-xl bg-white p-3 text-left ring-1 ring-surface-variant transition hover:ring-secondary" data-title="Building a Christ-Centred Family" data-preacher="Pastor Daniel Kato" data-scripture="Joshua 24:15" data-date="21 Sep 2026" data-description="Biblical foundations for a home shaped by worship, service, grace, and strong relationships."><b class="block text-sm">Building a Christ-Centred Family</b><span class="mt-1 block text-xs text-outline">Pastor Daniel • 47 min</span></button></div></aside>
+        </div>
+      </div>
+    </div>
+  </div>
   <div id="bibleModal" class="app-modal hidden fixed inset-0 z-[135] modal-backdrop items-center justify-center p-4"><div class="demo-modal w-full max-w-2xl bg-white rounded-2xl shadow-2xl p-6"><div class="flex justify-between"><div><span class="text-label-caps text-secondary lowercase">Bible Study</span><h3 class="text-headline-sm">Current Study Series</h3></div><button class="modal-close text-2xl">×</button></div><div class="grid sm:grid-cols-2 gap-4 mt-5"><div class="portal-card p-4"><b>The Book of Acts</b><p class="text-sm text-outline mt-1">Week 4 • Boldness through the Holy Spirit</p><div class="mini-bar mt-3"><span style="width:60%"></span></div></div><div class="portal-card p-4"><b>Foundations of Faith</b><p class="text-sm text-outline mt-1">6 lessons • New believers track</p><div class="mini-bar mt-3"><span style="width:82%"></span></div></div></div></div></div>
   <div id="hymnModal" class="app-modal hidden fixed inset-0 z-[135] modal-backdrop items-center justify-center p-4"><div class="demo-modal w-full max-w-2xl bg-white rounded-2xl shadow-2xl p-6"><div class="flex justify-between"><div><span class="text-label-caps text-secondary lowercase">Hymns</span><h3 class="text-headline-sm">Church Hymn Library</h3></div><button class="modal-close text-2xl">×</button></div><input class="portal-input mt-4" placeholder="Search hymn title or number"><div class="mt-3 divide-y"><div class="py-3"><b>#012 Amazing Grace</b><span class="block text-xs text-outline">Grace • Worship</span></div><div class="py-3"><b>#034 How Great Thou Art</b><span class="block text-xs text-outline">Praise • Worship</span></div><div class="py-3"><b>#078 Blessed Assurance</b><span class="block text-xs text-outline">Faith • Assurance</span></div></div></div></div>
 </div>
@@ -1428,8 +1601,12 @@ let loginRole='member';
 document.querySelectorAll('.role-tab').forEach(b=>b.addEventListener('click',()=>{loginRole=b.dataset.role;document.querySelectorAll('.role-tab').forEach(x=>{x.classList.remove('active');x.setAttribute('aria-pressed','false')});b.classList.add('active');b.setAttribute('aria-pressed','true');loginUser.value=loginRole==='admin'?'admin@ajc.church':'AJC-0012';loginPass.value=loginRole==='admin'?'admin123':'demo123';document.querySelector('label[for="loginUser"]').textContent=loginRole==='admin'?'Admin email address':'Member ID or email';loginDemoCredentials.textContent=loginRole==='admin'?'Admin: admin@ajc.church  •  Password: admin123':'Member ID: AJC-0012  •  Password: demo123';}));
 document.querySelector('.role-tab[data-role="member"]')?.setAttribute('aria-pressed','true');
 passwordToggle?.addEventListener('click',()=>{const showing=loginPass.type==='text';loginPass.type=showing?'password':'text';passwordToggle.textContent=showing?'Show':'Hide';passwordToggle.setAttribute('aria-label',showing?'Show password':'Hide password');});
-function setSermon(d){sermonTitle.textContent=d.title;sermonMeta.textContent=`${d.preacher} • ${d.scripture} • ${d.date}`;openModal('sermonLibraryModal');}
+function setSermon(d){sermonTitle.textContent=d.title;sermonMeta.textContent=`${d.preacher} • ${d.scripture} • ${d.date}`;sermonSpeaker.textContent=d.preacher;sermonScripture.textContent=d.scripture;sermonDate.textContent=d.date;sermonDescription.textContent=d.description||'A timely biblical message to strengthen your faith and help you walk closely with Christ in everyday life.';openModal('sermonLibraryModal');}
 document.querySelectorAll('.sermon-item,.sermon-queue').forEach(b=>b.addEventListener('click',()=>setSermon(b.dataset)));
+sermonLike?.addEventListener('click',()=>{const liked=sermonLike.getAttribute('aria-pressed')==='true';sermonLike.setAttribute('aria-pressed',String(!liked));sermonLike.classList.toggle('liked',!liked);sermonLike.querySelector('span').textContent=liked?'Like':'Liked';sermonLikeCount.textContent=String(Number(sermonLikeCount.textContent)+(liked?-1:1));});
+sermonSave?.addEventListener('click',()=>{const saved=sermonSave.getAttribute('aria-pressed')==='true';sermonSave.setAttribute('aria-pressed',String(!saved));sermonSave.classList.toggle('liked',!saved);sermonSave.querySelector('span').textContent=saved?'Save':'Saved';});
+sermonShare?.addEventListener('click',async()=>{const data={title:sermonTitle.textContent,text:`${sermonTitle.textContent} — ${sermonMeta.textContent}`,url:location.href};try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(`${data.text} ${data.url}`);sermonShare.textContent='Link copied';setTimeout(()=>{sermonShare.innerHTML='<svg class="ic"><use href="#share"/></svg>Share'},1600);}}catch(_){}});
+sermonCommentForm?.addEventListener('submit',e=>{e.preventDefault();const value=sermonCommentInput.value.trim();if(!value)return;const row=document.createElement('div');row.className='sermon-comment';const avatar=document.createElement('span');avatar.className='comment-avatar';avatar.textContent='YOU';const body=document.createElement('div');const head=document.createElement('div');head.className='flex items-center gap-2';const name=document.createElement('b');name.className='text-sm';name.textContent='You';const time=document.createElement('span');time.className='text-[11px] text-outline';time.textContent='Just now';const comment=document.createElement('p');comment.className='mt-1 text-sm leading-5 text-on-surface-variant';comment.textContent=value;head.append(name,time);body.append(head,comment);row.append(avatar,body);sermonComments.prepend(row);sermonCommentInput.value='';const total=sermonComments.children.length;sermonCommentCount.textContent=`${total} comment${total===1?'':'s'}`;});
 
 const memberNav=['Dashboard','Daily Word','My Giving','Announcements','Chatroom','Bible Study','Hymns','Events','Prayer Requests','Notifications','My Profile'];
 const adminNav=['Dashboard','Members','Attendance','Ministries','Tithes & Offerings','Accounting','Expenses','Assets','Sermons','Daily Word','Bible Study','Hymns','Events','Announcements','Chatroom','Prayer Requests','Reports','Users & Roles','Settings'];
