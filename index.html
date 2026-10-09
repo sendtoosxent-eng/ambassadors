@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ambassadors of Jesus Christ Church • Kampala | Church & Member Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<meta name="description" content="Ambassadors of Jesus Christ Church in Kampala — worship, discipleship, ministries, sermons, events and live services."/>
+<meta name="theme-color" content="#131b2e"/>
+<link rel="stylesheet" href="/src/tailwind.css"/>
+<style>
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0;overflow-x:hidden}
+body{font-family:'Poppins',system-ui,sans-serif}
+::-webkit-scrollbar{display:none}
+.ic{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;vertical-align:middle}
+.ic-fill{fill:currentColor;stroke:none}
+/* reveal: only hidden once JS (Motion) has loaded, so content never gets stuck invisible */
+.js [data-reveal]{opacity:0}
+.js [data-stagger]>*{opacity:0}
+/* animated hero fallback behind video */
+.hero-bg{background:radial-gradient(circle at 20% 20%,rgba(254,147,44,.35),transparent 45%),radial-gradient(circle at 80% 70%,rgba(86,94,116,.5),transparent 50%),#131b2e;animation:hue 14s ease-in-out infinite alternate}
+@keyframes hue{to{filter:hue-rotate(25deg) brightness(1.1)}}
+.ray{position:absolute;top:-20%;width:18vw;height:140%;background:linear-gradient(to bottom,rgba(255,220,195,.22),transparent 70%);transform-origin:top center;filter:blur(18px);animation:sway 9s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-14deg)}to{transform:rotate(14deg)}}
+.float{animation:floaty 6s ease-in-out infinite}
+@keyframes floaty{50%{transform:translateY(-12px)}}
+.pulse-ring{animation:ring 2s ease-out infinite}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}100%{box-shadow:0 0 0 18px rgba(37,211,102,0)}}
+.shimmer{background:linear-gradient(110deg,#fe932c,#ffdcc3,#fe932c);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.dot{position:absolute;border-radius:9999px;background:rgba(255,220,195,.55);animation:rise linear infinite}
+@keyframes rise{from{transform:translateY(0);opacity:0}15%{opacity:.8}to{transform:translateY(-110vh);opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+
+/* ===== Client demo portal additions ===== */
+.modal-backdrop{background:rgba(19,27,46,.72);backdrop-filter:blur(10px)}
+.demo-modal{animation:modalIn .28s cubic-bezier(.22,1,.36,1)}
+@keyframes modalIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.portal-shell{font-family:Poppins,system-ui,sans-serif;background:#f5f3ef;color:#1b1c1a}
+.portal-sidebar{background:#131b2e;color:#fff}
+.portal-link{display:flex;align-items:center;gap:.75rem;width:100%;padding:.72rem .85rem;border-radius:.8rem;color:#d6d8df;text-align:left;font-size:.86rem;transition:.2s}
+.portal-link:hover,.portal-link.active{background:rgba(254,147,44,.14);color:#fff}
+.portal-link.active{box-shadow:inset 3px 0 #fe932c}
+.portal-card{background:#fff;border:1px solid #e4e2de;border-radius:1.1rem;box-shadow:0 8px 28px rgba(19,27,46,.06)}
+.stat-card{background:#fff;border:1px solid #e4e2de;border-radius:1rem;padding:1rem}
+.badge{display:inline-flex;align-items:center;padding:.25rem .6rem;border-radius:999px;font-size:.72rem;font-weight:700}
+.portal-table{width:100%;border-collapse:collapse;font-size:.84rem}.portal-table th{text-align:left;padding:.75rem;color:#76777d;font-size:.72rem;text-transform:lowercase;letter-spacing:.05em}.portal-table td{padding:.85rem .75rem;border-top:1px solid #efeeea}.portal-table tr:hover td{background:#fbf9f5}
+.portal-input{width:100%;border:1px solid #d9d7d2;background:#fff;border-radius:.75rem;padding:.72rem .85rem;outline:none}.portal-input:focus{border-color:#fe932c;box-shadow:0 0 0 3px rgba(254,147,44,.12)}
+.portal-btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;border-radius:.75rem;padding:.7rem 1rem;font-weight:700;font-size:.84rem;transition:.2s}.portal-btn:hover{transform:translateY(-1px)}
+.primary-btn{background:#131b2e;color:#fff}.accent-btn{background:#fe932c;color:#663500}.soft-btn{background:#efeeea;color:#1b1c1a}
+.mini-bar{height:.48rem;border-radius:999px;background:#eae8e4;overflow:hidden}.mini-bar>span{display:block;height:100%;border-radius:inherit;background:#fe932c}
+.dashboard-view{animation:viewIn .3s ease}@keyframes viewIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+#portalApp{z-index:100}
+.login-dialog{width:min(1080px,calc(100vw - 2rem));max-height:calc(100dvh - 2rem);display:grid;grid-template-columns:minmax(0,1.02fr) minmax(420px,.98fr);overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:1.75rem;background:#fff;box-shadow:0 32px 90px rgba(8,13,27,.34)}
+.login-visual{position:relative;min-height:650px;isolation:isolate;background:#131b2e}
+.login-visual>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.login-visual:after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(11,18,34,.16) 0%,rgba(11,18,34,.48) 48%,rgba(11,18,34,.96) 100%)}
+.login-visual-content{position:relative;z-index:2;display:flex;height:100%;flex-direction:column;justify-content:space-between;padding:2rem;color:#fff}
+.login-role-tab{position:relative;border-radius:.8rem;padding:.72rem .9rem;color:#6b6d73;font-size:.85rem;font-weight:700;transition:.2s ease}
+.login-role-tab:hover{color:#131b2e}.login-role-tab.active{background:#fff;color:#131b2e;box-shadow:0 5px 16px rgba(19,27,46,.1)}
+.login-field{width:100%;height:3.25rem;border:1px solid #d9d7d2;background:#fff;border-radius:.85rem;padding:0 .95rem;color:#1b1c1a;outline:none;transition:.2s}.login-field::placeholder{color:#a3a3a3}.login-field:focus{border-color:#fe932c;box-shadow:0 0 0 4px rgba(254,147,44,.12)}
+.login-submit{width:100%;min-height:3.35rem;border-radius:.9rem;background:#131b2e;color:#fff;font-weight:700;box-shadow:0 10px 24px rgba(19,27,46,.18);transition:.2s}.login-submit:hover{background:#222d46;transform:translateY(-1px);box-shadow:0 14px 28px rgba(19,27,46,.22)}
+@media(max-width:767px){.login-dialog{display:block;width:min(100%,440px);max-height:calc(100dvh - 1.5rem);overflow-y:auto;border-radius:1.35rem}.login-visual{display:none}.login-form-panel{padding:1.25rem!important}.login-form-panel h3{font-size:1.65rem}.login-demo{font-size:.72rem}}
+@media(max-width:1023px){#portalSidebar{position:fixed;left:-285px;top:0;bottom:0;width:270px;z-index:120;transition:.25s}#portalSidebar.open{left:0}.portal-overlay{display:none;position:fixed;inset:0;background:rgba(19,27,46,.5);z-index:110}.portal-overlay.open{display:block}}
+
+
+/* ===== Public site polish: floating nav + mobile first ===== */
+#siteHeader{background:transparent!important;box-shadow:none!important;pointer-events:none;padding:0 .75rem}
+#siteHeader>.nav-shell{pointer-events:auto;max-width:80rem;margin:.75rem auto 0;height:4.25rem;border:1px solid rgba(228,226,222,.9);border-radius:1.15rem;background:rgba(251,249,245,.92);backdrop-filter:blur(18px);box-shadow:0 12px 36px rgba(19,27,46,.12)}
+#siteHeader.is-scrolled>.nav-shell{height:3.75rem;margin-top:.45rem;box-shadow:0 10px 28px rgba(19,27,46,.16)}
+#mainNav a.nav-link{border-radius:.7rem;padding:.55rem .7rem;transition:.2s}
+#mainNav a.nav-link.active{background:#131b2e;color:#fff;box-shadow:0 6px 14px rgba(19,27,46,.16)}
+#mobileMenu{pointer-events:auto;max-width:calc(100% - 1.5rem);margin:.4rem auto 0;border:1px solid #e4e2de;border-radius:1rem;box-shadow:0 16px 34px rgba(19,27,46,.16);overflow:hidden}
+.mobile-bottom-nav{display:none}
+.ministry-feature{position:relative;overflow:hidden}.ministry-feature:after{content:"";position:absolute;inset:auto -20% -55% auto;width:13rem;height:13rem;border-radius:999px;background:rgba(254,147,44,.11);pointer-events:none}
+.live-dot{width:.55rem;height:.55rem;border-radius:50%;background:#ef4444;box-shadow:0 0 0 0 rgba(239,68,68,.6);animation:livePulse 1.7s infinite}@keyframes livePulse{70%{box-shadow:0 0 0 10px rgba(239,68,68,0)}100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}}
+.stream-screen{background:linear-gradient(135deg,#131b2e,#26314c);min-height:22rem}.stream-screen:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 72% 30%,rgba(254,147,44,.23),transparent 34%),linear-gradient(to top,rgba(19,27,46,.94),rgba(19,27,46,.18));z-index:1}
+.testimonial-track{scroll-snap-type:x mandatory;scrollbar-width:none}.testimonial-track::-webkit-scrollbar{display:none}.testimonial-card{scroll-snap-align:start}
+.section-anchor{scroll-margin-top:6.5rem}
+.app-modal{opacity:0;transition:opacity .2s ease}.app-modal.flex{opacity:1}.app-modal>div{max-width:calc(100% - 0px);max-height:calc(100dvh - 24px);overflow:auto}
+.g-item{outline:none}.g-item:focus-visible{outline:3px solid #fe932c;outline-offset:4px}
+button,a{min-height:44px}
+@media(max-width:1279px){#siteHeader>.nav-shell{height:4rem}}
+@media(max-width:767px){
+  #siteHeader{padding:0 .5rem}#siteHeader>.nav-shell{margin-top:.5rem;border-radius:1rem;height:3.75rem;padding-left:.75rem;padding-right:.5rem}
+  #siteHeader .brand-subtitle{display:none}#siteHeader .brand-title{font-size:.78rem;max-width:10rem}
+  #siteHeader [href="#give"].give-top{display:none}
+  main#home{padding-top:4.5rem}.mobile-bottom-nav{display:grid;position:fixed;z-index:55;bottom:.55rem;left:.55rem;right:.55rem;grid-template-columns:repeat(5,1fr);background:rgba(19,27,46,.95);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.12);border-radius:1.15rem;padding:.38rem;box-shadow:0 18px 44px rgba(19,27,46,.3)}
+  .mobile-bottom-nav a,.mobile-bottom-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.18rem;min-height:3.15rem;border-radius:.8rem;color:#d6d8df;font-size:.61rem;font-weight:600}.mobile-bottom-nav svg{width:1.15rem;height:1.15rem}.mobile-bottom-nav .active{background:#fe932c;color:#663500}
+  body{padding-bottom:4.5rem}.stream-screen{min-height:17rem}
+  #fab{bottom:5.25rem}.app-modal{padding:.75rem}.app-modal>div{max-height:calc(100dvh - 24px)}
+  .mobile-stack-card{padding:1rem!important}.mobile-stack-card h3{font-size:1.1rem}.mobile-stack-card p{font-size:.82rem;line-height:1.35rem}
+  .testimonial-card{min-width:88%}
+}
+
+</style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+
+<!-- ============ INLINE SVG ICON SPRITE (no icon CDN) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="church" viewBox="0 0 24 24"><path d="M12 2v4M10 4h4M12 6 6 10v11h12V10l-6-4Z"/><path d="M10 21v-5a2 2 0 0 1 4 0v5M2 21h20M6 13H3v8M18 13h3v8"/></symbol>
+<symbol id="play" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5-13-7.5Z" fill="currentColor"/></symbol>
+<symbol id="pause" viewBox="0 0 24 24"><path d="M7 5v14M17 5v14" stroke-width="3"/></symbol>
+<symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+<symbol id="book" viewBox="0 0 24 24"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H12v17H5.5A2.5 2.5 0 0 0 3 22V5.5ZM21 5.5A2.5 2.5 0 0 0 18.5 3H12v17h6.5a2.5 2.5 0 0 1 2.5 2V5.5Z"/></symbol>
+<symbol id="fire" viewBox="0 0 24 24"><path d="M12 2s5 4 5 9a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-8Z"/><path d="M12 22a4 4 0 0 0 4-4c0-2-2-3-4-5-2 2-4 3-4 5a4 4 0 0 0 4 4Z"/></symbol>
+<symbol id="group" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></symbol>
+<symbol id="sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3ZM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16Z"/></symbol>
+<symbol id="scroll" viewBox="0 0 24 24"><path d="M8 3h11v15a3 3 0 0 1-3 3H6a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3h2ZM6 3a3 3 0 0 0-3 3v1h3M12 8h4M12 12h4"/></symbol>
+<symbol id="mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4M8 22h8"/></symbol>
+<symbol id="quote" viewBox="0 0 24 24"><path d="M4 17c0-5 2-8 6-9v3c-2 .5-3 2-3 4h3v5H4v-3ZM14 17c0-5 2-8 6-9v3c-2 .5-3 2-3 4h3v5h-6v-3Z" fill="currentColor" stroke="none"/></symbol>
+<symbol id="verified" viewBox="0 0 24 24"><path d="M12 2l2.4 2 3.1-.2 1 3 2.6 1.8-1 3 1 3-2.6 1.8-1 3-3.1-.2L12 22l-2.4-2-3.1.2-1-3L2.9 15.4l1-3-1-3L5.5 7.6l1-3 3.1.2L12 2Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+<symbol id="share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></symbol>
+<symbol id="chev-l" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+<symbol id="chev-r" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+<symbol id="headphones" viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="7" rx="1.5"/><rect x="17" y="14" width="4" height="7" rx="1.5"/></symbol>
+<symbol id="download" viewBox="0 0 24 24"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 20h16"/></symbol>
+<symbol id="bookmark" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4V3Z"/></symbol>
+<symbol id="pin" viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="car" viewBox="0 0 24 24"><path d="M5 16V11l2-5h10l2 5v5M3 16h18v3H3zM7 13h.01M17 13h.01"/></symbol>
+<symbol id="phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z"/></symbol>
+<symbol id="calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
+<symbol id="arrow-r" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+<symbol id="lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+<symbol id="heart" viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.800-8 11-8 11Z"/></symbol>
+<symbol id="whatsapp" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z" fill="currentColor" stroke="none"/><path d="M9 7.5c.3 3.500 3 6.200 6.500 6.800l1.200-1.500-2.200-1-.9.9a4.800 4.800 0 0 1-2.400-2.400l.9-.9-1-2.200L9 7.500Z" fill="#fff" stroke="none"/></symbol>
+<symbol id="menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+<symbol id="close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+<symbol id="check" viewBox="0 0 24 24"><path d="m4 12.500 5 5L20 6.500"/></symbol>
+<symbol id="send" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></symbol>
+<symbol id="mobile" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+<symbol id="bank" viewBox="0 0 24 24"><path d="M3 10 12 4l9 6H3ZM5 10v8M9.500 10v8M14.500 10v8M19 10v8M3 21h18"/></symbol>
+<symbol id="card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
+<symbol id="image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.500" cy="8.500" r="1.500"/><path d="m21 15-5-5L5 21"/></symbol>
+<symbol id="volume" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5ZM16 8.500a5 5 0 0 1 0 7M19 5.500a9 9 0 0 1 0 13"/></symbol>
+<symbol id="mute" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5ZM22 9l-6 6M16 9l6 6"/></symbol>
+<symbol id="expand" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+
+<symbol id="home-icon" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5V21h-6v-6H9v6H3v-9.5Z"/></symbol>
+<symbol id="users-icon" viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0M13 20a4.5 4.5 0 0 1 9 0"/></symbol>
+<symbol id="heart-hand" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/><path d="M4 21h5l2-2"/></symbol>
+<symbol id="video-icon" viewBox="0 0 24 24"><rect x="3" y="5" width="13" height="14" rx="2"/><path d="m16 10 5-3v10l-5-3Z"/></symbol>
+<symbol id="couple-icon" viewBox="0 0 24 24"><circle cx="8" cy="7" r="3"/><circle cx="16" cy="7" r="3"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0M10.5 20a5.5 5.5 0 0 1 11 0"/><path d="m12 12 1.2 1.2L14.5 12"/></symbol>
+<symbol id="child-icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c.5-5 3-7 7-7s6.5 2 7 7M9 7h.01M15 7h.01M10 10.5c1.3 1 2.7 1 4 0"/></symbol>
+<symbol id="calendar-star" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/><path d="m12 13 .8 1.7 1.9.2-1.4 1.3.4 1.8-1.7-.9-1.7.9.4-1.8-1.4-1.3 1.9-.2L12 13Z"/></symbol>
+<symbol id="login-icon" viewBox="0 0 24 24"><path d="M10 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5M14 8l4 4-4 4M8 12h10"/></symbol>
+
+</defs>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="nav-shell h-20 w-full px-4 sm:px-gutter-lg flex items-center justify-between gap-space-md">
+    <div class="flex items-center gap-space-sm shrink-0 min-w-0">
+      <img alt="Ambassadors of Jesus Christ Church Logo" class="h-8 w-auto object-contain" src="assets/logo.jpg"/>
+      <div class="flex flex-col min-w-0">
+        <span class="brand-title text-title-sm text-on-surface leading-tight tracking-tight truncate">Ambassadors of Jesus Christ</span>
+        <span class="brand-subtitle text-label-caps text-secondary lowercase tracking-wider">Church • Kampala Uganda</span>
+      </div>
+    </div>
+    <nav class="hidden xl:flex items-center gap-1" id="mainNav">
+      <a aria-current="page" class="nav-link px-2 py-1 text-on-surface font-semibold rounded-lg text-body-sm"  data-nav="home" href="#home">Home</a>
+      <a class="nav-link text-body-sm px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors"  data-nav="about" href="#about">About</a>
+      <a class="nav-link text-body-sm px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors"  data-nav="ministries" href="#ministries">Ministries</a>
+      <a class="nav-link text-body-sm px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors"  data-nav="sermons" href="#sermons">Sermons</a>
+      <a class="nav-link text-body-sm px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-nav="live" href="#live">Live</a>
+      <a class="nav-link text-body-sm px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors"  data-nav="events" href="#events">Events</a>
+      <a class="nav-link text-body-sm px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors"  data-nav="contact" href="#contact">Contact</a>
+      <div class="relative group">
+        <button class="text-body-sm px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1">More <svg class="ic" style="width:.9em;height:.9em"><use href="#chev-r"/></svg></button>
+        <div class="absolute right-0 top-full mt-2 w-52 rounded-xl bg-white shadow-xl border border-surface-variant p-2 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all">
+          <a class="block p-2 rounded-lg hover:bg-surface-container-low" href="#daily-word">Daily Word</a>
+          <a class="block p-2 rounded-lg hover:bg-surface-container-low" href="#gallery">Gallery</a>
+          <a class="block p-2 rounded-lg hover:bg-surface-container-low" href="#conferences">Conferences</a>
+          <a class="block p-2 rounded-lg hover:bg-surface-container-low" href="#testimonials">Testimonials</a>
+          <button class="w-full text-left p-2 rounded-lg hover:bg-surface-container-low" data-open="bibleModal">Bible Study</button>
+          <button class="w-full text-left p-2 rounded-lg hover:bg-surface-container-low" data-open="hymnModal">Hymns</button>
+        </div>
+      </div>
+    </nav>
+    <div class="flex items-center gap-space-sm shrink-0">
+      <button class="hidden sm:inline-flex items-center justify-center text-label-lg px-4 py-2 rounded-xl bg-primary-container text-on-primary font-semibold hover:bg-surface-tint transition-all" data-open="loginModal">Member Portal</button>
+      <a class="give-top inline-flex items-center justify-center text-label-lg px-4 py-2 rounded-xl bg-secondary-container text-on-secondary-container font-semibold shadow-[0_4px_16px_rgba(254,147,44,0.25)] hover:bg-secondary-fixed transition-all" href="#give">Give Online</a>
+      <button id="menuBtn" class="xl:hidden w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center" aria-label="Open menu"><svg class="ic"><use href="#menu"/></svg></button>
+    </div>
+  </div>
+  <!-- mobile menu -->
+  <div id="mobileMenu" class="hidden xl:hidden bg-surface border-t border-surface-variant px-4 pb-4">
+    <div class="grid grid-cols-2 gap-2 pt-3 text-body-sm">
+      <a href="#home" class="p-3 rounded-xl bg-surface-container-low">Home</a>
+      <a href="#about" class="p-3 rounded-xl bg-surface-container-low">About Us</a>
+      <a href="#ministries" class="p-3 rounded-xl bg-surface-container-low">Ministries</a>
+      <a href="#sermons" class="p-3 rounded-xl bg-surface-container-low">Sermons</a>
+      <a href="#live" class="p-3 rounded-xl bg-surface-container-low">Live Church</a>
+      <a href="#daily-word" class="p-3 rounded-xl bg-surface-container-low">Daily Word</a>
+      <a href="#events" class="p-3 rounded-xl bg-surface-container-low">Events</a>
+      <a href="#gallery" class="p-3 rounded-xl bg-surface-container-low">Gallery</a>
+      <a href="#give" class="p-3 rounded-xl bg-surface-container-low">Give / Tithe</a>
+      <a href="#contact" class="p-3 rounded-xl bg-surface-container-low">Contact</a>
+      <button data-open="loginModal" class="p-3 rounded-xl bg-primary-container text-white font-semibold text-left">Member Portal</button><a href="tel:+256700123456" class="p-3 rounded-xl bg-secondary-container text-on-secondary-container font-semibold">Call Church</a>
+    </div>
+  </div>
+</header>
+
+<main class="w-full pt-20 bg-surface" id="home">
+<div class="flex flex-col w-full">
+
+<!-- ============ HERO WITH VIDEO ============ -->
+<section class="relative w-full -mt-20 overflow-hidden bg-primary-container text-on-primary">
+  <!-- Animated fallback background (shows if no video file) -->
+  <div class="absolute inset-0 hero-bg z-0"></div>
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" id="rays">
+    <span class="ray" style="left:8%;animation-delay:0s"></span>
+    <span class="ray" style="left:35%;animation-delay:-3s"></span>
+    <span class="ray" style="left:62%;animation-delay:-6s"></span>
+    <span class="ray" style="left:85%;animation-delay:-2s"></span>
+  </div>
+  <!-- WELCOME VIDEO: drop your preaching-service clip at assets/hero-service.mp4 (and optional .webm) -->
+  <video id="heroVideo" class="absolute inset-0 w-full h-full object-cover z-0 opacity-0 transition-opacity duration-1000" autoplay muted loop playsinline preload="metadata" poster="https://lh3.googleusercontent.com/aida-public/AB6AXuA5TCbqE2FB3geekja1eXlN3PSdQosCi00CXmQvXdLO4Z1TY3ooMmOwHdYPHJrH2ygSFni2wMND-Yje8Y3hRUvaJ9q46wj658KDcmChEdMliybjC6nQrw2MstAkyOtAVRYZNM3DS7TY7VHA3AhffPsUCS12hfxv8VInBW0o_NE_ez46PJqHZ_4a8XCvXpuDG07_7VCW29UFMPXfwA6GtG_ivPoZm03Pu-AgQtP0MLQ">
+    <source src="/assets/church-demo-loop.mp4" type="video/mp4"/>
+  </video>
+  <div class="absolute inset-0 bg-gradient-to-b from-primary-container/70 via-primary-container/55 to-primary-container z-[1] pointer-events-none"></div>
+  <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none z-[1] float"></div>
+  <div class="absolute bottom-10 -left-20 w-80 h-80 rounded-full bg-surface-tint/30 blur-3xl pointer-events-none z-[1] float" style="animation-delay:-3s"></div>
+  <div class="absolute inset-0 z-[1] pointer-events-none overflow-hidden" id="dots"></div>
+
+  <!-- video controls -->
+  <div class="absolute right-4 sm:right-8 top-24 z-20 flex gap-2">
+    <button id="vidPlay" class="w-10 h-10 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center hover:bg-white/25" aria-label="Play or pause video"><svg class="ic"><use href="#pause"/></svg></button>
+    <button id="vidMute" class="w-10 h-10 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center hover:bg-white/25" aria-label="Mute or unmute video"><svg class="ic"><use href="#mute"/></svg></button>
+  </div>
+
+  <div class="relative z-10 w-full px-4 sm:px-gutter-lg pt-32 pb-space-3xl max-w-7xl mx-auto flex flex-col gap-space-2xl">
+    <div class="flex items-center gap-space-sm" data-hero>
+      <div class="inline-flex flex-wrap items-center gap-space-xs px-space-md py-space-2xs rounded-full bg-white/ backdrop-blur-md shadow-sm">
+        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-container opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary-container"></span></span>
+        <span class="text-label-caps text-secondary-fixed tracking-wider">Church Online</span>
+        <span class="text-on-primary-container text-body-sm">•</span>
+        <span class="text-body-sm text-surface-container-high" id="nextService">Next Service Soon • Kampala, Uganda</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+      <div class="lg:col-span-8 space-y-space-md">
+        <span class="text-label-caps text-secondary-container lowercase tracking-widest block" data-hero>A Place to Worship, Grow &amp; Serve</span>
+        <h1 class="text-headline-display text-on-primary tracking-tight max-w-3xl" data-hero>
+          Welcome to <span class="shimmer">Ambassadors of Jesus Christ</span> Church
+        </h1>
+        <p class="text-body-lg text-surface-container-high max-w-2xl leading-relaxed" data-hero>
+          Growing in Faith, Serving in Love, and Sharing Jesus Christ with the World. Anointed worship, apostolic revelation, and community transformation in Kampala and beyond.
+        </p>
+        <div class="flex flex-wrap items-center gap-space-sm pt-space-xs" data-hero>
+          <a class="inline-flex items-center gap-space-xs text-label-lg px-6 py-3 rounded-xl bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5" href="#events"><svg class="ic"><use href="#church"/></svg>Join Us This Sunday</a>
+          <a class="inline-flex items-center gap-space-xs text-label-lg px-6 py-3 rounded-xl bg-white/15 text-on-primary hover:bg-white/25 transition-all backdrop-blur-sm hover:-translate-y-0.5" href="#sermons"><svg class="ic"><use href="#play"/></svg>Watch Sermons</a>
+          <a class="inline-flex items-center gap-space-xs text-label-caps px-4 py-2 rounded-full bg-secondary-fixed text-on-secondary-fixed  tracking-wider shadow-sm hover:-translate-y-0.5 transition" href="#give"><svg class="ic"><use href="#mic"/></svg>Listen Online Radio</a>
+        </div>
+      </div>
+      <div class="lg:col-span-4 flex flex-col justify-end" data-hero>
+        <div class="p-space-lg rounded-2xl bg-white/10 backdrop-blur-md shadow-xl space-y-space-sm float">
+          <div class="flex items-center justify-between text-secondary-fixed">
+            <span class="text-label-caps tracking-widest lowercase">Our Calling</span>
+            <svg class="ic" style="width:1.4em;height:1.4em"><use href="#scroll"/></svg>
+          </div>
+          <p class="text-body-md text-surface-container italic leading-relaxed">“We are therefore Christ’s ambassadors, as though God were making his appeal through us. We implore you on Christ’s behalf: Be reconciled to God.”</p>
+          <div class="pt-space-2xs text-right"><span class="text-label-md text-secondary-container">2 Corinthians 5:20</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full rounded-2xl bg-white/15 backdrop-blur-md p-space-md lg:p-space-lg shadow-lg" data-hero>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+        <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-white/10 hover:bg-white/15 transition">
+          <div class="p-space-xs rounded-lg bg-secondary-container text-on-secondary-container shrink-0 flex items-center justify-center"><svg class="ic" style="width:1.4em;height:1.4em"><use href="#sun"/></svg></div>
+          <div class="space-y-space-2xs"><span class="text-label-caps text-secondary-fixed lowercase tracking-wider block">Sunday Morning Glory</span><h4 class="text-title-sm text-on-primary">Worship &amp; Word Service</h4><p class="text-body-sm text-surface-container-high">8:00 AM – 11:30 AM (Main Sanctuary &amp; Live)</p></div>
+        </div>
+        <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-white/10 hover:bg-white/15 transition">
+          <div class="p-space-xs rounded-lg bg-white/20 text-secondary-fixed shrink-0 flex items-center justify-center"><svg class="ic" style="width:1.4em;height:1.4em"><use href="#book"/></svg></div>
+          <div class="space-y-space-2xs"><span class="text-label-caps text-secondary-fixed lowercase tracking-wider block">Midweek Bible Study</span><h4 class="text-title-sm text-on-primary">Bible Study &amp; Teaching</h4><p class="text-body-sm text-surface-container-high">Wednesday – 5:00 PM (In-Person &amp; Zoom)</p></div>
+        </div>
+        <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-white/10 hover:bg-white/15 transition">
+          <div class="p-space-xs rounded-lg bg-white/20 text-secondary-fixed shrink-0 flex items-center justify-center"><svg class="ic" style="width:1.4em;height:1.4em"><use href="#fire"/></svg></div>
+          <div class="space-y-space-2xs"><span class="text-label-caps text-secondary-fixed lowercase tracking-wider block">Prayer &amp; Intercession</span><h4 class="text-title-sm text-on-primary">Friday Prayer Service</h4><p class="text-body-sm text-surface-container-high">Friday – 5:30 PM – Dawn Intercession</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KEY STATS ============ -->
+<section class="w-full px-4 sm:px-gutter-lg max-w-7xl mx-auto -mt-10 relative z-20">
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-space-md" data-stagger>
+    <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md flex flex-col justify-between space-y-space-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+      <div class="flex items-center justify-between"><div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-secondary"><svg class="ic"><use href="#group"/></svg></div><span class="text-label-caps px-2 py-1 rounded-full  text-on-secondary-fixed lowercase"></div>
+      <div><div class="text-headline-lg text-on-surface"><span data-count="486">486</span>+</div><div class="text-body-sm text-on-surface-variant">Active Baptized Members</div></div>
+    </div>
+    <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md flex flex-col justify-between space-y-space-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+      <div class="flex items-center justify-between"><div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-secondary"><svg class="ic"><use href="#sparkle"/></svg></div><span class="text-label-caps px-2 py-1 rounded-full  text-on-surface lowercase"></span></div>
+      <div><div class="text-headline-lg text-on-surface"><span data-count="12">12</span>+</div><div class="text-body-sm text-on-surface-variant">Vibrant Outreach Ministries</div></div>
+    </div>
+    <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md flex flex-col justify-between space-y-space-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+      <div class="flex items-center justify-between"><div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-secondary"><svg class="ic"><use href="#scroll"/></svg></div><span class="text-label-caps px-2 py-1 rounded-full  text-on-secondary-fixed lowercase"></span></div>
+      <div><div class="text-headline-lg text-on-surface"><span data-count="15">15</span>+</div><div class="text-body-sm text-on-surface-variant">Years Serving Christ in Uganda</div></div>
+    </div>
+    <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md flex flex-col justify-between space-y-space-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+      <div class="flex items-center justify-between"><div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-secondary"><svg class="ic"><use href="#mic"/></svg></div><span class="text-label-caps px-2 py-1 rounded-full  text-on-surface lowercase"></span></div>
+      <div><div class="text-headline-lg text-on-surface"><span data-count="120">120</span>+</div><div class="text-body-sm text-on-surface-variant">Archived Sermons &amp; Studies</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PASTOR'S WELCOME ============ -->
+<section id="about" class="section-anchor w-full px-4 sm:px-gutter-lg max-w-7xl mx-auto py-space-3xl">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+    <div class="lg:col-span-5 relative" data-reveal="left">
+      <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/5] bg-surface-container">
+        <img class="w-full h-full object-cover" alt="Pastor Daniel Kato" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV3cArSnkSsW-0im8RVit1Fmie4fXWUAoA-qDoKnwAdcwSFI2XexPYlCuAMOA9MBi7gc1DbX96zhzXaxc5zrTWhyhjjYH2MByBmww62lAKiO0FrIlMYr2gCatLIQKcSDIgc36ZTfp6MaABGpQd-AQdAZ-L0PFmxBIDPxXWx_74dz0X88UPN8hpg9nGV-jPqyQv4ZgnJs0crwaSMXeVNWZunWFofSiZlmO5pn4Ooyo"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent"></div>
+        <div class="absolute bottom-6 left-6 right-6 text-on-primary">
+          <span class="text-label-caps text-secondary-container tracking-wider block">Senior Pastor &amp; General Overseer</span>
+          <h3 class="text-headline-sm text-on-primary">Pastor Daniel Kato</h3>
+          <p class="text-body-sm text-surface-container">Ambassadors of Jesus Christ Church • Kampala, Uganda</p>
+        </div>
+      </div>
+      <div class="absolute -top-4 -right-2 sm:-right-4 p-space-md rounded-2xl bg-secondary-container text-on-secondary-container shadow-lg hidden sm:flex items-center gap-space-xs float">
+        <svg class="ic" style="width:1.6em;height:1.6em"><use href="#verified"/></svg>
+        <div class="flex flex-col"><span class="text-label-caps ">Apostolic Call</span><span class="text-title-sm font-bold">15 Yrs Ministry</span></div>
+      </div>
+    </div>
+    <div class="lg:col-span-7 space-y-space-lg" data-reveal="right">
+      <div class="space-y-space-xs"><span class="text-label-caps text-secondary  tracking-widest"></span><h2 class="text-headline-lg text-on-surface tracking-tight">Equipping Believers to Impact Nations for Christ</h2></div>
+      <blockquote class="p-space-lg rounded-2xl bg-surface-container-low shadow-sm space-y-space-sm relative">
+        <svg class="ic ic-fill text-secondary opacity-40" style="width:2.2em;height:2.2em"><use href="#quote"/></svg>
+        <p class="text-body-lg text-on-surface italic leading-relaxed">“Welcome to our spiritual family where ambassadors of Christ are equipped for kingdom impact and community transformation. We believe God has orchestrated your steps here today to find purpose, renewed hope, and supernatural fellowship.”</p>
+        <div class="text-title-sm text-on-surface font-semibold">— Senior Pastor Daniel Kato &amp; Mama Sarah Kato</div>
+      </blockquote>
+      <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md space-y-space-xs">
+        <div class="flex items-center gap-space-xs text-secondary"><svg class="ic"><use href="#book"/></svg><span class="text-label-caps lowercase tracking-wider">Scripture of the Month</span></div>
+        <p class="text-body-md text-on-surface font-medium leading-relaxed">“Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!”</p>
+        <div class="text-right"><span class="text-label-md text-secondary font-bold">2 Corinthians 5:17 (NIV)</span></div>
+      </div>
+      <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+        <a class="text-label-lg px-6 py-3 rounded-xl bg-primary-container text-on-primary hover:bg-surface-tint transition-all shadow-sm" href="#about">Our Vision &amp; Doctrinal Creed</a>
+        <a class="text-label-lg px-5 py-3 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" href="#contact">Schedule Pastoral Counseling</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAILY WORD ============ -->
+<section id="daily-word" class="section-anchor w-full bg-surface-container-low py-space-3xl">
+  <div class="w-full px-4 sm:px-gutter-lg max-w-7xl mx-auto space-y-space-xl">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md" data-reveal>
+      <div class="space-y-space-2xs"><span class="text-label-caps text-secondarytracking-widest">Daily Word</span><h2 class="text-headline-lg text-on-surface">Today’s Daily Word &amp; Devotional</h2><p class="text-body-md text-on-surface-variant">Fueling your spiritual life each morning before stepping into the world.</p></div>
+      <div class="inline-flex items-center rounded-xl bg-surface-container-lowest p-1 shadow-sm self-start">
+        <button class="px-3 py-2 rounded-lg hover:bg-surface-container text-on-surface-variant flex items-center gap-1 text-label-md" type="button"><svg class="ic" style="width:1em;height:1em"><use href="#chev-l"/></svg>Previous</button>
+        <span class="px-3 py-2 text-label-md bg-secondary-fixed text-on-secondary-fixed rounded-lg">Today</span>
+        <button class="px-3 py-2 rounded-lg hover:bg-surface-container text-on-surface-variant flex items-center gap-1 text-label-md" type="button">Next<svg class="ic" style="width:1em;height:1em"><use href="#chev-r"/></svg></button>
+      </div>
+    </div>
+    <div class="p-space-lg sm:p-space-xl rounded-2xl bg-surface-container-lowest shadow-lg grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center" data-reveal>
+      <div class="lg:col-span-7 space-y-space-md">
+        <div class="flex items-center gap-space-xs"><span class="p-1 rounded-lg bg-secondary-container/20 text-secondary"><svg class="ic"><use href="#sparle"/></svg></span><span class="text-label-caps text-secondary lowercase">Theme: Walking in Victorious Faith</span></div>
+        <div class="p-space-md rounded-xl bg-surface-container-low shadow-sm">
+          <h3 class="text-title-md text-on-surface italic leading-relaxed">“I can do all things through Christ who strengthens me.”</h3>
+          <div class="pt-space-xs flex justify-between items-center text-outline"><span class="text-label-caps lowercase text-secondary">Philippians 4:13</span><span class="text-body-sm" id="dayOfYear">Day of Yearly Walk</span></div>
+        </div>
+        <div class="space-y-space-xs text-on-surface"><h4 class="text-title-sm font-semibold">Morning Reflection Snippet</h4><p class="text-body-md text-on-surface-variant leading-relaxed">Paul wrote these words while chained in prison, revealing that kingdom strength does not rely on earthly circumstances. When Kampala storms or financial uncertainties arise, Christ Himself infuses supernatural endurance and unwavering victory into your inner spirit.</p></div>
+        <div class="p-space-md rounded-xl bg-surface-container shadow-sm space-y-space-2xs"><span class="text-label-caps text-secondary lowercase tracking-wider block">Today’s Prayer Affirmation</span><p class="text-body-sm text-on-surface italic">“Heavenly Father, I confess my complete dependence on Your divine grace. Through Christ who indwells me, I overcome every obstacle today. Make me a carrier of Your light in Kampala. In Jesus’ mighty name, Amen.”</p></div>
+        <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+          <a class="text-label-lg px-6 py-3 rounded-xl bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-all shadow-md" href="#daily-word">Read Full Daily Word</a>
+          <button id="shareWord" class="text-label-md px-4 py-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface flex items-center gap-1" type="button"><svg class="ic" style="width:1em;height:1em"><use href="#share"/></svg>Share Word</button>
+        </div>
+      </div>
+      <div class="lg:col-span-5 flex flex-col items-center justify-center">
+        <div class="relative w-full rounded-2xl overflow-hidden shadow-md aspect-square bg-surface-container">
+          <img class="w-full h-full object-cover" alt="Open Bible on a lectern in morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnthfThXLmv0YFjs-Sr4d765qjeiMnd7UIOs9z--YwZDcb8iLjfmX4QGWC1q3YdnNU4ylT99aOb2-BGP1ZrhalJAcS_JweLE9Pv9GNP4WT9Yh_eELZQTHHU-0o1z3vrYeowWWQ8TkRwoc6x0ISgs7nqjTj9vSaVjURxL_nwrWkfhkSlfXWcDsBfKUOtT0pAhU5bt9OKndvPUEBGBfNOHho1pPR9fEsVxI0nUat240"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-container/85 via-transparent to-transparent flex flex-col justify-end p-space-lg text-on-primary">
+            <span class="text-label-caps text-secondary-container lowercase">Daily Audio Reading</span>
+            <p class="text-title-sm">Listen to Pastor Daniel’s 3-Min Morning Voice</p>
+            <div class="mt-space-xs flex items-center gap-space-sm">
+              <button class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-lg hover:scale-110 transition" type="button" aria-label="Play"><svg class="ic"><use href="#play"/></svg></button>
+              <div class="h-1.5 flex-1 bg-white/30 rounded-full overflow-hidden"><div class="h-full bg-secondary-container w-1/3"></div></div>
+              <span class="text-label-caps text-surface-container">01:14 / 03:25</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MINISTRIES ============ -->
+<section id="ministries" class="section-anchor w-full px-4 sm:px-gutter-lg max-w-7xl mx-auto py-space-3xl space-y-space-2xl">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md" data-reveal>
+    <div class="space-y-space-2xs"><span class="text-label-caps text-secondary lowercase tracking-widest">Connect &amp; Serve</span><h2 class="text-headline-lg text-on-surface">Vibrant Ministries for Every Season</h2><p class="text-body-md text-on-surface-variant">Find your spiritual family and activate your divine gifts within our active ministry arms.</p></div>
+    <a class="inline-flex items-center gap-space-xs text-label-lg px-4 py-2 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container transition-all self-start" href="#family-ministries">Explore Ministry Spotlight<svg class="ic" style="width:1em;height:1em"><use href="#arrow-r"/></svg></a>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg" data-stagger>
+    <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md flex flex-col justify-between space-y-space-md hover:shadow-xl hover:-translate-y-1 transition-all group">
+      <div class="space-y-space-sm">
+        <div class="relative h-44 rounded-xl overflow-hidden bg-surface-container"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Youth worshipping" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXWggo1IVhoQc7RjzRIJp67BriPmMbthvjoIlOe08uLW4hs9O3C6YHCWlaV1tEgIkOMVz1a97sK_NbHs_JS2DnSwBRKy_JynoAbWAokTCYq4EFi4zUAmE-ksztSBntRfFAM1Go0RlRFlAN-gWuy_sBh28baCfbHbLOcl0RyCP5lh-aNAqyI9TbQ9iCPDs2eY5L5jqndIOOq181pegopym6GPCtqDNbIB8EfGOpzII"/><span class="absolute top-2 right-2 px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container text-label-caps lowercase">Ages 16-30</span></div>
+        <span class="text-label-caps text-secondary lowercase tracking-wider block">Youth &amp; Young Adults</span>
+        <h3 class="text-headline-sm text-on-surface">Kingdom Trailblazers</h3>
+        <p class="text-body-sm text-on-surface-variant leading-relaxed">Raising bold young leaders passionate about purity, technology, business, and fearless gospel proclamation in Uganda’s campuses.</p>
+      </div>
+      <div class="pt-space-xs flex items-center justify-between gap-2"><span class="text-label-caps text-outline">Sat @ 3:00 PM</span><a class="text-label-md px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-surface-tint transition-all" href="#contact">Join Ministry</a></div>
+    </div>
+    <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md flex flex-col justify-between space-y-space-md hover:shadow-xl hover:-translate-y-1 transition-all group">
+      <div class="space-y-space-sm">
+        <div class="relative h-44 rounded-xl overflow-hidden bg-surface-container"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Women in prayer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtqbrdu0v_Dry_J0qfTtklWKln-goIYalEjqCcFfzfpBzsoOJR4wM24Or36FAr1eLBT1nfqwlvi7vlI_3NI2YV1_QDE82pPudVubnMVNFWyx9EB8B-vC3W2RKxeq_zlQIStGEQRBPnzh8H7eaGF-DVCZm8-pW9RDMSDRv2XqhxSKR2ADytJqigCM1dwEMST6PjO92BUZHeVkLtfU908_ESNZ7eyn3874t6sEifBCs"/><span class="absolute top-2 right-2 px-2 py-1 rounded-full bg-surface-container-high text-on-surface text-label-caps lowercase">Women of Grace</span></div>
+        <span class="text-label-caps text-secondary lowercase tracking-wider block">Sisterhood Fellowship</span>
+        <h3 class="text-headline-sm text-on-surface">Proverbs 31 Fellowship</h3>
+        <p class="text-body-sm text-on-surface-variant leading-relaxed">Nurturing godly wives, mothers, entrepreneurs, and intercessors through biblical wisdom, mentorship, and charitable community outreach.</p>
+      </div>
+      <div class="pt-space-xs flex items-center justify-between gap-2"><span class="text-label-caps text-outline">1st &amp; 3rd Sat @ 10:00 AM</span><a class="text-label-md px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-surface-tint transition-all" href="#contact">Join Ministry</a></div>
+    </div>
+    <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md flex flex-col justify-between space-y-space-md hover:shadow-xl hover:-translate-y-1 transition-all group">
+      <div class="space-y-space-sm">
+        <div class="relative h-44 rounded-xl overflow-hidden bg-surface-container"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Men's fellowship" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA47W64VQ6fsFUSkniFziPUXNTzoqd1IjuMc6kO9lb1dHGvcPWVCqR6rVjvTIntCLJva7yyrAQ2CPyNI0ztGGCIPUaRBdnkJfeOxmg1-L4krZaKkPXYhfkIUMwTa-hnRDfMmlnaRaa1Js79Y4BZPeLwGF7AvGA-KLI7bzihWZtXSb_IfuXh92L96gZ00sXw0oUwCc6vs5gJaKwI1VEWXyy0yKZkfFrm-Siw3_oRjeg"/><span class="absolute top-2 right-2 px-2 py-1 rounded-full bg-surface-container-high text-on-surface text-label-caps lowercase">Kingdom Leaders</span></div>
+        <span class="text-label-caps text-secondary lowercase tracking-wider block">Men of Integrity</span>
+        <h3 class="text-headline-sm text-on-surface">Men of Valor</h3>
+        <p class="text-body-sm text-on-surface-variant leading-relaxed">Equipping men as spiritual priests of their homes, ethical business innovators, and courageous guardians of community morality.</p>
+      </div>
+      <div class="pt-space-xs flex items-center justify-between gap-2"><span class="text-label-caps text-outline">Monthly Breakfast @ 7:00 AM</span><a class="text-label-md px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-surface-tint transition-all" href="#contact">Join Ministry</a></div>
+    </div>
+    <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md flex flex-col justify-between space-y-space-md hover:shadow-xl hover:-translate-y-1 transition-all group">
+      <div class="space-y-space-sm">
+        <div class="relative h-44 rounded-xl overflow-hidden bg-surface-container"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Children's Bible craft" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMKUF77L6Mfi15-noxnY4HxpNlbI8jFFUKytdCej3_F7TzEOlZiXimG5vTLQGLpuAiVkfA-GZjQFbNJ6ZahXCDRxPRvrcxzIGPffPvWeZV_vUmAOVcqE5i_D-9F2BRNxcAozZQ1N0O1pvK71wtUdNvLcs_mqCzRw4_umm2ScuGdRksSdJMjpVpM_mGaRjAnX01w0Q1A4sZXEz8juX_gOA8DIUr6PdlNCofyrxlIGM"/><span class="absolute top-2 right-2 px-2 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-label-caps lowercase">Ages 3-14</span></div>
+        <span class="text-label-caps text-secondary lowercase tracking-wider block">Generational Heritage</span>
+        <h3 class="text-headline-sm text-on-surface">Children &amp; Sunday School</h3>
+        <p class="text-body-sm text-on-surface-variant leading-relaxed">Planting foundational seeds of Christ in kids through interactive storytelling, music, Scripture memorization, and joyful games.</p>
+      </div>
+      <div class="pt-space-xs flex items-center justify-between gap-2"><span class="text-label-caps text-outline">Every Sunday @ 8:30 AM</span><a class="text-label-md px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-surface-tint transition-all" href="#contact">Join Ministry</a></div>
+    </div>
+    <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md flex flex-col justify-between space-y-space-md hover:shadow-xl hover:-translate-y-1 transition-all group lg:col-span-2">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md items-center">
+        <div class="relative h-48 rounded-xl overflow-hidden bg-surface-container"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Choir and band" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY2lUEWAUBHN3vO3IobZwWx-XzMH2xNt0e9QIXdwVg8ABNbL9WzuNLaFdiTSlFRkkp4fSIj8f9ESKgflExWY5BQho43NTPYa3n0CFKP2k9vGxdBFnjV5jDLJ63gZ7Kx5zfk7Wxrx6IAbcb1QbYEaoqYO6xrkWAaRUkwTepLNZdDzKdKaeE5Jr5EXrd-rU0I2u2naGlnxHVh7y0kfUbsXgTHsNmDB2D7bigynvWt1M"/><span class="absolute top-2 left-2 px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container text-label-caps lowercase">Levites of Zion</span></div>
+        <div class="space-y-space-xs">
+          <span class="text-label-caps text-secondary lowercase tracking-wider block">Worship &amp; Creative Arts</span>
+          <h3 class="text-headline-sm text-on-surface">Worship &amp; Creative Arts</h3>
+          <p class="text-body-sm text-on-surface-variant leading-relaxed">Leading the congregation into the Holy of Holies through spirit-filled chorales, African praise instrumentation, media production, and dramatic arts.</p>
+          <div class="pt-space-xs flex items-center justify-between gap-2"><span class="text-label-caps text-outline">Thurs &amp; Sat Rehearsals</span><a class="text-label-md px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-surface-tint transition-all" href="#contact">Audition &amp; Join</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ FAMILY & GENERATION MINISTRIES ============ -->
+<section id="family-ministries" class="section-anchor w-full bg-primary-container text-white py-space-3xl">
+  <div class="max-w-7xl mx-auto px-4 sm:px-gutter-lg space-y-8">
+    <div class="max-w-3xl" data-reveal><span class="text-label-caps text-secondary-container lowercase tracking-widest">Every Generation Belongs</span><h2 class="text-headline-lg mt-2">A Church Home for Children, Youth &amp; Families</h2><p class="text-surface-container-high mt-3">Dedicated spaces, leaders and programs help every age group grow in faith, build friendships and serve with purpose.</p></div>
+    <div class="grid lg:grid-cols-3 gap-5" data-stagger>
+      <article class="ministry-feature mobile-stack-card rounded-2xl bg-white/10 border border-white/10 p-6 backdrop-blur-md">
+        <div class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-container grid place-items-center mb-5"><svg class="ic" style="width:1.6rem;height:1.6rem"><use href="#child-icon"/></svg></div>
+        <span class="text-label-caps text-secondary-fixed lowercase">Children • Ages 3–14</span><h3 class="text-xl font-bold mt-2">AJC Kids Church</h3><p class="text-surface-container-high mt-3">Safe, joyful Sunday classes with Bible stories, worship, memory verses, creative activities and age-based groups led by trained teachers.</p>
+        <div class="mt-5 flex flex-wrap gap-2 text-xs"><span class="px-3 py-1.5 rounded-full bg-white/10">Sunday 8:30 AM</span><span class="px-3 py-1.5 rounded-full bg-white/10">Parent Check-in</span></div>
+      </article>
+      <article class="ministry-feature mobile-stack-card rounded-2xl bg-white/10 border border-white/10 p-6 backdrop-blur-md">
+        <div class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-container grid place-items-center mb-5"><svg class="ic" style="width:1.6rem;height:1.6rem"><use href="#fire"/></svg></div>
+        <span class="text-label-caps text-secondary-fixed lowercase">Youth • Ages 15–30</span><h3 class="text-xl font-bold mt-2">AJC Youth Movement</h3><p class="text-surface-container-high mt-3">Faith, leadership, career mentorship, music, sports and honest conversations that help young people follow Christ confidently in everyday life.</p>
+        <div class="mt-5 flex flex-wrap gap-2 text-xs"><span class="px-3 py-1.5 rounded-full bg-white/10">Saturday 3:00 PM</span><span class="px-3 py-1.5 rounded-full bg-white/10">Youth Connect</span></div>
+      </article>
+      <article class="ministry-feature mobile-stack-card rounded-2xl bg-white/10 border border-white/10 p-6 backdrop-blur-md">
+        <div class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-container grid place-items-center mb-5"><svg class="ic" style="width:1.6rem;height:1.6rem"><use href="#couple-icon"/></svg></div>
+        <span class="text-label-caps text-secondary-fixed lowercase">Marriage &amp; Family</span><h3 class="text-xl font-bold mt-2">Covenant Couples</h3><p class="text-surface-container-high mt-3">Marriage enrichment, counseling, family devotion guidance, anniversary celebrations and fellowship for engaged and married couples.</p>
+        <div class="mt-5 flex flex-wrap gap-2 text-xs"><span class="px-3 py-1.5 rounded-full bg-white/10">Monthly Fellowship</span><span class="px-3 py-1.5 rounded-full bg-white/10">Couples Counseling</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERMONS ============ -->
+<section id="sermons" class="section-anchor w-full bg-surface-container-low py-space-3xl">
+  <div class="w-full px-4 sm:px-gutter-lg max-w-7xl mx-auto space-y-space-2xl">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md" data-reveal>
+      <div class="space-y-space-2xs"><span class="text-label-caps text-secondary lowercase tracking-widest">Sermon Library</span><h2 class="text-headline-lg text-on-surface">Latest Sermons &amp; Teachings</h2><p class="text-body-md text-on-surface-variant">Stream life-altering sermons delivered live from the Kampala Sanctuary pulpit.</p></div>
+      <a class="inline-flex items-center gap-space-xs text-label-lg px-4 py-2 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container transition-all self-start" href="#sermons">View Sermon Library<svg class="ic" style="width:1em;height:1em"><use href="#arrow-r"/></svg></a>
+    </div>
+    <div class="p-space-lg lg:p-space-xl rounded-2xl bg-surface-container-lowest shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center" data-reveal>
+      <div class="lg:col-span-7">
+        <div class="relative rounded-2xl overflow-hidden aspect-video bg-primary-container shadow-md group">
+          <img class="w-full h-full object-cover" alt="Pastor Daniel preaching" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5TCbqE2FB3geekja1eXlN3PSdQosCi00CXmQvXdLO4Z1TY3ooMmOwHdYPHJrH2ygSFni2wMND-Yje8Y3hRUvaJ9q46wj658KDcmChEdMliybjC6nQrw2MstAkyOtAVRYZNM3DS7TY7VHA3AhffPsUCS12hfxv8VInBW0o_NE_ez46PJqHZ_4a8XCvXpuDG07_7VCW29UFMPXfwA6GtG_ivPoZm03Pu-AgQtP0MLQ"/>
+          <div class="absolute inset-0 bg-primary-container/40 group-hover:bg-primary-container/20 transition-colors flex items-center justify-center">
+            <button class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform pulse-ring" type="button" aria-label="Play sermon" style="--tw:0"><svg class="ic" style="width:1.8em;height:1.8em"><use href="#play"/></svg></button>
+          </div>
+          <div class="absolute bottom-3 left-3 right-3 flex justify-between items-center text-on-primary gap-2"><span class="px-2 py-1 rounded bg-primary-container/80 text-label-caps">54:20 Full Service</span><span class="px-2 py-1 rounded bg-primary-container/80 text-label-caps">1080p HD Audio &amp; Video</span></div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 space-y-space-md">
+        <div class="flex flex-wrap items-center gap-space-xs"><span class="px-2 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-label-caps lowercase">Featured Message</span><span class="text-body-sm text-outline">• Sunday Morning Glory</span></div>
+        <h3 class="text-headline-md text-on-surface">Walking in Victorious Faith</h3>
+        <div class="flex flex-wrap items-center gap-space-sm text-on-surface-variant text-body-sm"><span class="flex items-center gap-1"><svg class="ic" style="width:1em;height:1em"><use href="#group"/></svg>Pastor Daniel Kato</span><span>•</span><span class="flex items-center gap-1 text-secondary font-semibold"><svg class="ic" style="width:1em;height:1em"><use href="#book"/></svg>John 15:1-8</span></div>
+        <p class="text-body-sm text-on-surface-variant leading-relaxed">Discover the essential spiritual laws of remaining attached to Christ the True Vine. You cannot produce authentic fruit through self-reliance; apostolic victory is the direct outflow of abiding in His truth.</p>
+        <div class="p-space-sm rounded-xl bg-surface-container-low shadow-sm flex items-center gap-space-sm">
+          <button class="w-9 h-9 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center shrink-0 hover:bg-surface-container" type="button" aria-label="Listen"><svg class="ic"><use href="#headphones"/></svg></button>
+          <div class="flex-1 min-w-0"><div class="text-label-md text-on-surface truncate">Audio Podcast Episode #118</div><div class="text-label-caps text-outline">MP3 • 42 MB Stream</div></div>
+          <a class="text-label-caps text-secondary underline hover:text-on-surface transition-colors" href="#">Listen</a>
+        </div>
+        <div class="flex flex-wrap items-center gap-space-xs pt-1">
+          <a class="inline-flex items-center gap-1 text-label-md px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-surface-tint transition-all" href="#"><svg class="ic" style="width:1em;height:1em"><use href="#download"/></svg>Study Notes (PDF)</a>
+          <a class="inline-flex items-center gap-1 text-label-md px-4 py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" href="#"><svg class="ic" style="width:1em;height:1em"><use href="#bookmark"/></svg>Scripture References</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="mt-space-xl" data-reveal>
+      <div class="flex items-end justify-between gap-4 mb-4"><div><span class="text-label-caps text-secondary lowercase tracking-widest">Recently Uploaded</span><h3 class="text-headline-sm mt-1">Latest Messages from Church Leadership</h3></div><button data-open="sermonLibraryModal" class="text-label-md px-4 py-2 rounded-xl bg-primary-container text-white">Open Sermon Player</button></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <button class="sermon-item text-left p-4 rounded-2xl bg-white shadow-md hover:-translate-y-1 transition" data-title="Walking in Victorious Faith" data-preacher="Pastor Daniel Kato" data-scripture="John 15:1-8" data-date="6 Oct 2026">
+          <div class="aspect-video rounded-xl overflow-hidden bg-primary-container relative"><img class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5TCbqE2FB3geekja1eXlN3PSdQosCi00CXmQvXdLO4Z1TY3ooMmOwHdYPHJrH2ygSFni2wMND-Yje8Y3hRUvaJ9q46wj658KDcmChEdMliybjC6nQrw2MstAkyOtAVRYZNM3DS7TY7VHA3AhffPsUCS12hfxv8VInBW0o_NE_ez46PJqHZ_4a8XCvXpuDG07_7VCW29UFMPXfwA6GtG_ivPoZm03Pu-AgQtP0MLQ"><span class="absolute inset-0 grid place-items-center"><span class="w-12 h-12 rounded-full bg-secondary-container grid place-items-center shadow-lg"><svg class="ic"><use href="#play"/></svg></span></span></div>
+          <h4 class="font-bold mt-3">Walking in Victorious Faith</h4><p class="text-body-sm text-on-surface-variant mt-1">Pastor Daniel Kato • John 15:1-8</p><p class="text-label-caps text-secondary mt-2">Uploaded 6 Oct 2026</p>
+        </button>
+        <button class="sermon-item text-left p-4 rounded-2xl bg-white shadow-md hover:-translate-y-1 transition" data-title="A Life of Prayer" data-preacher="Pr. Sarah Kato" data-scripture="Luke 11:1-13" data-date="29 Sep 2026">
+          <div class="aspect-video rounded-xl overflow-hidden bg-primary-container relative"><img class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV3cArSnkSsW-0im8RVit1Fmie4fXWUAoA-qDoKnwAdcwSFI2XexPYlCuAMOA9MBi7gc1DbX96zhzXaxc5zrTWhyhjjYH2MByBmww62lAKiO0FrIlMYr2gCatLIQKcSDIgc36ZTfp6MaABGpQd-AQdAZ-L0PFmxBIDPxXWx_74dz0X88UPN8hpg9nGV-jPqyQv4ZgnJs0crwaSMXeVNWZunWFofSiZlmO5pn4Ooyo"><span class="absolute inset-0 grid place-items-center"><span class="w-12 h-12 rounded-full bg-secondary-container grid place-items-center shadow-lg"><svg class="ic"><use href="#play"/></svg></span></span></div>
+          <h4 class="font-bold mt-3">A Life of Prayer</h4><p class="text-body-sm text-on-surface-variant mt-1">Pr. Sarah Kato • Luke 11:1-13</p><p class="text-label-caps text-secondary mt-2">Uploaded 29 Sep 2026</p>
+        </button>
+        <button class="sermon-item text-left p-4 rounded-2xl bg-white shadow-md hover:-translate-y-1 transition" data-title="Building a Christ-Centred Family" data-preacher="Pastor Daniel Kato" data-scripture="Joshua 24:15" data-date="21 Sep 2026">
+          <div class="aspect-video rounded-xl overflow-hidden bg-primary-container relative"><img class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtqbrdu0v_Dry_J0qfTtklWKln-goIYalEjqCcFfzfpBzsoOJR4wM24Or36FAr1eLBT1nfqwlvi7vlI_3NI2YV1_QDE82pPudVubnMVNFWyx9EB8B-vC3W2RKxeq_zlQIStGEQRBPnzh8H7eaGF-DVCZm8-pW9RDMSDRv2XqhxSKR2ADytJqigCM1dwEMST6PjO92BUZHeVkLtfU908_ESNZ7eyn3874t6sEifBCs"><span class="absolute inset-0 grid place-items-center"><span class="w-12 h-12 rounded-full bg-secondary-container grid place-items-center shadow-lg"><svg class="ic"><use href="#play"/></svg></span></span></div>
+          <h4 class="font-bold mt-3">Building a Christ-Centred Family</h4><p class="text-body-sm text-on-surface-variant mt-1">Pastor Daniel Kato • Joshua 24:15</p><p class="text-label-caps text-secondary mt-2">Uploaded 21 Sep 2026</p>
+        </button>
+      </div>
+    </div>
+</section>
+
+
+<!-- ============ LIVE CHURCH ============ -->
+<section id="live" class="section-anchor w-full py-space-3xl bg-surface">
+  <div class="max-w-7xl mx-auto px-4 sm:px-gutter-lg">
+    <div class="grid lg:grid-cols-12 gap-6 items-stretch">
+      <div class="lg:col-span-8 relative stream-screen rounded-2xl overflow-hidden shadow-xl" data-reveal>
+        <img class="absolute inset-0 w-full h-full object-cover opacity-65" alt="Church live worship service" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5TCbqE2FB3geekja1eXlN3PSdQosCi00CXmQvXdLO4Z1TY3ooMmOwHdYPHJrH2ygSFni2wMND-Yje8Y3hRUvaJ9q46wj658KDcmChEdMliybjC6nQrw2MstAkyOtAVRYZNM3DS7TY7VHA3AhffPsUCS12hfxv8VInBW0o_NE_ez46PJqHZ_4a8XCvXpuDG07_7VCW29UFMPXfwA6GtG_ivPoZm03Pu-AgQtP0MLQ"/>
+        <div class="absolute inset-0 z-10 p-5 sm:p-7 flex flex-col justify-between text-white">
+          <div class="flex items-center justify-between gap-3"><span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-600 font-bold text-xs"><span class="live-dot"></span> LIVE CHURCH</span><span class="hidden sm:inline text-xs px-3 py-1.5 rounded-full bg-black/35 backdrop-blur">HD • Kampala Sanctuary</span></div>
+          <div><p class="text-secondary-fixed text-label-caps lowercase">Sunday Worship Experience</p><h2 class="text-2xl sm:text-3xl font-bold mt-2">Join the Service From Wherever You Are</h2><p class="text-white/80 mt-2 max-w-2xl text-sm sm:text-base">Watch worship, the Word and church events live. Production can connect this player to the church's YouTube or Facebook Live stream.</p><button id="livePlayDemo" class="mt-5 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-secondary-container text-on-secondary-container font-bold"><svg class="ic"><use href="#play"/></svg>Watch Live Preview</button></div>
+        </div>
+      </div>
+      <aside class="lg:col-span-4 portal-card p-5 sm:p-6 flex flex-col justify-between" data-reveal>
+        <div><span class="text-label-caps text-secondary lowercase">Next Broadcasts</span><h3 class="text-xl font-bold mt-2">Church Online Schedule</h3><div class="mt-5 space-y-4">
+          <div class="flex gap-3"><div class="w-11 h-11 rounded-xl bg-secondary-fixed grid place-items-center text-secondary"><svg class="ic"><use href="#sun"/></svg></div><div><b class="block">Sunday Worship</b><span class="text-sm text-outline">Sunday • 8:00 AM EAT</span></div></div>
+          <div class="flex gap-3"><div class="w-11 h-11 rounded-xl bg-surface-container grid place-items-center text-secondary"><svg class="ic"><use href="#book"/></svg></div><div><b class="block">Midweek Bible Study</b><span class="text-sm text-outline">Wednesday • 5:00 PM EAT</span></div></div>
+          <div class="flex gap-3"><div class="w-11 h-11 rounded-xl bg-surface-container grid place-items-center text-secondary"><svg class="ic"><use href="#fire"/></svg></div><div><b class="block">Prayer Service</b><span class="text-sm text-outline">Friday • 5:30 PM EAT</span></div></div>
+        </div></div>
+        <a href="#events" class="mt-6 portal-btn primary-btn">See All Live Events <svg class="ic"><use href="#arrow-r"/></svg></a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EVENTS ============ -->
+<section id="events" class="section-anchor w-full px-4 sm:px-gutter-lg max-w-7xl mx-auto py-space-3xl space-y-space-2xl">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md" data-reveal>
+    <div class="space-y-space-2xs"><span class="text-label-caps text-secondary lowercase tracking-widest">Mark Your Calendar</span><h2 class="text-headline-lg text-on-surface">Upcoming Assemblies &amp; Conferences</h2><p class="text-body-md text-on-surface-variant">Gather with brothers and sisters for divine impartation and supernatural revival.</p></div>
+    <a class="inline-flex items-center gap-space-xs text-label-lg px-4 py-2 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container transition-all self-start" href="#events">Full Church Calendar<svg class="ic" style="width:1em;height:1em"><use href="#calendar"/></svg></a>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg" data-stagger>
+    <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md flex flex-col justify-between space-y-space-md hover:shadow-xl hover:-translate-y-1 transition-all">
+      <div class="space-y-space-sm">
+        <div class="flex items-center justify-between gap-2"><span class="px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container text-label-caps lowercase">Annual Flagship</span><span class="text-label-caps text-secondary font-bold">Don't miss it</span></div>
+        <div class="flex items-baseline gap-space-xs"><span class="text-headline-lg text-secondary font-bold">24-26</span><span class="text-title-sm text-on-surface-variant">APRIL 2027</span></div>
+        <h3 class="text-headline-sm text-on-surface">National Youth Conference</h3>
+        <p class="text-body-sm text-on-surface-variant leading-relaxed">“Ignited for Dominion” — 3 explosive days of worship, practical career workshops, prophetic breakout sessions, and fellowship.</p>
+        <div class="p-space-xs rounded-xl bg-surface-container-low text-body-sm space-y-1"><div class="flex items-center gap-1 text-on-surface"><svg class="ic text-secondary" style="width:1em;height:1em"><use href="#pin"/></svg><span>Main Sanctuary, Nakasero Kampala</span></div><div class="flex items-center gap-1 text-on-surface"><svg class="ic text-secondary" style="width:1em;height:1em"><use href="#clock"/></svg><span>09:00 AM – 06:00 PM Daily</span></div></div>
+      </div>
+      <div class="pt-space-xs"><a class="w-full inline-flex items-center justify-center text-label-md px-4 py-3 rounded-xl bg-primary-container text-on-primary hover:bg-surface-tint transition-all" href="#contact">Register Free Delegate Seat</a></div>
+    </div>
+    <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md flex flex-col justify-between space-y-space-md hover:shadow-xl hover:-translate-y-1 transition-all">
+      <div class="space-y-space-sm">
+        <div class="flex items-center justify-between gap-2"><span class="px-2 py-1 rounded-full bg-surface-container-high text-on-surface text-label-caps lowercase">Marriage Ministry</span><span class="text-label-caps text-outline">Seats Limited</span></div>
+        <div class="flex items-baseline gap-space-xs"><span class="text-headline-lg text-secondary font-bold">16</span><span class="text-title-sm text-on-surface-variant">MAY 2027</span></div>
+        <h3 class="text-headline-sm text-on-surface">Annual Couples Gala Dinner</h3>
+        <p class="text-body-sm text-on-surface-variant leading-relaxed">An evening of romance, renewal of vows, intimate worship, and practical marital counsel under the guidance of Pastor Daniel &amp; Mama Sarah.</p>
+        <div class="p-space-xs rounded-xl bg-surface-container-low text-body-sm space-y-1"><div class="flex items-center gap-1 text-on-surface"><svg class="ic text-secondary" style="width:1em;height:1em"><use href="#pin"/></svg><span>Imperial Royale Hotel, Kampala</span></div><div class="flex items-center gap-1 text-on-surface"><svg class="ic text-secondary" style="width:1em;height:1em"><use href="#clock"/></svg><span>06:00 PM – 10:00 PM Dinner</span></div></div>
+      </div>
+      <div class="pt-space-xs"><a class="w-full inline-flex items-center justify-center text-label-md px-4 py-3 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container transition-all" href="#contact">Reserve Couple Table</a></div>
+    </div>
+    <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md flex flex-col justify-between space-y-space-md hover:shadow-xl hover:-translate-y-1 transition-all">
+      <div class="space-y-space-sm">
+        <div class="flex items-center justify-between gap-2"><span class="px-2 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-label-caps lowercase">Deliverance</span><span class="text-label-caps text-secondary font-bold">Monthly Vigil</span></div>
+        <div class="flex items-baseline gap-space-xs"><span class="text-headline-lg text-secondary font-bold">Every Fri</span><span class="text-title-sm text-on-surface-variant">NIGHT</span></div>
+        <h3 class="text-headline-sm text-on-surface">Miracle Night Prayer</h3>
+        <p class="text-body-sm text-on-surface-variant leading-relaxed">A night dedicated to violent intercession, breaking generational bondages, healing the sick, and laying hands for kingdom empowerment.</p>
+        <div class="p-space-xs rounded-xl bg-surface-container-low text-body-sm space-y-1"><div class="flex items-center gap-1 text-on-surface"><svg class="ic text-secondary" style="width:1em;height:1em"><use href="#pin"/></svg><span>Main Sanctuary Altar, Nakasero</span></div><div class="flex items-center gap-1 text-on-surface"><svg class="ic text-secondary" style="width:1em;height:1em"><use href="#clock"/></svg><span>09:00 PM – 05:30 AM Dawn</span></div></div>
+      </div>
+      <div class="pt-space-xs"><a class="w-full inline-flex items-center justify-center text-label-md px-4 py-3 rounded-xl bg-primary-container text-on-primary hover:bg-surface-tint transition-all" href="#prayer">Submit Prayer Request</a></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ UPCOMING CONFERENCES ============ -->
+<section id="conferences" class="section-anchor w-full bg-surface-container-low py-space-3xl">
+ <div class="max-w-7xl mx-auto px-4 sm:px-gutter-lg space-y-7">
+   <div class="flex flex-col md:flex-row md:items-end justify-between gap-4"><div><span class="text-label-caps text-secondary lowercase tracking-widest">Save the Date</span><h2 class="text-headline-lg mt-1">Upcoming Conferences &amp; Special Gatherings</h2><p class="text-on-surface-variant mt-2">Explore major gatherings coming up at Ambassadors of Jesus Christ Church.</p></div><a href="#events" class="portal-btn soft-btn self-start">View Church Calendar</a></div>
+   <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5" data-stagger>
+     <article class="portal-card overflow-hidden group"><div class="h-44 overflow-hidden"><img class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXWggo1IVhoQc7RjzRIJp67BriPmMbthvjoIlOe08uLW4hs9O3C6YHCWlaV1tEgIkOMVz1a97sK_NbHs_JS2DnSwBRKy_JynoAbWAokTCYq4EFi4zUAmE-ksztSBntRfFAM1Go0RlRFlAN-gWuy_sBh28baCfbHbLOcl0RyCP5lh-aNAqyI9TbQ9iCPDs2eY5L5jqndIOOq181pegopym6GPCtqDNbIB8EfGOpzII" alt="Youth conference"/></div><div class="p-5"><span class="badge bg-secondary-fixed text-on-secondary-fixed">17–19 OCT 2026</span><h3 class="text-lg font-bold mt-3">Youth Ablaze Conference</h3><p class="text-sm text-on-surface-variant mt-2">Three days of worship, discipleship, career mentoring and youth fellowship.</p><button class="mt-4 portal-btn primary-btn" data-event-register="Youth Ablaze Conference">Register Interest</button></div></article>
+     <article class="portal-card overflow-hidden group"><div class="h-44 overflow-hidden"><img class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtqbrdu0v_Dry_J0qfTtklWKln-goIYalEjqCcFfzfpBzsoOJR4wM24Or36FAr1eLBT1nfqwlvi7vlI_3NI2YV1_QDE82pPudVubnMVNFWyx9EB8B-vC3W2RKxeq_zlQIStGEQRBPnzh8H7eaGF-DVCZm8-pW9RDMSDRv2XqhxSKR2ADytJqigCM1dwEMST6PjO92BUZHeVkLtfU908_ESNZ7eyn3874t6sEifBCs" alt="Women conference"/></div><div class="p-5"><span class="badge bg-secondary-fixed text-on-secondary-fixed">7 NOV 2026</span><h3 class="text-lg font-bold mt-3">Women of Grace Summit</h3><p class="text-sm text-on-surface-variant mt-2">A one-day gathering for prayer, family, purpose, business and mentorship.</p><button class="mt-4 portal-btn primary-btn" data-event-register="Women of Grace Summit">Register Interest</button></div></article>
+     <article class="portal-card overflow-hidden group md:col-span-2 xl:col-span-1"><div class="h-44 overflow-hidden"><img class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA47W64VQ6fsFUSkniFziPUXNTzoqd1IjuMc6kO9lb1dHGvcPWVCqR6rVjvTIntCLJva7yyrAQ2CPyNI0ztGGCIPUaRBdnkJfeOxmg1-L4krZaKkPXYhfkIUMwTa-hnRDfMmlnaRaa1Js79Y4BZPeLwGF7AvGA-KLI7bzihWZtXSb_IfuXh92L96gZ00sXw0oUwCc6vs5gJaKwI1VEWXyy0yKZkfFrm-Siw3_oRjeg" alt="Marriage conference"/></div><div class="p-5"><span class="badge bg-secondary-fixed text-on-secondary-fixed">21 NOV 2026</span><h3 class="text-lg font-bold mt-3">Covenant Marriage Encounter</h3><p class="text-sm text-on-surface-variant mt-2">A couples experience focused on communication, faith, parenting and friendship.</p><button class="mt-4 portal-btn primary-btn" data-event-register="Covenant Marriage Encounter">Register Interest</button></div></article>
+   </div>
+ </div>
+</section>
+
+<!-- ============ GALLERY (NEW) ============ -->
+<section id="gallery" class="section-anchor w-full bg-surface-container-low py-space-3xl">
+  <div class="w-full px-4 sm:px-gutter-lg max-w-7xl mx-auto space-y-space-xl">
+    <div class="text-center max-w-2xl mx-auto space-y-space-2xs" data-reveal>
+      <span class="text-label-caps text-secondary lowercase tracking-widest">Sanctuary Life</span>
+      <h2 class="text-headline-lg text-on-surface">Glimpses of Kingdom Fellowship</h2>
+      <p class="text-body-md text-on-surface-variant">We are a vibrant multi-generational family bound by love, truth, and genuine joy in Christ.</p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-2" id="galFilters" data-reveal>
+      <button data-f="all" class="gf px-4 py-2 rounded-full text-label-md bg-primary-container text-on-primary">All</button>
+      <button data-f="worship" class="gf px-4 py-2 rounded-full text-label-md bg-surface-container-lowest text-on-surface">Worship</button>
+      <button data-f="community" class="gf px-4 py-2 rounded-full text-label-md bg-surface-container-lowest text-on-surface">Community</button>
+      <button data-f="youth" class="gf px-4 py-2 rounded-full text-label-md bg-surface-container-lowest text-on-surface">Youth &amp; Kids</button>
+      <button data-f="faith" class="gf px-4 py-2 rounded-full text-label-md bg-surface-container-lowest text-on-surface">Baptism &amp; Prayer</button>
+    </div>
+    <!-- Swap any src with your own photos (e.g. assets/gallery/01.jpg) -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-space-md" id="galGrid">
+      <figure data-cat="faith" class="g-item rounded-2xl overflow-hidden aspect-square bg-surface-container shadow-md group relative cursor-pointer"><img loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Water baptism" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4Xqsj1tMFneuP2k5eAMWNFV0RSOgbyKI9tM8JZ0necoF9u5q7yfh_XYz6AZcMNkrHtv6nKtKcBFEY4PDeBH_sa6B5VaSjNUwwKZifQo2Fn0SkCjcpIHp5Xo5ySUokS1Lb8xplsNKrqos5KSawmwB7LjR3cIw8NW-wO7KqKh3jY__Q2S8rBDwxarv7aqcHNJYTDFLz0M4pcYAcmu9aurf0Ta0Mn4AuAwRcKXUyYUA"/><figcaption class="absolute inset-0 bg-gradient-to-t from-primary-container/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 text-on-primary text-label-caps lowercase">Water Baptism</figcaption></figure>
+      <figure data-cat="youth worship" class="g-item rounded-2xl overflow-hidden aspect-square bg-surface-container shadow-md group relative cursor-pointer"><img loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Youth praise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSXvZbhZu3atXSyN4k2gU5_tpcVdWCwE5JAAQ1jKtmh9cbUVGP-7Ece5mwxRQBViY0t7slMYeb3C8R7V96hzqkaPYQZ_SbHyqz_1vjI1w_jRtFWamzxTiNy1vNogRImoyXDMu1KyiXEh65NHet7OsgInQVoemrmkNqvEueLqNOYL4PYet6HdrMu9vIchGLoS8yBmE-XzDt-wJjD9W1aXTXrrxZMtIqRLlhoNvpaLg"/><figcaption class="absolute inset-0 bg-gradient-to-t from-primary-container/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 text-on-primary text-label-caps lowercase">Youth Praise</figcaption></figure>
+      <figure data-cat="community" class="g-item rounded-2xl overflow-hidden aspect-square bg-surface-container shadow-md group relative cursor-pointer"><img loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="City charity outreach" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP8rPy46VukHHwHu4gTkEQ5FcxR9bdWyBqq3Bz_BBEp19-9dXS99DP2d7SpQ_6PvEQRK8zFh7Ksejt68Lo36lbiqaqWmnjn_UWyXNYG9mRwxm3uAeRifoAYZ5ggAuye0ULKkkQLy2ffjn0D4bVYJtLm9LV-nadGL4ov9emR06sejwA_WMMFWDtyh_JiF3kWWrXwN6Rjxn6_ZrsZtsjvoXGs6dueuOg5028uJDObUg"/><figcaption class="absolute inset-0 bg-gradient-to-t from-primary-container/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 text-on-primary text-label-caps lowercase">City Charity Outreach</figcaption></figure>
+      <figure data-cat="faith" class="g-item rounded-2xl overflow-hidden aspect-square bg-surface-container shadow-md group relative cursor-pointer"><img loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Holy Communion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdgqnn2Cm1t0eipAjwsQ4HR4r_zKfgULR43gRkdmb7lvz7vJ8YaC5c24-Q5fQj9uBBgvIQN5-oH_rqcCcg9nIy-P91BO6hAhmomx5gZgcpsmvFum17MbeAX4zaSiNGu0lw7yMBpm24I-KvM_vdujFkllRIEmNXNOh4yC7444GS11F8agEOM-52pKRFbitI2QQ5EFGHI-63RyNOFbIV4dmLdVuUtu5AzmLuc-HMzac"/><figcaption class="absolute inset-0 bg-gradient-to-t from-primary-container/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 text-on-primary text-label-caps lowercase">Holy Communion</figcaption></figure>
+      <figure data-cat="worship" class="g-item rounded-2xl overflow-hidden aspect-square md:aspect-[4/3] md:col-span-2 bg-surface-container shadow-md group relative cursor-pointer"><img loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Choir and band" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY2lUEWAUBHN3vO3IobZwWx-XzMH2xNt0e9QIXdwVg8ABNbL9WzuNLaFdiTSlFRkkp4fSIj8f9ESKgflExWY5BQho43NTPYa3n0CFKP2k9vGxdBFnjV5jDLJ63gZ7Kx5zfk7Wxrx6IAbcb1QbYEaoqYO6xrkWAaRUkwTepLNZdDzKdKaeE5Jr5EXrd-rU0I2u2naGlnxHVh7y0kfUbsXgTHsNmDB2D7bigynvWt1M"/><figcaption class="absolute inset-0 bg-gradient-to-t from-primary-container/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 text-on-primary text-label-caps lowercase">Worship &amp; Creative Arts</figcaption></figure>
+      <figure data-cat="worship" class="g-item rounded-2xl overflow-hidden aspect-square md:aspect-[4/3] md:col-span-2 bg-surface-container shadow-md group relative cursor-pointer"><img loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Pastor preaching" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5TCbqE2FB3geekja1eXlN3PSdQosCi00CXmQvXdLO4Z1TY3ooMmOwHdYPHJrH2ygSFni2wMND-Yje8Y3hRUvaJ9q46wj658KDcmChEdMliybjC6nQrw2MstAkyOtAVRYZNM3DS7TY7VHA3AhffPsUCS12hfxv8VInBW0o_NE_ez46PJqHZ_4a8XCvXpuDG07_7VCW29UFMPXfwA6GtG_ivPoZm03Pu-AgQtP0MLQ"/><figcaption class="absolute inset-0 bg-gradient-to-t from-primary-container/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 text-on-primary text-label-caps lowercase">Sunday Preaching</figcaption></figure>
+      <figure data-cat="youth" class="g-item rounded-2xl overflow-hidden aspect-square bg-surface-container shadow-md group relative cursor-pointer"><img loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Children's Sunday school" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMKUF77L6Mfi15-noxnY4HxpNlbI8jFFUKytdCej3_F7TzEOlZiXimG5vTLQGLpuAiVkfA-GZjQFbNJ6ZahXCDRxPRvrcxzIGPffPvWeZV_vUmAOVcqE5i_D-9F2BRNxcAozZQ1N0O1pvK71wtUdNvLcs_mqCzRw4_umm2ScuGdRksSdJMjpVpM_mGaRjAnX01w0Q1A4sZXEz8juX_gOA8DIUr6PdlNCofyrxlIGM"/><figcaption class="absolute inset-0 bg-gradient-to-t from-primary-container/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 text-on-primary text-label-caps lowercase">Children's Church</figcaption></figure>
+      <figure data-cat="community" class="g-item rounded-2xl overflow-hidden aspect-square bg-surface-container shadow-md group relative cursor-pointer"><img loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Women's fellowship" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtqbrdu0v_Dry_J0qfTtklWKln-goIYalEjqCcFfzfpBzsoOJR4wM24Or36FAr1eLBT1nfqwlvi7vlI_3NI2YV1_QDE82pPudVubnMVNFWyx9EB8B-vC3W2RKxeq_zlQIStGEQRBPnzh8H7eaGF-DVCZm8-pW9RDMSDRv2XqhxSKR2ADytJqigCM1dwEMST6PjO92BUZHeVkLtfU908_ESNZ7eyn3874t6sEifBCs"/><figcaption class="absolute inset-0 bg-gradient-to-t from-primary-container/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 text-on-primary text-label-caps lowercase">Women of Grace</figcaption></figure>
+      <figure data-cat="community" class="g-item rounded-2xl overflow-hidden aspect-square bg-surface-container shadow-md group relative cursor-pointer"><img loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Men's fellowship" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA47W64VQ6fsFUSkniFziPUXNTzoqd1IjuMc6kO9lb1dHGvcPWVCqR6rVjvTIntCLJva7yyrAQ2CPyNI0ztGGCIPUaRBdnkJfeOxmg1-L4krZaKkPXYhfkIUMwTa-hnRDfMmlnaRaa1Js79Y4BZPeLwGF7AvGA-KLI7bzihWZtXSb_IfuXh92L96gZ00sXw0oUwCc6vs5gJaKwI1VEWXyy0yKZkfFrm-Siw3_oRjeg"/><figcaption class="absolute inset-0 bg-gradient-to-t from-primary-container/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 text-on-primary text-label-caps lowercase">Men of Valor</figcaption></figure>
+      <figure data-cat="youth" class="g-item rounded-2xl overflow-hidden aspect-square bg-surface-container shadow-md group relative cursor-pointer"><img loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Kingdom Trailblazers youth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXWggo1IVhoQc7RjzRIJp67BriPmMbthvjoIlOe08uLW4hs9O3C6YHCWlaV1tEgIkOMVz1a97sK_NbHs_JS2DnSwBRKy_JynoAbWAokTCYq4EFi4zUAmE-ksztSBntRfFAM1Go0RlRFlAN-gWuy_sBh28baCfbHbLOcl0RyCP5lh-aNAqyI9TbQ9iCPDs2eY5L5jqndIOOq181pegopym6GPCtqDNbIB8EfGOpzII"/><figcaption class="absolute inset-0 bg-gradient-to-t from-primary-container/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 text-on-primary text-label-caps lowercase">Kingdom Trailblazers</figcaption></figure>
+      <figure data-cat="faith" class="g-item rounded-2xl overflow-hidden aspect-square bg-surface-container shadow-md group relative cursor-pointer"><img loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="The Word" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnthfThXLmv0YFjs-Sr4d765qjeiMnd7UIOs9z--YwZDcb8iLjfmX4QGWC1q3YdnNU4ylT99aOb2-BGP1ZrhalJAcS_JweLE9Pv9GNP4WT9Yh_eELZQTHHU-0o1z3vrYeowWWQ8TkRwoc6x0ISgs7nqjTj9vSaVjURxL_nwrWkfhkSlfXWcDsBfKUOtT0pAhU5bt9OKndvPUEBGBfNOHho1pPR9fEsVxI0nUat240"/><figcaption class="absolute inset-0 bg-gradient-to-t from-primary-container/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 text-on-primary text-label-caps lowercase">The Word</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GIVING + DONATE FORM ============ -->
+<section id="give" class="section-anchor w-full px-4 sm:px-gutter-lg max-w-7xl mx-auto py-space-3xl">
+  <div class="relative rounded-2xl bg-primary-container text-on-primary overflow-hidden shadow-2xl p-space-lg lg:p-space-2xl">
+    <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none float"></div>
+    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+      <div class="lg:col-span-7 space-y-space-md" data-reveal="left">
+        <div class="flex items-center gap-space-xs"><span class="p-1 rounded-lg bg-secondary-container text-on-secondary-container"><svg class="ic"><use href="#heart"/></svg></span><span class="text-label-caps text-secondary-container lowercase tracking-wider">Kingdom Stewardship &amp; Covenant Giving</span></div>
+        <h2 class="text-headline-lg text-on-primary tracking-tight">Partner with God’s Work in Uganda &amp; the Nations</h2>
+        <p class="text-body-md text-surface-container leading-relaxed">Your faithful tithes, building pledges, and sacrificial mission offerings enable us to preach the gospel on television, feed vulnerable widows, and educate orphans across Kampala.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+          <div class="p-space-sm rounded-xl bg-white/10 backdrop-blur-sm space-y-1"><span class="text-label-caps text-secondary-fixed lowercase block">Mobile Money (Uganda)</span><div class="text-title-sm text-on-primary font-bold">MTN MoMo: *165*4*...</div><div class="text-title-sm text-on-primary font-bold">Airtel Money: *185*9*...</div><span class="text-body-sm text-surface-container-high block">Merchant Code: AJC-KAMPALA</span></div>
+          <div class="p-space-sm rounded-xl bg-white/10 backdrop-blur-sm space-y-1"><span class="text-label-caps text-secondary-fixed lowercase block">Direct Bank Transfer</span><div class="text-title-sm text-on-primary font-bold">Stanbic Bank Uganda</div><div class="text-body-sm text-surface-container-high">A/C: 9030018847291</div><span class="text-body-sm text-surface-container-high block">Branch: Nakasero Kampala</span></div>
+        </div>
+        <div class="flex flex-wrap gap-space-sm pt-2">
+          <a href="tel:+256700123456" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/15 hover:bg-white/25 transition text-label-lg"><svg class="ic"><use href="#phone"/></svg>Call about giving</a>
+          <a href="https://wa.me/256700123456?text=Hello%20Ambassadors%20of%20Jesus%20Christ%20Church%2C%20I%20need%20help%20with%20giving." target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#25D366] text-white hover:brightness-110 transition text-label-lg"><svg class="ic ic-fill"><use href="#whatsapp"/></svg>WhatsApp us</a>
+        </div>
+      </div>
+
+      <!-- DONATE FORM -->
+      <div class="lg:col-span-5" data-reveal="right">
+        <form id="donateForm" class="p-space-lg rounded-2xl bg-surface-container-lowest text-on-surface shadow-2xl space-y-space-md" novalidate>
+          <div class="space-y-1"><h3 class="text-title-md text-on-surface">Instant Online Giving</h3><p class="text-body-sm text-on-surface-variant">Choose gift designation and give securely with Mobile Money, card or bank.</p></div>
+          <div class="grid grid-cols-3 gap-1" id="fundTabs">
+            <button type="button" data-v="Tithe" class="fund py-2 rounded-lg text-label-caps text-center lowercase bg-secondary-fixed text-on-secondary-fixed font-bold">Tithe</button>
+            <button type="button" data-v="Offering" class="fund py-2 rounded-lg text-label-caps text-center lowercase bg-surface-container hover:bg-surface-container-high">Offering</button>
+            <button type="button" data-v="Missions" class="fund py-2 rounded-lg text-label-caps text-center lowercase bg-surface-container hover:bg-surface-container-high">Missions</button>
+          </div>
+          <div class="space-y-1">
+            <span class="text-label-caps text-outline lowercase">Select Amount (UGX)</span>
+            <div class="grid grid-cols-3 gap-1" id="amtTabs">
+              <button type="button" data-v="20000" class="amt py-2 rounded-lg text-label-md text-center bg-surface-container hover:bg-surface-container-high">20,000</button>
+              <button type="button" data-v="50000" class="amt py-2 rounded-lg text-label-md text-center bg-primary-container text-on-primary font-bold">50,000</button>
+              <button type="button" data-v="100000" class="amt py-2 rounded-lg text-label-md text-center bg-surface-container hover:bg-surface-container-high">100,000</button>
+            </div>
+            <input id="dAmount" type="number" min="1000" inputmode="numeric" value="50000" placeholder="Or enter any amount" class="w-full mt-1 px-3 py-2 rounded-xl bg-surface-container-low outline-none focus:ring-2 focus:ring-secondary-container"/>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+            <div><label class="block text-label-caps lowercase text-on-surface-variant mb-1">Full Name</label><input id="dName" required class="w-full px-3 py-2 rounded-xl bg-surface-container-low outline-none focus:ring-2 focus:ring-secondary-container" placeholder="e.g. Grace Tumuhimbise"/></div>
+            <div><label class="block text-label-caps lowercase text-on-surface-variant mb-1">Phone / WhatsApp</label><input id="dPhone" required type="tel" class="w-full px-3 py-2 rounded-xl bg-surface-container-low outline-none focus:ring-2 focus:ring-secondary-container" placeholder="+256 700 000 000"/></div>
+          </div>
+          <div>
+            <label class="block text-label-caps lowercase text-on-surface-variant mb-1">Payment Method</label>
+            <div class="grid grid-cols-2 gap-1" id="payTabs">
+              <button type="button" data-v="MTN MoMo" class="pay flex items-center justify-center gap-1 py-2 rounded-lg text-label-md bg-secondary-fixed text-on-secondary-fixed font-bold"><svg class="ic" style="width:1em;height:1em"><use href="#mobile"/></svg>MTN MoMo</button>
+              <button type="button" data-v="Airtel Money" class="pay flex items-center justify-center gap-1 py-2 rounded-lg text-label-md bg-surface-container"><svg class="ic" style="width:1em;height:1em"><use href="#mobile"/></svg>Airtel Money</button>
+              <button type="button" data-v="Card" class="pay flex items-center justify-center gap-1 py-2 rounded-lg text-label-md bg-surface-container"><svg class="ic" style="width:1em;height:1em"><use href="#card"/></svg>Card</button>
+              <button type="button" data-v="Bank Transfer" class="pay flex items-center justify-center gap-1 py-2 rounded-lg text-label-md bg-surface-container"><svg class="ic" style="width:1em;height:1em"><use href="#bank"/></svg>Bank</button>
+            </div>
+          </div>
+          <div><label class="block text-label-caps lowercase text-on-surface-variant mb-1">Note (optional)</label><textarea id="dNote" rows="2" class="w-full px-3 py-2 rounded-xl bg-surface-container-low outline-none focus:ring-2 focus:ring-secondary-container" placeholder="Pledge, project or testimony..."></textarea></div>
+          <p id="dMsg" class="hidden text-body-sm rounded-xl p-3"></p>
+          <button type="submit" class="w-full inline-flex items-center justify-center gap-2 text-label-lg px-4 py-3 rounded-xl bg-secondary-container text-on-secondary-container font-semibold shadow-md hover:bg-secondary-fixed transition-all"><svg class="ic"><use href="#heart"/></svg>Proceed to Secure Giving</button>
+          <div class="flex items-center justify-center gap-1 text-outline text-label-caps"><svg class="ic" style="width:1em;height:1em"><use href="#lock"/></svg><span>Secure • Instant SMS Receipt</span></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIES & PRAYER ============ -->
+<!-- ============================================================
+     TESTIMONIALS + PRAYER FORM SECTION (fixed, copy-paste ready)
+     Paste this block where the old <section id="testimonials"> was.
+     It includes: markup, CSS, icon sprite, and JS.
+     ============================================================ -->
+
+<!-- 1) CSS: scroll-reveal that FAILS OPEN (content is only hidden when JS is running) -->
+<style>
+  /* Prevent sideways-translated elements from causing horizontal scroll */
+  #testimonials { overflow-x: clip; }
+
+  /* Icon size used by <svg class="ic"> */
+  .ic { width: 1.1em; height: 1.1em; fill: currentColor; flex-shrink: 0; }
+
+  /* ---- Reveal animations ----
+     Elements are hidden ONLY when the <html> tag has the "reveal-ready" class,
+     which the script below adds. If JS fails, everything stays visible. */
+  .reveal-ready [data-reveal] {
+    opacity: 0;
+    transition: opacity .7s ease, transform .7s ease;
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  .reveal-ready [data-reveal=""],
+  .reveal-ready [data-reveal="up"]    { transform: translateY(28px); }
+  .reveal-ready [data-reveal="left"]  { transform: translateX(-40px); }
+  .reveal-ready [data-reveal="right"] { transform: translateX(40px); }
+
+  /* On small screens, slide up instead of sideways (no overflow, always in view) */
+  @media (max-width: 1023px) {
+    .reveal-ready [data-reveal="left"],
+    .reveal-ready [data-reveal="right"] { transform: translateY(28px); }
+  }
+
+  .reveal-ready [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Staggered children: each direct child fades up in sequence */
+  .reveal-ready [data-stagger] > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+    transition-delay: var(--stagger-delay, 0ms);
+  }
+  .reveal-ready [data-stagger].is-visible > * {
+    opacity: 1;
+    transform: none;
+  }
+  /* Keep the card hover effect working after the reveal finishes */
+  .reveal-ready [data-stagger].is-visible > *:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-ready [data-reveal],
+    .reveal-ready [data-stagger] > * {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* Message shown after form submit */
+  #pMsg.show { display: block; }
+</style>
+
+<!-- 2) SVG sprite: provides the #send icon used by the button -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="send" viewBox="0 0 24 24">
+    <path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"/>
+  </symbol>
+</svg>
+
+<!-- 3) The section -->
+<section id="testimonials" class="section-anchor w-full px-4 sm:px-gutter-lg max-w-7xl mx-auto py-space-2xl">
+  <span id="prayer" class="section-anchor" aria-hidden="true"></span>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+
+    <!-- Left: testimonies -->
+    <div class="lg:col-span-7 space-y-space-lg">
+      <div class="space-y-space-2xs" data-reveal>
+        <span class="text-label-caps text-secondary lowercase tracking-widest">Lives Changed by Grace</span>
+        <h2 class="text-headline-lg text-on-surface">Testimonies of God’s Faithfulness</h2>
+      </div>
+
+      <div class="space-y-space-md" data-stagger>
+        <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md space-y-space-xs hover:-translate-y-1 hover:shadow-xl transition-all">
+          <div class="flex items-center justify-between gap-2 flex-wrap">
+            <div class="flex items-center gap-space-xs">
+              <div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold">KM</div>
+              <div>
+                <div class="text-title-sm text-on-surface font-semibold">Kato Moses &amp; Family</div>
+                <div class="text-body-sm text-outline">Nakasero Fellowship</div>
+              </div>
+            </div>
+            <span class="text-label-caps px-2 py-1 rounded-full bg-surface-container text-secondary">Miraculous Healing</span>
+          </div>
+          <p class="text-body-md text-on-surface-variant italic leading-relaxed">“During the Friday Miracle Night, Pastor Daniel laid hands on me after 3 years of chronic spinal pain. The power of the Lord struck me, and I was healed that instant. Glory to Jesus!”</p>
+        </div>
+
+        <div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-md space-y-space-xs hover:-translate-y-1 hover:shadow-xl transition-all">
+          <div class="flex items-center justify-between gap-2 flex-wrap">
+            <div class="flex items-center gap-space-xs">
+              <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-bold">JN</div>
+              <div>
+                <div class="text-title-sm text-on-surface font-semibold">Joy Namubiru</div>
+                <div class="text-body-sm text-outline">Kingdom Trailblazers</div>
+              </div>
+            </div>
+            <span class="text-label-caps px-2 py-1 rounded-full bg-surface-container text-secondary">Academic &amp; Career</span>
+          </div>
+          <p class="text-body-md text-on-surface-variant italic leading-relaxed">“I was on the verge of dropping out of university due to tuition debt. After prayer with the youth leaders, God opened a supernatural sponsorship door. I graduated with top honors!”</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: prayer form -->
+    <div class="lg:col-span-5" data-reveal="right">
+      <div class="p-space-lg lg:p-space-xl rounded-2xl bg-surface-container-low shadow-lg space-y-space-md">
+        <div class="space-y-space-2xs">
+          <span class="text-label-caps text-secondary lowercase tracking-widest">Confidential Intercession</span>
+          <h3 class="text-headline-md text-on-surface">Need Prayer Today?</h3>
+          <p class="text-body-sm text-on-surface-variant">Our Pastor and 24/7 Intercession Council pray over every single request before the Holy Altar.</p>
+        </div>
+
+        <form id="prayerForm" class="space-y-space-sm" novalidate>
+          <div>
+            <label for="pName" class="block text-label-caps lowercase text-on-surface-variant mb-1">Full Name</label>
+            <input id="pName" name="name" type="text" required autocomplete="name"
+                   class="w-full px-3 py-2 rounded-xl bg-surface-container-lowest outline-none focus:ring-2 focus:ring-secondary-container"
+                   placeholder="e.g. Grace Tumuhimbise"/>
+          </div>
+
+          <div>
+            <label for="pPhone" class="block text-label-caps lowercase text-on-surface-variant mb-1">Phone / WhatsApp Number</label>
+            <input id="pPhone" name="phone" type="tel" autocomplete="tel"
+                   class="w-full px-3 py-2 rounded-xl bg-surface-container-lowest outline-none focus:ring-2 focus:ring-secondary-container"
+                   placeholder="+256 700 000 000"/>
+          </div>
+
+          <div>
+            <label for="pText" class="block text-label-caps lowercase text-on-surface-variant mb-1">Your Prayer Petition</label>
+            <textarea id="pText" name="petition" rows="3" required
+                      class="w-full px-3 py-2 rounded-xl bg-surface-container-lowest outline-none focus:ring-2 focus:ring-secondary-container"
+                      placeholder="Describe your prayer need (Healing, Family, Salvation, Finances)..."></textarea>
+          </div>
+
+          <label class="flex items-center gap-2 text-body-sm text-on-surface-variant">
+            <input type="checkbox" name="confidential" class="rounded"/>
+            Keep completely confidential to Senior Pastor
+          </label>
+
+          <button type="submit"
+                  class="w-full inline-flex items-center justify-center gap-2 text-label-lg px-4 py-3 rounded-xl bg-primary-container text-on-primary hover:bg-surface-tint transition-all shadow-md">
+            <svg class="ic" aria-hidden="true"><use href="#send"/></svg>Send Prayer Petition
+          </button>
+
+          <p id="pMsg" role="status" aria-live="polite"
+             class="hidden text-body-sm rounded-xl p-3 bg-green-100 text-green-900">
+            Prayer request received. Our Intercession Council is standing in agreement with you.
+          </p>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 4) JS: reveal-on-scroll + stagger + form handling -->
+<script>
+(function () {
+  'use strict';
+
+  var root = document.documentElement;
+  var reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canObserve = 'IntersectionObserver' in window;
+
+  /* ---------- Scroll reveal ---------- */
+  function initReveal() {
+    var targets = document.querySelectorAll('[data-reveal], [data-stagger]');
+    if (!targets.length) return;
+
+    // If we can't animate, leave everything visible (no "reveal-ready" class added)
+    if (reduceMotion || !canObserve) return;
+
+    // Set per-child stagger delays
+    document.querySelectorAll('[data-stagger]').forEach(function (group) {
+      Array.prototype.forEach.call(group.children, function (child, i) {
+        child.style.setProperty('--stagger-delay', (i * 120) + 'ms');
+      });
+    });
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -5% 0px' });
+
+    // Only now hide elements (so a JS failure never leaves content invisible)
+    root.classList.add('reveal-ready');
+    targets.forEach(function (el) { io.observe(el); });
+
+    // Safety net: if anything is still hidden after 2.5s, show it
+    setTimeout(function () {
+      document.querySelectorAll('[data-reveal]:not(.is-visible), [data-stagger]:not(.is-visible)')
+        .forEach(function (el) { el.classList.add('is-visible'); });
+    }, 2500);
+  }
+
+  /* ---------- Prayer form ---------- */
+  function initPrayerForm() {
+    var form = document.getElementById('prayerForm');
+    var msg = document.getElementById('pMsg');
+    if (!form || !msg) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      var data = {
+        name: form.elements['name'].value.trim(),
+        phone: form.elements['phone'].value.trim(),
+        petition: form.elements['petition'].value.trim(),
+        confidential: form.elements['confidential'].checked
+      };
+
+      /* TODO: send `data` to your backend. Example:
+         fetch('/api/prayer-requests', {
+           method: 'POST',
+           headers: { 'Content-Type': 'application/json' },
+           body: JSON.stringify(data)
+         });
+      */
+      console.log('Prayer request:', data);
+
+      msg.classList.remove('hidden');
+      msg.classList.add('show');
+      form.reset();
+
+      setTimeout(function () {
+        msg.classList.remove('show');
+        msg.classList.add('hidden');
+      }, 8000);
+    });
+  }
+
+  function init() {
+    initReveal();
+    initPrayerForm();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+<!-- ============ MEMBER STORIES ============ -->
+<section class="w-full py-10 bg-surface">
+ <div class="max-w-7xl mx-auto px-4 sm:px-gutter-lg">
+  <div class="flex items-end justify-between mb-5"><div><span class="text-label-caps text-secondary lowercase">Real Community</span><h2 class="text-xl sm:text-2xl font-bold mt-1">Stories From Our Church Family</h2></div><div class="hidden sm:flex gap-2"><button id="testPrev" class="w-10 h-10 rounded-xl bg-surface-container grid place-items-center" aria-label="Previous testimonial"><svg class="ic"><use href="#chev-l"/></svg></button><button id="testNext" class="w-10 h-10 rounded-xl bg-primary-container text-white grid place-items-center" aria-label="Next testimonial"><svg class="ic"><use href="#chev-r"/></svg></button></div></div>
+  <div id="testimonialTrack" class="testimonial-track flex gap-4 overflow-x-auto pb-3">
+   <article class="testimonial-card min-w-[78%] sm:min-w-[46%] lg:min-w-[31%] portal-card p-5"><svg class="ic ic-fill text-secondary opacity-40"><use href="#quote"/></svg><p class="mt-3 text-sm leading-6">“This church helped my family find a real community. Our children look forward to Sunday School and we have grown through the couples fellowship.”</p><div class="mt-4"><b>Michael &amp; Ruth</b><span class="block text-xs text-outline">Married Couples Ministry</span></div></article>
+   <article class="testimonial-card min-w-[78%] sm:min-w-[46%] lg:min-w-[31%] portal-card p-5"><svg class="ic ic-fill text-secondary opacity-40"><use href="#quote"/></svg><p class="mt-3 text-sm leading-6">“The youth ministry gave me mentors, friends and confidence to serve God while building my career. I no longer feel like faith and my future are separate.”</p><div class="mt-4"><b>Patricia N.</b><span class="block text-xs text-outline">AJC Youth Movement</span></div></article>
+   <article class="testimonial-card min-w-[78%] sm:min-w-[46%] lg:min-w-[31%] portal-card p-5"><svg class="ic ic-fill text-secondary opacity-40"><use href="#quote"/></svg><p class="mt-3 text-sm leading-6">“When I first visited, the welcome team made me feel at home. Bible study has helped me understand Scripture in a practical way.”</p><div class="mt-4"><b>Daniel O.</b><span class="block text-xs text-outline">New Member</span></div></article>
+   <article class="testimonial-card min-w-[78%] sm:min-w-[46%] lg:min-w-[31%] portal-card p-5"><svg class="ic ic-fill text-secondary opacity-40"><use href="#quote"/></svg><p class="mt-3 text-sm leading-6">“Being able to watch the service online keeps me connected when work takes me outside Kampala. The digital church experience matters.”</p><div class="mt-4"><b>Sarah A.</b><span class="block text-xs text-outline">Online Church Member</span></div></article>
+  </div>
+ </div>
+</section>
+
+<!-- ============ LOCATION / CONTACT ============ -->
+<section id="contact" class="section-anchor w-full px-4 sm:px-gutter-lg max-w-7xl mx-auto py-space-3xl">
+  <div class="rounded-2xl bg-surface-container-lowest shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12" data-reveal>
+    <div class="lg:col-span-5 p-space-lg lg:p-space-xl space-y-space-lg flex flex-col justify-between">
+      <div class="space-y-space-md">
+        <div class="space-y-space-2xs"><span class="text-label-caps text-secondary lowercase tracking-widest">Find Sanctuary</span><h2 class="text-headline-md text-on-surface">Visit Us in Kampala</h2><p class="text-body-sm text-on-surface-variant">We look forward to welcoming you warmly in person this week.</p></div>
+        <div class="space-y-space-sm text-body-sm">
+          <div class="flex items-start gap-space-sm"><svg class="ic text-secondary" style="width:1.4em;height:1.4em"><use href="#pin"/></svg><div><div class="text-title-sm text-on-surface">Kampala Sanctuary Ground</div><div class="text-on-surface-variant">Plot 14 Apostles Way, Nakasero Hill • Kampala, Uganda</div></div></div>
+          <div class="flex items-start gap-space-sm"><svg class="ic text-secondary" style="width:1.4em;height:1.4em"><use href="#car"/></svg><div><div class="text-title-sm text-on-surface">Parking &amp; Accessibility</div><div class="text-on-surface-variant">Free secure sanctuary parking available for 150+ vehicles. Wheelchair accessible main doors.</div></div></div>
+          <div class="flex items-start gap-space-sm"><svg class="ic text-secondary" style="width:1.4em;height:1.4em"><use href="#phone"/></svg><div><div class="text-title-sm text-on-surface">Sanctuary Helpline</div><div class="text-on-surface-variant">+256 414 000 777 / +256 700 123 456</div></div></div>
+        </div>
+      </div>
+      <div class="pt-space-md flex flex-wrap items-center gap-space-xs">
+        <a class="inline-flex items-center gap-2 text-label-md px-4 py-3 rounded-xl bg-primary-container text-on-primary hover:bg-surface-tint transition-all" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Nakasero+Hill+Kampala+Uganda"><svg class="ic" style="width:1em;height:1em"><use href="#pin"/></svg>Get Directions</a>
+        <a class="inline-flex items-center gap-2 text-label-md px-4 py-3 rounded-xl bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-all" href="tel:+256700123456"><svg class="ic" style="width:1em;height:1em"><use href="#phone"/></svg>Call Church</a>
+        <a class="inline-flex items-center gap-2 text-label-md px-4 py-3 rounded-xl bg-[#25D366] text-white hover:brightness-110 transition-all" target="_blank" rel="noopener" href="https://wa.me/256700123456?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20first-time%20visit."><svg class="ic ic-fill" style="width:1em;height:1em"><use href="#whatsapp"/></svg>WhatsApp</a>
+      </div>
+    </div>
+    <div class="lg:col-span-7 h-80 lg:h-auto min-h-[360px] relative bg-surface-container">
+      <div class="w-full h-full bg-cover bg-center" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHyeivnjE2X4heHYGPTRoY9kr7OC3Xcol5l3PLrq61BIftt8c6Zk9LGMFihP9IoInuRSt235yBbCNiI3MrivX7ELFRCb6sEc63E2_NqPM4SgICCiYxtiqfR9l_Uu_mdPNFABgKyUTXncATLeIOu1_W71DkmFHl2Xcho7SpMUxLn9YvW29Ais0j1RythFi1HixW6x26IDRZOA9xNP5EB2QjExb46T_pBB54uVXM1oQ')"></div>
+      <div class="absolute bottom-4 right-4 p-space-sm rounded-xl bg-white/90 backdrop-blur-md shadow-lg flex items-center gap-space-xs"><svg class="ic text-secondary"><use href="#pin"/></svg><span class="text-label-caps text-on-surface lowercase">Nakasero • Kampala Central</span></div>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="w-full bg-surface-container-low text-on-surface-variant pt-space-3xl pb-24 sm:pb-space-2xl">
+  <div class="w-full px-4 sm:px-gutter-lg">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl mb-space-2xl">
+      <div class="space-y-space-md">
+        <div class="flex items-center gap-space-sm"><img alt="Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W6S4X18EYX2-834oOOu-S3-sBU93yZ6RTdvhzs2AxB0PnYWQoPdV_rMTQTt_SELFZN4gbEy57BYhpPeILH0-mIUsv-KjNEIfYA3DHvnN3m9rb5lh4tVqQIcvirzOj9KuegGkOtqQYnl8ljZcpv-RMmyeY5Iq5uh8QkYPr3LQQbgiDl6VgKJ1clarlo_7uxoHb3vvbRxOVZ2EIn8c_T3itAO-EGP0KOikYs_KWZW5sA"/><span class="text-title-sm text-on-surface">Ambassadors of Jesus Christ</span></div>
+        <p class="text-body-sm leading-relaxed">Proclaiming the Kingdom of God, transforming lives, and equipping believers across Kampala, Uganda, and the nations of the earth with apostolic truth and grace.</p>
+        <div class="space-y-1 text-body-sm"><div class="text-on-surface font-semibold">Kampala Sanctuary</div><div>Plot 14 Apostles Way, Nakasero • Kampala, Uganda</div><div>Phone: +256 414 000 777 / +256 700 123 456</div><div>Email: office@ambassadorsofjesuschrist.ug</div></div>
+      
+      <!-- ============================================================
+     SOCIAL LINKS (real brand icons, SVG, responsive, copy-paste ready)
+     Paste the sprite once per page (top of <body>), then use the
+     <nav> block anywhere (footer, contact section, header...).
+     Replace each href="#" with your real profile URL.
+     ============================================================ -->
+
+<!-- 1) SVG sprite: paste ONCE per page -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-facebook" viewBox="0 0 320 512">
+    <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
+  </symbol>
+
+  <symbol id="i-x" viewBox="0 0 24 24">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </symbol>
+
+  <!-- Instagram: rounded square + lens + flash dot -->
+  <symbol id="i-instagram" viewBox="0 0 24 24">
+    <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/>
+  </symbol>
+
+  <symbol id="i-youtube" viewBox="0 0 24 24">
+    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+  </symbol>
+
+  <symbol id="i-whatsapp" viewBox="0 0 448 512">
+    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+  </symbol>
+
+  <symbol id="i-tiktok" viewBox="0 0 24 24">
+    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+  </symbol>
+
+  <symbol id="i-linkedin" viewBox="0 0 448 512">
+    <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>
+  </symbol>
+</svg>
+
+<!-- 2) Styles (self-contained; uses plain CSS so it works with or without Tailwind) -->
+<style>
+  .socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .socials a {
+    --brand: #6b7280;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;            /* 44px = comfortable touch target on mobile */
+    height: 44px;
+    border-radius: 9999px;
+    color: #374151;
+    background: rgba(0, 0, 0, .06);
+    transition: transform .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
+  }
+  .socials a:hover,
+  .socials a:focus-visible {
+    color: #fff;
+    background: var(--brand);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .18);
+    outline: none;
+  }
+  .socials a:focus-visible { box-shadow: 0 0 0 3px rgba(59, 130, 246, .5); }
+  .socials svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+
+  /* Official brand colors on hover */
+  .socials .s-facebook  { --brand: #1877F2; }
+  .socials .s-x         { --brand: #000000; }
+  .socials .s-instagram { --brand: #E4405F; }
+  .socials .s-youtube   { --brand: #FF0000; }
+  .socials .s-whatsapp  { --brand: #25D366; }
+  .socials .s-tiktok    { --brand: #010101; }
+  .socials .s-linkedin  { --brand: #0A66C2; }
+
+  /* Slightly larger on tablets and up */
+  @media (min-width: 640px) {
+    .socials { gap: 16px; justify-content: flex-start; }
+    .socials a { width: 48px; height: 48px; }
+    .socials svg { width: 22px; height: 22px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .socials a { transition: none; }
+    .socials a:hover, .socials a:focus-visible { transform: none; }
+  }
+</style>
+
+<!-- 3) The social links: paste wherever you want them -->
+<nav aria-label="Social media">
+  <ul class="socials">
+    <li>
+      <a class="s-facebook" href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+        <svg aria-hidden="true" focusable="false"><use href="#i-facebook"/></svg>
+      </a>
+    </li>
+    <li>
+      <a class="s-x" href="#" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" title="X (Twitter)">
+        <svg aria-hidden="true" focusable="false"><use href="#i-x"/></svg>
+      </a>
+    </li>
+    <li>
+      <a class="s-instagram" href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+        <svg aria-hidden="true" focusable="false"><use href="#i-instagram"/></svg>
+      </a>
+    </li>
+    <li>
+      <a class="s-youtube" href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+        <svg aria-hidden="true" focusable="false"><use href="#i-youtube"/></svg>
+      </a>
+    </li>
+    <li>
+      <a class="s-whatsapp" href="https://wa.me/256700000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
+        <svg aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+      </a>
+    </li>
+    <li>
+      <a class="s-tiktok" href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok">
+        <svg aria-hidden="true" focusable="false"><use href="#i-tiktok"/></svg>
+      </a>
+    </li>
+    <li>
+      <a class="s-linkedin" href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+        <svg aria-hidden="true" focusable="false"><use href="#i-linkedin"/></svg>
+      </a>
+    </li>
+  </ul>
+</nav>
+      </div>
+      <div class="space-y-space-md">
+        <h4 class="text-title-sm text-on-surface">Worship &amp; Service Times</h4>
+        <ul class="space-y-space-sm text-body-sm">
+          <li class="flex justify-between gap-2"><span class="text-on-surface font-medium">Sunday Early Dawn Glory:</span><span class="text-right">07:00 AM - 09:00 AM</span></li>
+          <li class="flex justify-between gap-2"><span class="text-on-surface font-medium">Sunday Celebration Service:</span><span class="text-right">09:30 AM - 12:30 PM</span></li>
+          <li class="flex justify-between gap-2"><span class="text-on-surface font-medium">Midweek Apostolic Word:</span><span class="text-right">Wed 05:30 PM - 07:30 PM</span></li>
+          <li class="flex justify-between gap-2"><span class="text-on-surface font-medium">Friday Miracle &amp; Intercession:</span><span class="text-right">Fri 06:00 PM - 09:00 PM</span></li>
+          <li class="flex justify-between gap-2"><span class="text-on-surface font-medium">Youth Ambassadors Ignite:</span><span class="text-right">Sat 03:00 PM - 06:00 PM</span></li>
+        </ul>
+      </div>
+      <div class="space-y-space-md">
+        <h4 class="text-title-sm text-on-surface">Quick Exploration</h4>
+        <ul class="space-y-space-xs text-body-sm">
+          <li><a class="hover:text-on-surface transition-colors" href="#sermons">Sermon Audio &amp; Video Library</a></li>
+          <li><a class="hover:text-on-surface transition-colors" href="#ministries">Children, Youth &amp; Family Ministries</a></li>
+          <li><a class="hover:text-on-surface transition-colors" href="#daily-word">Daily Prophetic Devotionals</a></li>
+          <li><a class="hover:text-on-surface transition-colors" href="#gallery">Photo Gallery</a></li>
+          <li><a class="hover:text-on-surface transition-colors" href="#give">Mobile Money (MTN/Airtel) &amp; Bank Tithes</a></li>
+          <li><a class="hover:text-on-surface transition-colors" href="#contact">Counseling &amp; Pastoral Support</a></li>
+        </ul>
+      </div>
+      <div class="space-y-space-md">
+        <h4 class="text-title-sm text-on-surface">Ambassador Monthly Bulletin</h4>
+        <p class="text-body-sm">Subscribe for weekly prophetic bulletins, upcoming conferences, prayer requests, and community fellowship alerts.</p>
+        <div class="flex flex-col gap-space-xs">
+          <div class="flex rounded-xl bg-surface-container-lowest p-1 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><input class="w-full min-w-0 bg-transparent px-3 py-2 text-body-sm text-on-surface placeholder:text-outline outline-none" placeholder="Your email address" type="email"/><button class="text-label-md px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-surface-tint transition-all" type="button">Join</button></div>
+          <span class="text-label-caps text-outline">Privacy respected. Unsubscribe at any time.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-body-sm text-outline text-center md:text-left">
+      <p>© 2026 Ambassadors of Jesus Christ Church. Registered Ministry, Kampala - Republic of Uganda. All Rights Reserved.</p>
+      <div class="flex items-center gap-space-lg"><a class="hover:text-on-surface transition-colors" href="#about">Faith Statement</a><a class="hover:text-on-surface transition-colors" href="#give">Stewardship Policy</a><a class="hover:text-on-surface transition-colors" href="#contact">Reach Sanctuary Office</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING CALL + WHATSAPP ============ -->
+<div id="fab" class="fixed right-4 bottom-4 z-50 flex flex-col gap-3 items-end">
+  <a href="tel:+256700123456" aria-label="Call the church" class="group flex items-center gap-2 pl-4 pr-4 h-14 rounded-full bg-primary-container text-on-primary shadow-xl hover:scale-105 transition">
+    <svg class="ic" style="width:1.5em;height:1.5em"><use href="#phone"/></svg><span class="hidden sm:inline text-label-lg">Call Church</span>
+  </a>
+  <a href="https://wa.me/256700123456?text=Hello%20Ambassadors%20of%20Jesus%20Christ%20Church%2C%20I%20would%20like%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="pulse-ring flex items-center gap-2 pl-4 pr-4 h-14 rounded-full bg-[#25D366] text-white shadow-xl hover:scale-105 transition">
+    <svg class="ic ic-fill" style="width:1.7em;height:1.7em"><use href="#whatsapp"/></svg><span class="hidden sm:inline text-label-lg">WhatsApp</span>
+  </a>
+</div>
+
+
+<nav class="mobile-bottom-nav" aria-label="Mobile quick navigation">
+ <a href="#home" data-mobile-nav="home" class="active"><svg class="ic"><use href="#home-icon"/></svg><span>Home</span></a>
+ <a href="#sermons" data-mobile-nav="sermons"><svg class="ic"><use href="#play"/></svg><span>Sermons</span></a>
+ <a href="#live" data-mobile-nav="live"><svg class="ic"><use href="#video-icon"/></svg><span>Live</span></a>
+ <a href="#events" data-mobile-nav="events"><svg class="ic"><use href="#calendar"/></svg><span>Events</span></a>
+ <button type="button" data-open="loginModal"><svg class="ic"><use href="#login-icon"/></svg><span>Portal</span></button>
+</nav>
+
+<!-- ============ GALLERY LIGHTBOX ============ -->
+<div id="lightbox" class="hidden fixed inset-0 z-[160] bg-black/90 items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Gallery image viewer">
+  <button id="lbClose" class="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/15 text-white flex items-center justify-center" aria-label="Close"><svg class="ic"><use href="#close"/></svg></button>
+  <button id="lbPrev" class="absolute left-3 sm:left-6 w-12 h-12 rounded-full bg-white/15 text-white flex items-center justify-center" aria-label="Previous image"><svg class="ic"><use href="#chev-l"/></svg></button>
+  <img id="lbImg" class="max-h-[85vh] max-w-full rounded-2xl shadow-2xl" alt=""/>
+  <button id="lbNext" class="absolute right-3 sm:right-6 w-12 h-12 rounded-full bg-white/15 text-white flex items-center justify-center" aria-label="Next image"><svg class="ic"><use href="#chev-r"/></svg></button>
+</div>
+
+
+<!-- ============ CLIENT DEMO MODALS ============ -->
+<div id="modalRoot">
+  <div id="loginModal" class="app-modal hidden fixed inset-0 z-[130] modal-backdrop items-center justify-center p-4">
+    <div class="demo-modal login-dialog">
+      <section class="login-visual" aria-label="Ambassadors of Jesus Christ worship community">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY2lUEWAUBHN3vO3IobZwWx-XzMH2xNt0e9QIXdwVg8ABNbL9WzuNLaFdiTSlFRkkp4fSIj8f9ESKgflExWY5BQho43NTPYa3n0CFKP2k9vGxdBFnjV5jDLJ63gZ7Kx5zfk7Wxrx6IAbcb1QbYEaoqYO6xrkWAaRUkwTepLNZdDzKdKaeE5Jr5EXrd-rU0I2u2naGlnxHVh7y0kfUbsXgTHsNmDB2D7bigynvWt1M" alt="Church worship team leading the congregation"/>
+        <div class="login-visual-content">
+          <div class="flex items-center gap-3"><img src="assets/logo.jpg" alt="" class="h-12 w-12 rounded-xl object-cover ring-1 ring-white/20"><div><p class="text-sm font-bold leading-tight">Ambassadors of Jesus Christ</p><p class="text-xs text-white/60 mt-1">Church • Kampala, Uganda</p></div></div>
+          <div><span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-xs font-semibold backdrop-blur-md"><span class="h-2 w-2 rounded-full bg-secondary-container"></span> Church management portal</span><blockquote class="mt-5 max-w-md text-2xl font-semibold leading-snug tracking-tight">“Serving with excellence, leading with faith.”</blockquote><p class="mt-3 max-w-sm text-sm leading-relaxed text-white/65">One secure place to care for our people, ministries, giving, and the life of our church community.</p></div>
+        </div>
+      </section>
+      <section class="login-form-panel relative flex flex-col justify-center p-10 lg:p-12">
+        <button class="modal-close absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full bg-surface-container-low text-xl text-on-surface-variant transition hover:bg-surface-container" aria-label="Close dialog">×</button>
+        <div class="mb-7"><span class="text-xs font-bold uppercase tracking-[.18em] text-secondary">Secure portal</span><h3 class="mt-2 text-3xl font-bold tracking-tight text-on-surface">Welcome back</h3><p class="mt-2 text-sm leading-relaxed text-on-surface-variant">Choose your portal and sign in to continue.</p></div>
+        <form id="loginForm" class="space-y-5">
+          <div class="grid grid-cols-2 gap-1.5 rounded-xl bg-surface-container-low p-1.5" aria-label="Select portal role"><button type="button" class="role-tab login-role-tab active" data-role="member">Member portal</button><button type="button" class="role-tab login-role-tab" data-role="admin">Admin portal</button></div>
+          <div><label for="loginUser" class="text-sm font-semibold text-on-surface">Member ID or email</label><input id="loginUser" class="login-field mt-2" value="AJC-0012" autocomplete="username" required></div>
+          <div><div class="flex items-center justify-between"><label for="loginPass" class="text-sm font-semibold text-on-surface">Password</label><button type="button" data-open="forgotModal" class="text-xs font-bold text-secondary hover:underline">Forgot password?</button></div><div class="relative mt-2"><input id="loginPass" type="password" class="login-field pr-16" value="demo123" autocomplete="current-password" required><button id="passwordToggle" type="button" class="absolute inset-y-0 right-1 my-auto h-10 px-3 text-xs font-bold text-on-surface-variant hover:text-on-surface" aria-label="Show password">Show</button></div></div>
+          <label class="flex w-fit items-center gap-2.5 text-sm text-on-surface-variant"><input type="checkbox" checked class="h-4 w-4 rounded accent-[#fe932c]"> Keep me signed in</label>
+          <button class="login-submit" type="submit"><span>Sign in to portal</span> <span aria-hidden="true">→</span></button>
+          <div class="login-demo rounded-xl border border-[#f1dfca] bg-[#fff8ef] p-3.5 text-xs leading-relaxed text-[#6f4b24]"><b>Demo access</b><br><span id="loginDemoCredentials">Member ID: AJC-0012 &nbsp;•&nbsp; Password: demo123</span></div>
+          <p class="text-center text-sm text-on-surface-variant">New here? <button type="button" data-open="signupModal" class="font-bold text-secondary hover:underline">Request membership</button></p>
+        </form>
+      </section>
+    </div>
+  </div>
+  <div id="signupModal" class="app-modal hidden fixed inset-0 z-[135] modal-backdrop items-center justify-center p-4"><div class="demo-modal w-full max-w-xl bg-white rounded-2xl shadow-2xl p-6"><div class="flex justify-between"><div><span class="text-label-caps text-secondary lowercase">Member Registration</span><h3 class="text-headline-md">Join the Church Portal</h3></div><button class="modal-close text-2xl">×</button></div><form id="signupForm" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5"><input class="portal-input" placeholder="Full name" required><input class="portal-input" placeholder="Phone number" required><input class="portal-input" type="email" placeholder="Email"><select class="portal-input"><option>Youth</option><option>Men</option><option>Women</option><option>Married Couples</option><option>Sunday School Parent</option><option>Visitor</option></select><textarea class="portal-input sm:col-span-2" rows="3" placeholder="Tell us briefly how you are connected to the church"></textarea><button class="portal-btn accent-btn sm:col-span-2">Submit Membership Request</button></form></div></div>
+  <div id="forgotModal" class="app-modal hidden fixed inset-0 z-[140] modal-backdrop items-center justify-center p-4"><div class="demo-modal w-full max-w-sm bg-white rounded-2xl shadow-2xl p-6"><div class="flex justify-between"><h3 class="text-headline-sm">Reset Password</h3><button class="modal-close text-2xl">×</button></div><p class="text-body-sm text-on-surface-variant mt-2">Enter your email or Member ID and the church office will send reset instructions.</p><form id="forgotForm" class="space-y-3 mt-4"><input class="portal-input" placeholder="Email or Member ID" required><button class="portal-btn accent-btn w-full">Send Instructions</button></form></div></div>
+  <div id="sermonLibraryModal" class="app-modal hidden fixed inset-0 z-[135] modal-backdrop items-center justify-center p-4"><div class="demo-modal w-full max-w-5xl max-h-[90vh] overflow-auto bg-white rounded-2xl shadow-2xl"><div class="flex justify-between items-center p-5 border-b"><div><span class="text-label-caps text-secondary lowercase">Sermon Player</span><h3 id="sermonTitle" class="text-headline-sm">Walking in Victorious Faith</h3></div><button class="modal-close text-2xl">×</button></div><div class="grid lg:grid-cols-3 gap-0"><div class="lg:col-span-2 p-5 bg-primary-container"><video id="sermonVideo" class="w-full aspect-video rounded-xl bg-black" controls poster="https://lh3.googleusercontent.com/aida-public/AB6AXuA5TCbqE2FB3geekja1eXlN3PSdQosCi00CXmQvXdLO4Z1TY3ooMmOwHdYPHJrH2ygSFni2wMND-Yje8Y3hRUvaJ9q46wj658KDcmChEdMliybjC6nQrw2MstAkyOtAVRYZNM3DS7TY7VHA3AhffPsUCS12hfxv8VInBW0o_NE_ez46PJqHZ_4a8XCvXpuDG07_7VCW29UFMPXfwA6GtG_ivPoZm03Pu-AgQtP0MLQ"><source src="assets/hero-service.mp4" type="video/mp4"></video><div class="text-white mt-4"><p id="sermonMeta" class="font-semibold">Pastor Daniel Kato • John 15:1-8 • 6 Oct 2026</p><p class="text-white/70 text-sm mt-2">Demo media player. Church administrators can upload or attach sermon video/audio from the admin dashboard.</p></div></div><div class="p-5 space-y-3"><h4 class="font-bold">Recent uploads</h4><button class="sermon-queue w-full text-left p-3 rounded-xl bg-surface-container-low" data-title="Walking in Victorious Faith" data-preacher="Pastor Daniel Kato" data-scripture="John 15:1-8" data-date="6 Oct 2026"><b>Walking in Victorious Faith</b><span class="block text-xs text-outline">6 Oct 2026</span></button><button class="sermon-queue w-full text-left p-3 rounded-xl hover:bg-surface-container-low" data-title="A Life of Prayer" data-preacher="Pr. Sarah Kato" data-scripture="Luke 11:1-13" data-date="29 Sep 2026"><b>A Life of Prayer</b><span class="block text-xs text-outline">29 Sep 2026</span></button><button class="sermon-queue w-full text-left p-3 rounded-xl hover:bg-surface-container-low" data-title="Building a Christ-Centred Family" data-preacher="Pastor Daniel Kato" data-scripture="Joshua 24:15" data-date="21 Sep 2026"><b>Building a Christ-Centred Family</b><span class="block text-xs text-outline">21 Sep 2026</span></button></div></div></div></div>
+  <div id="bibleModal" class="app-modal hidden fixed inset-0 z-[135] modal-backdrop items-center justify-center p-4"><div class="demo-modal w-full max-w-2xl bg-white rounded-2xl shadow-2xl p-6"><div class="flex justify-between"><div><span class="text-label-caps text-secondary lowercase">Bible Study</span><h3 class="text-headline-sm">Current Study Series</h3></div><button class="modal-close text-2xl">×</button></div><div class="grid sm:grid-cols-2 gap-4 mt-5"><div class="portal-card p-4"><b>The Book of Acts</b><p class="text-sm text-outline mt-1">Week 4 • Boldness through the Holy Spirit</p><div class="mini-bar mt-3"><span style="width:60%"></span></div></div><div class="portal-card p-4"><b>Foundations of Faith</b><p class="text-sm text-outline mt-1">6 lessons • New believers track</p><div class="mini-bar mt-3"><span style="width:82%"></span></div></div></div></div></div>
+  <div id="hymnModal" class="app-modal hidden fixed inset-0 z-[135] modal-backdrop items-center justify-center p-4"><div class="demo-modal w-full max-w-2xl bg-white rounded-2xl shadow-2xl p-6"><div class="flex justify-between"><div><span class="text-label-caps text-secondary lowercase">Hymns</span><h3 class="text-headline-sm">Church Hymn Library</h3></div><button class="modal-close text-2xl">×</button></div><input class="portal-input mt-4" placeholder="Search hymn title or number"><div class="mt-3 divide-y"><div class="py-3"><b>#012 Amazing Grace</b><span class="block text-xs text-outline">Grace • Worship</span></div><div class="py-3"><b>#034 How Great Thou Art</b><span class="block text-xs text-outline">Praise • Worship</span></div><div class="py-3"><b>#078 Blessed Assurance</b><span class="block text-xs text-outline">Faith • Assurance</span></div></div></div></div>
+</div>
+
+<!-- ============ MEMBER / ADMIN PORTAL ============ -->
+<div id="portalApp" class="portal-shell hidden fixed inset-0 overflow-hidden">
+  <div id="portalOverlay" class="portal-overlay"></div>
+  <div class="flex h-full">
+    <aside id="portalSidebar" class="portal-sidebar w-[270px] shrink-0 p-4 flex flex-col">
+      <div class="flex items-center gap-3 px-2 py-3 border-b border-white/10"><div class="w-10 h-10 rounded-xl bg-secondary-container text-on-secondary-container grid place-items-center font-black">AJ</div><div><div class="font-bold leading-tight">Ambassadors of Jesus Christ</div><div class="text-xs text-white/50">Church Management</div></div></div>
+      <div class="mt-4 px-2"><span id="portalRoleBadge" class="badge bg-white/10 text-secondary-fixed">MEMBER PORTAL</span></div>
+      <nav id="portalNav" class="mt-3 space-y-1 overflow-y-auto pr-1 flex-1"></nav>
+      <button id="portalLogout" class="portal-link mt-3 border border-white/10"><svg class="ic"><use href="#login-icon"/></svg> Logout</button>
+    </aside>
+    <section class="flex-1 min-w-0 flex flex-col h-full">
+      <header class="h-20 bg-white border-b border-surface-variant flex items-center justify-between px-4 sm:px-6 shrink-0"><div class="flex items-center gap-3"><button id="portalMenu" class="lg:hidden w-10 h-10 rounded-xl bg-surface-container"><svg class="ic"><use href="#menu"/></svg></button><div><p id="portalEyebrow" class="text-xs lowercase tracking-widest text-secondary font-bold">Member portal</p><h2 id="portalPageTitle" class="font-bold text-lg">Dashboard</h2></div></div><div class="flex items-center gap-2"><button class="w-10 h-10 rounded-xl bg-surface-container relative"><svg class="ic"><use href="#verified"/></svg><span class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-secondary-container text-[10px] grid place-items-center font-bold">3</span></button><div class="hidden sm:flex items-center gap-2 pl-2"><div class="w-9 h-9 rounded-full bg-primary-container text-white grid place-items-center font-bold" id="portalAvatar">DK</div><div><b id="portalUserName" class="text-sm">Daniel Kato</b><span id="portalUserSub" class="block text-xs text-outline">AJC-0012</span></div></div></div></header>
+      <main id="portalContent" class="flex-1 overflow-y-auto p-4 sm:p-6"></main>
+    </section>
+  </div>
+</div>
+
+
+<!-- ============ SCRIPTS ============ -->
+<script type="module">
+/* Motion One / Motion for the web — the vanilla-JS engine from the Framer Motion team (same API family),
+   used so the page stays a single HTML file. If it fails to load the page still shows fully. */
+let M=null;
+try{ M=await import("motion"); }catch(e){ console.warn("Motion failed to load; showing page without scroll animations.",e); }
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- Header / mobile menu ---------- */
+const menuBtn=document.getElementById("menuBtn"),mobileMenu=document.getElementById("mobileMenu");
+menuBtn.setAttribute('aria-expanded','false');
+menuBtn.setAttribute('aria-controls','mobileMenu');
+menuBtn.addEventListener("click",()=>{const open=mobileMenu.classList.toggle("hidden")===false;menuBtn.setAttribute('aria-expanded',String(open));icon(menuBtn,open?'close':'menu');});
+mobileMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileMenu.classList.add("hidden")));
+const siteHeader=document.getElementById('siteHeader');
+const syncHeader=()=>siteHeader.classList.toggle('is-scrolled',scrollY>24);
+addEventListener('scroll',syncHeader,{passive:true});syncHeader();
+
+/* ---------- Floating particles in hero ---------- */
+const dots=document.getElementById("dots");
+for(let i=0;i<22;i++){const d=document.createElement("span");d.className="dot";const s=2+Math.random()*5;d.style.cssText=`left:${Math.random()*100}%;bottom:-10px;width:${s}px;height:${s}px;animation-duration:${9+Math.random()*12}s;animation-delay:${-Math.random()*15}s`;dots.appendChild(d);}
+
+/* ---------- Hero video ---------- */
+const v=document.getElementById("heroVideo"),pb=document.getElementById("vidPlay"),mb=document.getElementById("vidMute");
+const icon=(b,id)=>b.querySelector("use").setAttribute("href","#"+id);
+v.addEventListener("loadeddata",()=>{v.classList.remove("opacity-0");v.classList.add("opacity-100");v.play().catch(()=>{});});
+v.addEventListener("error",()=>{v.style.display="none";pb.style.display="none";mb.style.display="none";},true);
+v.querySelectorAll("source").forEach(s=>s.addEventListener("error",()=>{ if(!v.currentSrc){v.style.display="none";pb.style.display="none";mb.style.display="none";} }));
+pb.addEventListener("click",()=>{ if(v.paused){v.play();icon(pb,"pause");}else{v.pause();icon(pb,"play");} });
+mb.addEventListener("click",()=>{ v.muted=!v.muted; icon(mb,v.muted?"mute":"volume"); });
+if(reduce){v.removeAttribute("autoplay");v.pause();}
+
+/* ---------- Next service countdown text ---------- */
+(function(){
+  const now=new Date(); const day=now.getDay(); // 0 = Sunday
+  let add=(7-day)%7; if(add===0 && now.getHours()>=12) add=7;
+  const el=document.getElementById("nextService");
+  el.textContent = add===0 ? "Service is today • Kampala, Uganda" : `Next Service in ${add} Day${add>1?"s":""} • Kampala, Uganda`;
+  const doy=Math.floor((now-new Date(now.getFullYear(),0,0))/86400000);
+  document.getElementById("dayOfYear").textContent=`Day ${doy} of Yearly Walk`;
+})();
+
+/* ---------- Animations with Motion ---------- */
+if(M && !reduce){
+  const {animate,inView,stagger,scroll}=M;
+  document.documentElement.classList.add("js");
+
+  // hero entrance
+  animate("[data-hero]",{opacity:[0,1],transform:["translateY(34px)","translateY(0px)"]},{delay:stagger(0.12,{startDelay:0.15}),duration:0.9,easing:[0.22,1,0.36,1]});
+
+  // reveal on scroll
+  document.querySelectorAll("[data-reveal]").forEach(el=>{
+    const dir=el.dataset.reveal; const from = dir==="left"?"translateX(-48px)":dir==="right"?"translateX(48px)":"translateY(40px)";
+    inView(el,()=>{animate(el,{opacity:[0,1],transform:[from,"translate(0px,0px)"]},{duration:0.9,easing:[0.22,1,0.36,1]});},{amount:0.15});
+  });
+  // staggered groups
+  document.querySelectorAll("[data-stagger]").forEach(g=>{
+    inView(g,()=>{animate(g.children,{opacity:[0,1],transform:["translateY(40px) scale(.97)","translateY(0px) scale(1)"]},{delay:stagger(0.1),duration:0.8,easing:[0.22,1,0.36,1]});},{amount:0.1});
+  });
+  // animated counters
+  document.querySelectorAll("[data-count]").forEach(el=>{
+    const end=+el.dataset.count;
+    inView(el,()=>{animate(0,end,{duration:2,easing:"ease-out",onUpdate:l=>el.textContent=Math.round(l)});});
+  });
+  // parallax hero video/bg
+  const rays=document.getElementById("rays");
+  // The lightweight background loop supplies movement without scroll-jank.
+
+  // gallery items spring in when filtered
+  window.__galAnimate=(els)=>animate(els,{opacity:[0,1],transform:["scale(.85)","scale(1)"]},{delay:stagger(0.05),duration:0.5,easing:[0.22,1,0.36,1]});
+  // gallery entrance
+  const gg=document.getElementById("galGrid");
+  inView(gg,()=>{animate(gg.children,{opacity:[0,1],transform:["translateY(30px) scale(.96)","translateY(0px) scale(1)"]},{delay:stagger(0.06),duration:0.7});},{amount:0.1});
+  // FAB bounce in
+  animate("#fab > a",{opacity:[0,1],transform:["scale(0)","scale(1)"]},{delay:stagger(0.15,{startDelay:1.2}),duration:0.6,easing:"spring(1, 90, 12, 0)"});
+}else{
+  window.__galAnimate=()=>{};
+}
+
+/* ---------- Gallery filters + lightbox ---------- */
+const items=[...document.querySelectorAll(".g-item")];
+document.querySelectorAll(".gf").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".gf").forEach(x=>{x.className="gf px-4 py-2 rounded-full text-label-md bg-surface-container-lowest text-on-surface";});
+  b.className="gf px-4 py-2 rounded-full text-label-md bg-primary-container text-on-primary";
+  const f=b.dataset.f; const shown=[];
+  items.forEach(it=>{const ok=f==="all"||it.dataset.cat.split(" ").includes(f); it.style.display=ok?"":"none"; if(ok)shown.push(it);});
+  window.__galAnimate(shown);
+}));
+const lb=document.getElementById("lightbox"),lbImg=document.getElementById("lbImg");
+let lightboxIndex=0;
+items.forEach((it,index)=>{it.tabIndex=0;it.setAttribute('role','button');it.setAttribute('aria-label',`Open ${it.querySelector('img').alt} in gallery`);const open=()=>{lightboxIndex=index;showLightbox();};it.addEventListener("click",open);it.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});});
+function showLightbox(){const it=items[lightboxIndex];lbImg.src=it.querySelector("img").src;lbImg.alt=it.querySelector("img").alt;lb.classList.remove("hidden");lb.classList.add("flex");document.body.style.overflow='hidden';document.getElementById('lbClose').focus();if(M&&!reduce)M.animate(lbImg,{opacity:[0,1],transform:["scale(.9)","scale(1)"]},{duration:0.35});}
+const moveLightbox=step=>{lightboxIndex=(lightboxIndex+step+items.length)%items.length;showLightbox();};
+document.getElementById('lbPrev').addEventListener('click',e=>{e.stopPropagation();moveLightbox(-1);});
+document.getElementById('lbNext').addEventListener('click',e=>{e.stopPropagation();moveLightbox(1);});
+const closeLb=()=>{lb.classList.add("hidden");lb.classList.remove("flex");document.body.style.overflow='';};
+lb.addEventListener("click",e=>{if(e.target!==lbImg)closeLb();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLb();if(!lb.classList.contains('hidden')&&e.key==='ArrowLeft')moveLightbox(-1);if(!lb.classList.contains('hidden')&&e.key==='ArrowRight')moveLightbox(1);});
+
+/* ---------- Donate form ---------- */
+const CHURCH_WA="256700123456";
+const state={fund:"Tithe",method:"MTN MoMo"};
+function pick(sel,activeCls,idleCls,cb){
+  document.querySelectorAll(sel).forEach(b=>b.addEventListener("click",()=>{
+    document.querySelectorAll(sel).forEach(x=>{x.className=x.className.replace(activeCls,"").trim()+" "+idleCls;});
+    b.className=b.className.replace(idleCls,"").trim()+" "+activeCls; cb(b.dataset.v);
+    if(M&&!reduce)M.animate(b,{transform:["scale(.92)","scale(1)"]},{duration:0.3});
+  }));
+}
+pick(".fund","bg-secondary-fixed text-on-secondary-fixed font-bold","bg-surface-container",v=>state.fund=v);
+pick(".amt","bg-primary-container text-on-primary font-bold","bg-surface-container",v=>{document.getElementById("dAmount").value=v;});
+pick(".pay","bg-secondary-fixed text-on-secondary-fixed font-bold","bg-surface-container",v=>state.method=v);
+const dMsg=document.getElementById("dMsg");
+function showMsg(ok,html){dMsg.className="text-body-sm rounded-xl p-3 "+(ok?"bg-green-100 text-green-900":"bg-red-100 text-red-900");dMsg.innerHTML=html;dMsg.classList.remove("hidden");}
+document.getElementById("donateForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const name=dName.value.trim(),phone=dPhone.value.trim(),amt=+dAmount.value,note=dNote.value.trim();
+  if(!name||!phone||!(amt>=1000)){showMsg(false,"Please enter your name, phone number and an amount of at least UGX 1,000.");return;}
+  const text=`Hello, I would like to give.%0A*Type:* ${state.fund}%0A*Amount:* UGX ${amt.toLocaleString()}%0A*Method:* ${state.method}%0A*Name:* ${name}%0A*Phone:* ${phone}${note?`%0A*Note:* ${encodeURIComponent(note)}`:""}`;
+  const url=`https://wa.me/${CHURCH_WA}?text=${text.replace(/ /g,"%20")}`;
+  showMsg(true,`Thank you, ${name.split(" ")[0]}! Your ${state.fund.toLowerCase()} of <b>UGX ${amt.toLocaleString()}</b> via ${state.method} is ready. <a class="underline font-semibold" target="_blank" rel="noopener" href="${url}">Tap here to confirm with the finance office on WhatsApp</a>.`);
+  /* TODO (backend): POST the form to your Laravel endpoint / payment gateway (Flutterwave, Pesapal, DPO) here. */
+});
+
+/* ---------- Prayer form ---------- */
+document.getElementById("prayerForm").addEventListener("submit",e=>{e.preventDefault();const m=document.getElementById("pMsg");m.classList.remove("hidden");e.target.reset();});
+
+/* ---------- Share ---------- */
+document.getElementById("shareWord").addEventListener("click",async()=>{
+  const data={title:"Daily Word",text:"“I can do all things through Christ who strengthens me.” — Philippians 4:13",url:location.href};
+  try{ if(navigator.share) await navigator.share(data); else {await navigator.clipboard.writeText(data.text+" "+data.url); alert("Copied to clipboard");} }catch(_){}
+});
+
+
+/* ========== Client demo portal logic ========== */
+const appModals=[...document.querySelectorAll('.app-modal')];
+let modalTrigger=null;
+appModals.forEach(m=>{m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.querySelectorAll('.modal-close').forEach(b=>b.setAttribute('aria-label','Close dialog'));});
+function closeModals(){appModals.forEach(m=>{m.classList.add('hidden');m.classList.remove('flex')});document.body.style.overflow='';document.getElementById('sermonVideo')?.pause();modalTrigger?.focus?.();}
+function openModal(id){modalTrigger=document.activeElement;closeModals();const m=document.getElementById(id);if(m){m.classList.remove('hidden');m.classList.add('flex');document.body.style.overflow='hidden';requestAnimationFrame(()=>m.querySelector('button,input,select,textarea,a[href]')?.focus());}}
+window.openModal=openModal;
+document.addEventListener('click',e=>{const op=e.target.closest('[data-open]');if(op){e.preventDefault();openModal(op.dataset.open);}if(e.target.classList.contains('app-modal'))closeModals();if(e.target.closest('.modal-close'))closeModals();});
+document.addEventListener('keydown',e=>{const open=appModals.find(m=>!m.classList.contains('hidden'));if(e.key==='Escape')closeModals();if(e.key==='Tab'&&open){const focusable=[...open.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),video[controls]')];if(!focusable.length)return;const first=focusable[0],last=focusable.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
+['signupForm','forgotForm'].forEach(id=>{const f=document.getElementById(id);if(f)f.addEventListener('submit',e=>{e.preventDefault();alert(id==='signupForm'?'Membership request submitted for demo.':'Reset instructions prepared for demo.');closeModals();});});
+let loginRole='member';
+document.querySelectorAll('.role-tab').forEach(b=>b.addEventListener('click',()=>{loginRole=b.dataset.role;document.querySelectorAll('.role-tab').forEach(x=>{x.classList.remove('active');x.setAttribute('aria-pressed','false')});b.classList.add('active');b.setAttribute('aria-pressed','true');loginUser.value=loginRole==='admin'?'admin@ajc.church':'AJC-0012';loginPass.value=loginRole==='admin'?'admin123':'demo123';document.querySelector('label[for="loginUser"]').textContent=loginRole==='admin'?'Admin email address':'Member ID or email';loginDemoCredentials.textContent=loginRole==='admin'?'Admin: admin@ajc.church  •  Password: admin123':'Member ID: AJC-0012  •  Password: demo123';}));
+document.querySelector('.role-tab[data-role="member"]')?.setAttribute('aria-pressed','true');
+passwordToggle?.addEventListener('click',()=>{const showing=loginPass.type==='text';loginPass.type=showing?'password':'text';passwordToggle.textContent=showing?'Show':'Hide';passwordToggle.setAttribute('aria-label',showing?'Show password':'Hide password');});
+function setSermon(d){sermonTitle.textContent=d.title;sermonMeta.textContent=`${d.preacher} • ${d.scripture} • ${d.date}`;openModal('sermonLibraryModal');}
+document.querySelectorAll('.sermon-item,.sermon-queue').forEach(b=>b.addEventListener('click',()=>setSermon(b.dataset)));
+
+const memberNav=['Dashboard','Daily Word','My Giving','Announcements','Chatroom','Bible Study','Hymns','Events','Prayer Requests','Notifications','My Profile'];
+const adminNav=['Dashboard','Members','Attendance','Ministries','Tithes & Offerings','Accounting','Expenses','Assets','Sermons','Daily Word','Bible Study','Hymns','Events','Announcements','Chatroom','Prayer Requests','Reports','Users & Roles','Settings'];
+let currentRole='member';
+const fmt=n=>'UGX '+Number(n).toLocaleString();
+const icons={'Dashboard':'home-icon','Members':'users-icon','Attendance':'check','Ministries':'church','Tithes & Offerings':'heart','Accounting':'scroll','Expenses':'arrow-r','Assets':'verified','Sermons':'play','Daily Word':'sun','Bible Study':'book','Hymns':'volume','Events':'calendar','Announcements':'mic','Chatroom':'send','Prayer Requests':'heart-hand','Reports':'scroll','Users & Roles':'group','Settings':'verified','My Giving':'heart','Notifications':'verified','My Profile':'group'};
+function openPortal(role){currentRole=role;closeModals();document.getElementById('portalApp').classList.remove('hidden');document.body.style.overflow='hidden';portalRoleBadge.textContent=role==='admin'?'ADMIN CONSOLE':'MEMBER PORTAL';portalEyebrow.textContent=role==='admin'?'Church administration':'Member portal';portalUserName.textContent=role==='admin'?'Grace Namukasa':'Daniel Kato';portalUserSub.textContent=role==='admin'?'Church Administrator':'AJC-0012 • Youth Ministry';portalAvatar.textContent=role==='admin'?'GN':'DK';renderNav();renderPage('Dashboard');}
+function closePortal(){portalApp.classList.add('hidden');document.body.style.overflow='';portalSidebar.classList.remove('open');portalOverlay.classList.remove('open');}
+window.closePortal=closePortal;
+function renderNav(){const arr=currentRole==='admin'?adminNav:memberNav;portalNav.innerHTML=arr.map((x,i)=>`<button class="portal-link ${i===0?'active':''}" data-page="${x}"><svg class="ic w-5 h-5"><use href="#${icons[x]||'church'}"/></svg><span>${x}</span></button>`).join('');portalNav.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>{portalNav.querySelectorAll('.portal-link').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderPage(b.dataset.page);portalSidebar.classList.remove('open');portalOverlay.classList.remove('open');}));}
+loginForm.addEventListener('submit',e=>{e.preventDefault();openPortal(loginRole);});
+portalLogout.addEventListener('click',closePortal);portalMenu.addEventListener('click',()=>{portalSidebar.classList.add('open');portalOverlay.classList.add('open')});portalOverlay.addEventListener('click',()=>{portalSidebar.classList.remove('open');portalOverlay.classList.remove('open')});
+
+const card=(title,value,sub='')=>`<div class="stat-card"><p class="text-xs lowercase tracking-wider text-outline font-bold">${title}</p><h3 class="text-2xl font-bold mt-2">${value}</h3><p class="text-xs text-outline mt-1">${sub}</p></div>`;
+function table(headers,rows){return `<div class="portal-card overflow-x-auto"><table class="portal-table"><thead><tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`}
+function toolbar(btn='Add New'){return `<div class="flex flex-col sm:flex-row gap-3 justify-between mb-4"><input class="portal-input sm:max-w-xs" placeholder="Search records..."><div class="flex gap-2"><button class="portal-btn soft-btn" onclick="alert('Export prepared for demo')">Export</button><button class="portal-btn accent-btn" onclick="alert('${btn} form would open here in the production system')">+ ${btn}</button></div></div>`}
+function renderPage(page){portalPageTitle.textContent=page;let h='';if(currentRole==='admin')h=adminPage(page);else h=memberPage(page);portalContent.innerHTML=`<div class="dashboard-view max-w-[1500px] mx-auto">${h}</div>`;wireDynamic();}
+function adminPage(page){
+ if(page==='Dashboard')return `<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6"><div><p class="text-secondary font-bold text-sm">Thursday, 8 October 2026</p><h1 class="text-2xl font-bold">Good evening, Grace</h1><p class="text-outline">Here is the latest church activity and ministry health.</p></div><button class="portal-btn accent-btn" onclick="alert('Quick action menu')">+ Quick Action</button></div><div class="grid grid-cols-2 xl:grid-cols-5 gap-3">${card('Total Members','486','438 active')}${card('Sunday Attendance','391','80% attendance rate')}${card('Tithe This Month',fmt(18450000),'+8.4% vs last month')}${card('Offerings',fmt(9750000),'October 2026')}${card('Pending Prayers','14','6 private')}</div><div class="grid lg:grid-cols-3 gap-4 mt-5"><div class="portal-card p-5 lg:col-span-2"><div class="flex justify-between"><b>Attendance Trend</b><span class="text-xs text-outline">Last 6 Sundays</span></div><div class="h-48 mt-5 flex items-end gap-3">${[72,78,74,82,79,86].map((v,i)=>`<div class="flex-1 text-center"><div class="rounded-t-xl bg-primary-container" style="height:${v*1.6}px"></div><span class="text-[10px] text-outline">W${i+1}</span></div>`).join('')}</div></div><div class="portal-card p-5"><b>Giving Mix</b><div class="space-y-4 mt-5"><div><div class="flex justify-between text-sm"><span>Tithe</span><b>56%</b></div><div class="mini-bar mt-1"><span style="width:56%"></span></div></div><div><div class="flex justify-between text-sm"><span>Offering</span><b>30%</b></div><div class="mini-bar mt-1"><span style="width:30%"></span></div></div><div><div class="flex justify-between text-sm"><span>Other</span><b>14%</b></div><div class="mini-bar mt-1"><span style="width:14%"></span></div></div></div></div></div><div class="grid lg:grid-cols-2 gap-4 mt-5">${table(['Recent Member','Category','Status'],[['Amina Nankya','Women','<span class="badge bg-green-100 text-green-800">Active</span>'],['Joshua Ssemanda','Youth','<span class="badge bg-green-100 text-green-800">Active</span>'],['Peter Mugisha','Men','<span class="badge bg-orange-100 text-orange-800">New</span>']])}${table(['Transaction','Type','Amount'],[['TRX-2041','Tithe',fmt(250000)],['TRX-2040','Offering',fmt(50000)],['TRX-2039','Building Fund',fmt(400000)]])}</div>`;
+ if(page==='Members')return `${toolbar('Add Member')}<div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">${card('All Members','486')}${card('Youth','104')}${card('Men','118')}${card('Women','137')}</div>${table(['Member ID','Name','Category','Phone','Status'],[['AJC-0012','Daniel Kato','Youth','0702 123 456','<span class="badge bg-green-100 text-green-800">Active</span>'],['AJC-0018','Esther Namusoke','Women','0772 342 101','<span class="badge bg-green-100 text-green-800">Active</span>'],['AJC-0022','Moses Ssentongo','Men','0751 221 800','<span class="badge bg-green-100 text-green-800">Active</span>'],['AJC-0031','Rebecca Nakato','Married Couples','0788 441 201','<span class="badge bg-green-100 text-green-800">Active</span>'],['AJC-0045','Brian Ouma','Youth','0705 200 620','<span class="badge bg-orange-100 text-orange-800">New</span>']])}`;
+ if(page==='Attendance')return `${toolbar('Create Service')}<div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">${card('Present','391')}${card('Absent','78')}${card('Visitors','22')}${card('Attendance Rate','80%')}</div><div class="portal-card p-5"><div class="flex flex-wrap gap-2 mb-4"><span class="badge bg-secondary-fixed text-on-secondary-fixed">Sunday Worship • 4 Oct 2026</span><span class="badge bg-surface-container">Mark attendance</span></div>${table(['Member','Ministry','Status','Action'],[['Daniel Kato','Youth','Present','<button class="portal-btn soft-btn">Change</button>'],['Esther Namusoke','Women','Present','<button class="portal-btn soft-btn">Change</button>'],['Moses Ssentongo','Men','Absent','<button class="portal-btn soft-btn">Change</button>'],['Rebecca Nakato','Couples','Present','<button class="portal-btn soft-btn">Change</button>']])}</div>`;
+ if(page==='Tithes & Offerings'||page==='Accounting'||page==='Expenses')return `${toolbar(page==='Expenses'?'Record Expense':'Record Transaction')}<div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">${card('Income',fmt(32800000))}${card('Expenses',fmt(14600000))}${card('Balance',fmt(18200000))}${card('Transactions','247')}</div>${table(['Date','Reference','Category','Method','Amount'],[['08 Oct','TRX-2041','Tithe','MTN MoMo',fmt(250000)],['08 Oct','TRX-2040','Offering','Cash',fmt(50000)],['07 Oct','EXP-058','Utilities','Bank','-'+fmt(780000)],['06 Oct','TRX-2039','Building Fund','Airtel Money',fmt(400000)]])}`;
+ if(page==='Assets')return `${toolbar('Add Asset')}<div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">${card('Assets','84')}${card('Est. Value',fmt(185000000))}${card('Needs Repair','4')}${card('Under Maintenance','2')}</div>${table(['Asset ID','Asset','Category','Location','Condition'],[['AST-001','Yamaha Keyboard','Musical Instrument','Main Sanctuary','<span class="badge bg-green-100 text-green-800">Good</span>'],['AST-014','Canon Camera','Media','Media Booth','<span class="badge bg-green-100 text-green-800">Excellent</span>'],['AST-026','Projector','AV Equipment','Youth Hall','<span class="badge bg-yellow-100 text-yellow-800">Fair</span>'],['AST-041','Church Van','Vehicle','Parking','<span class="badge bg-orange-100 text-orange-800">Maintenance</span>']])}`;
+ if(page==='Sermons')return `${toolbar('Upload Sermon')}<div class="grid md:grid-cols-3 gap-4"><div class="portal-card p-4"><div class="aspect-video rounded-xl bg-primary-container grid place-items-center text-white"><svg class="ic" style="width:2.4rem;height:2.4rem"><use href="#play"/></svg></div><b class="block mt-3">Walking in Victorious Faith</b><span class="text-xs text-outline">Pastor Daniel Kato • 6 Oct 2026</span></div><div class="portal-card p-4"><div class="aspect-video rounded-xl bg-primary-container grid place-items-center text-white"><svg class="ic" style="width:2.4rem;height:2.4rem"><use href="#play"/></svg></div><b class="block mt-3">A Life of Prayer</b><span class="text-xs text-outline">Pr. Sarah Kato • 29 Sep 2026</span></div><div class="portal-card p-4 border-dashed grid place-items-center min-h-52"><button class="portal-btn accent-btn" onclick="alert('Upload sermon modal')">+ Upload New Sermon</button></div></div>`;
+ if(page==='Reports')return `<div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">${['Membership Report','Attendance Report','Tithe & Offering Report','Income & Expense Report','Asset Report','Ministry Report','Visitor Report','Giving by Member','Event Report'].map(x=>`<div class="portal-card p-5"><div class="w-11 h-11 rounded-xl bg-surface-container grid place-items-center">▥</div><b class="block mt-3">${x}</b><p class="text-sm text-outline mt-1">Filter, print, export PDF or Excel.</p><div class="flex gap-2 mt-4"><button class="portal-btn soft-btn" onclick="window.print()">Print</button><button class="portal-btn accent-btn" onclick="alert('Excel export demo')">Export</button></div></div>`).join('')}</div>`;
+ if(page==='Users & Roles')return `${toolbar('Add User')}<div class="grid lg:grid-cols-2 gap-4"><div>${table(['User','Role','Access'],[['Grace Namukasa','Super Admin','Full Access'],['Paul Sserwanga','Treasurer','Finance'],['Ruth Nabirye','Attendance Officer','Attendance'],['Joseph Kato','Ministry Leader','Youth']])}</div><div class="portal-card p-5"><b>Role Permissions</b><div class="space-y-3 mt-4">${['Manage members','Record attendance','View giving','Manage accounting','Publish sermons','Manage announcements','Export reports'].map((x,i)=>`<label class="flex justify-between p-3 rounded-xl bg-surface-container-low"><span>${x}</span><input type="checkbox" ${i<4?'checked':''}></label>`).join('')}</div></div></div>`;
+ if(page==='Settings')return `<div class="grid lg:grid-cols-2 gap-4"><div class="portal-card p-5 space-y-4"><b>Church Profile</b><input class="portal-input" value="Ambassadors of Jesus Christ Church"><input class="portal-input" value="Kampala, Uganda"><input class="portal-input" value="+256 700 123456"><input class="portal-input" value="info@ajc.church"><button class="portal-btn accent-btn">Save Changes</button></div><div class="portal-card p-5 space-y-4"><b>Giving Settings</b><input class="portal-input" value="UGX"><input class="portal-input" value="MTN Mobile Money"><input class="portal-input" value="Airtel Money"><button class="portal-btn accent-btn">Save Giving Settings</button></div></div>`;
+ if(['Ministries','Daily Word','Bible Study','Hymns','Events','Announcements','Chatroom','Prayer Requests'].includes(page))return genericAdmin(page);
+ return genericAdmin(page);
+}
+function genericAdmin(page){const data={Ministries:['Youth Ministry','Women of Grace','Men of Valor','Sunday School','Married Couples','Worship Team'], 'Daily Word':['Strength for Today','Grace in Difficult Seasons','Living by Faith'], 'Bible Study':['The Book of Acts','Foundations of Faith','Christian Family'], Hymns:['Amazing Grace','How Great Thou Art','Blessed Assurance'], Events:['Youth Conference','Sunday Worship','Couples Dinner','Community Outreach'], Announcements:['Youth Conference Registration','Sunday Service Reminder','Choir Rehearsal Update'], Chatroom:['General Church','Youth','Women','Men','Prayer'], 'Prayer Requests':['Healing for family','Employment breakthrough','Thanksgiving','Marriage support']}[page]||['Record One','Record Two','Record Three'];return `${toolbar('Add '+page.replace(/s$/,''))}<div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">${data.map((x,i)=>`<div class="portal-card p-5"><div class="flex justify-between"><span class="badge bg-surface-container">${page}</span><span class="text-xs text-outline">#${String(i+1).padStart(2,'0')}</span></div><b class="block mt-3">${x}</b><p class="text-sm text-outline mt-1">Demo content managed by church authorities.</p><div class="flex gap-2 mt-4"><button class="portal-btn soft-btn">Edit</button><button class="portal-btn accent-btn">View</button></div></div>`).join('')}</div>`}
+function memberPage(page){
+ if(page==='Dashboard')return `<div class="mb-6"><p class="text-secondary font-bold text-sm">Welcome back</p><h1 class="text-2xl font-bold">Good evening, Daniel</h1><p class="text-outline">Stay connected with your church family and spiritual journey.</p></div><div class="grid grid-cols-2 lg:grid-cols-4 gap-3">${card('Next Service','Sunday 8:00 AM','Main Sanctuary')}${card('My Giving',fmt(150000),'This month')}${card('Bible Study','65%','Current series')}${card('Unread Notices','3','Latest announcements')}</div><div class="grid lg:grid-cols-3 gap-4 mt-5"><div class="portal-card p-5 lg:col-span-2"><span class="badge bg-secondary-fixed text-on-secondary-fixed">VERSE OF THE DAY</span><h2 class="text-xl font-bold mt-4">“I can do all things through Christ who strengthens me.”</h2><p class="text-secondary font-bold mt-2">Philippians 4:13</p><p class="text-sm text-outline mt-4">Today’s reflection: Christ gives strength that is greater than changing circumstances.</p><button class="portal-btn accent-btn mt-4" onclick="openModal('bibleModal')">Continue Daily Word</button></div><div class="portal-card p-5"><b>Upcoming</b><div class="mt-4 space-y-3"><div class="p-3 bg-surface-container-low rounded-xl"><b>Sunday Worship</b><span class="block text-xs text-outline">11 Oct • 8:00 AM</span></div><div class="p-3 bg-surface-container-low rounded-xl"><b>Youth Conference</b><span class="block text-xs text-outline">17 Oct • 9:00 AM</span></div></div></div></div>`;
+ if(page==='My Giving')return `<div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">${card('This Month',fmt(150000))}${card('This Year',fmt(1260000))}${card('Last Gift',fmt(50000),'Offering • 4 Oct')}</div><button class="portal-btn accent-btn mb-4" onclick="closePortal();location.hash='give'">Give / Pay Tithe</button>${table(['Date','Type','Method','Amount'],[['04 Oct 2026','Offering','MTN MoMo',fmt(50000)],['01 Oct 2026','Tithe','MTN MoMo',fmt(100000)],['06 Sep 2026','Tithe','Cash',fmt(120000)]])}`;
+ if(page==='Announcements')return `<div class="space-y-3"><div class="portal-card p-5 border-l-4 border-secondary-container"><span class="badge bg-red-100 text-red-800">IMPORTANT</span><b class="block mt-2">Youth Conference Registration Now Open</b><p class="text-sm text-outline mt-1">Register with the Youth Ministry desk before 14 October.</p></div><div class="portal-card p-5"><span class="badge bg-surface-container">GENERAL</span><b class="block mt-2">Sunday Service Reminder</b><p class="text-sm text-outline mt-1">Morning worship begins at 8:00 AM.</p></div></div>`;
+ if(page==='Chatroom')return `<div class="portal-card overflow-hidden"><div class="p-4 border-b"><b>General Church Chat</b><span class="block text-xs text-outline">128 members • 18 online</span></div><div class="p-5 space-y-4 h-[360px] overflow-y-auto bg-surface-container-low"><div class="max-w-md bg-white p-3 rounded-2xl"><b class="text-xs">Esther Namusoke</b><p class="text-sm">Praise God church family! Remember Bible study at 5 PM today.</p></div><div class="max-w-md ml-auto bg-primary-container text-white p-3 rounded-2xl"><b class="text-xs text-secondary-fixed">You</b><p class="text-sm">Amen, thank you for the reminder.</p></div><div class="max-w-md bg-white p-3 rounded-2xl"><b class="text-xs">Youth Leader Joseph</b><p class="text-sm">Youth conference registration closes soon.</p></div></div><div class="p-3 flex gap-2"><input class="portal-input" placeholder="Write a message..."><button class="portal-btn accent-btn">Send</button></div></div>`;
+ if(page==='Prayer Requests')return `<div class="grid lg:grid-cols-2 gap-4"><form class="portal-card p-5 space-y-3" onsubmit="event.preventDefault();alert('Prayer request submitted for demo')"><b>Submit a Prayer Request</b><input class="portal-input" placeholder="Prayer request title"><select class="portal-input"><option>Private — Pastor only</option><option>Prayer Team</option><option>Public</option></select><textarea class="portal-input" rows="5" placeholder="How can we pray with you?"></textarea><button class="portal-btn accent-btn">Submit Request</button></form><div class="portal-card p-5"><b>My Requests</b><div class="mt-4 space-y-3"><div class="p-3 rounded-xl bg-surface-container-low"><span class="badge bg-blue-100 text-blue-800">PRAYING</span><b class="block mt-2">Family guidance</b></div><div class="p-3 rounded-xl bg-surface-container-low"><span class="badge bg-green-100 text-green-800">ANSWERED</span><b class="block mt-2">Thanksgiving for work</b></div></div></div></div>`;
+ if(page==='My Profile')return `<div class="portal-card p-5"><div class="flex items-center gap-4"><div class="w-20 h-20 rounded-full bg-primary-container text-white grid place-items-center text-2xl font-bold">DK</div><div><h2 class="text-xl font-bold">Daniel Kato</h2><p class="text-outline">AJC-0012 • Youth Ministry</p><span class="badge bg-green-100 text-green-800 mt-2">Active Member</span></div></div><div class="grid sm:grid-cols-2 gap-4 mt-6"><label class="text-sm">Phone<input class="portal-input mt-1" value="+256 702 123456"></label><label class="text-sm">Email<input class="portal-input mt-1" value="daniel.kato@example.com"></label><label class="text-sm">Marital Status<input class="portal-input mt-1" value="Single"></label><label class="text-sm">Date Joined<input class="portal-input mt-1" value="12 March 2023" disabled></label></div><button class="portal-btn accent-btn mt-5">Save Profile</button></div>`;
+ if(page==='Daily Word')return `<div class="portal-card p-6"><span class="badge bg-secondary-fixed text-on-secondary-fixed">TODAY'S WORD</span><h2 class="text-2xl font-bold mt-4">Strength for Today</h2><p class="text-secondary font-bold mt-2">Philippians 4:13</p><blockquote class="text-lg mt-4">“I can do all things through Christ who strengthens me.”</blockquote><p class="text-outline mt-4">God’s strength meets us in ordinary responsibilities, difficult seasons and moments that demand courage.</p><div class="p-4 rounded-xl bg-surface-container-low mt-5"><b>Prayer</b><p class="text-sm mt-2">Father, strengthen me to walk faithfully today and reflect Christ in every decision. Amen.</p></div></div>`;
+ if(page==='Bible Study')return `<div class="grid lg:grid-cols-2 gap-4"><div class="portal-card p-5"><b>The Book of Acts</b><p class="text-outline text-sm mt-1">Week 4 of 8</p><div class="mini-bar mt-4"><span style="width:50%"></span></div><button class="portal-btn accent-btn mt-4">Continue Lesson</button></div><div class="portal-card p-5"><b>Foundations of Faith</b><p class="text-outline text-sm mt-1">5 of 6 lessons complete</p><div class="mini-bar mt-4"><span style="width:83%"></span></div><button class="portal-btn soft-btn mt-4">Review Lessons</button></div></div>`;
+ if(page==='Hymns')return `<div class="portal-card p-5"><input class="portal-input" placeholder="Search hymns"><div class="mt-4 divide-y">${['#012 Amazing Grace','#034 How Great Thou Art','#078 Blessed Assurance','#105 What a Friend We Have in Jesus','#121 Holy, Holy, Holy'].map(x=>`<div class="py-3 flex justify-between"><b>${x}</b><button class="text-secondary">Open</button></div>`).join('')}</div></div>`;
+ if(page==='Events')return `<div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">${['Sunday Worship • 11 Oct','Youth Conference • 17 Oct','Couples Dinner • 24 Oct'].map(x=>`<div class="portal-card p-5"><span class="badge bg-secondary-fixed text-on-secondary-fixed">UPCOMING</span><b class="block mt-3">${x}</b><p class="text-sm text-outline mt-1">Ambassadors of Jesus Christ Church, Kampala</p><button class="portal-btn accent-btn mt-4">View Event</button></div>`).join('')}</div>`;
+ return `<div class="portal-card p-6"><h2 class="font-bold">${page}</h2><p class="text-outline mt-2">This section is connected in the client demo and ready for full backend integration.</p></div>`;
+}
+function wireDynamic(){document.querySelectorAll('#portalContent button').forEach(b=>b.addEventListener('click',()=>{}));}
+
+
+
+/* ---------- Public active navigation + mobile polish ---------- */
+const publicSections=['home','about','ministries','sermons','live','events','give','contact'].map(id=>document.getElementById(id)).filter(Boolean);
+const navLinks=[...document.querySelectorAll('[data-nav]')];
+const mobileNavLinks=[...document.querySelectorAll('[data-mobile-nav]')];
+const setActivePublic=id=>{
+  navLinks.forEach(a=>a.classList.toggle('active',a.dataset.nav===id));
+  mobileNavLinks.forEach(a=>a.classList.toggle('active',a.dataset.mobileNav===id));
+};
+const sectionObserver=new IntersectionObserver(entries=>{
+  const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+  if(visible) setActivePublic(visible.target.id);
+},{rootMargin:'-25% 0px -58% 0px',threshold:[0,.15,.35,.6]});
+publicSections.forEach(s=>sectionObserver.observe(s));
+
+/* Live preview and event registration demo */
+document.getElementById('livePlayDemo')?.addEventListener('click',()=>{
+  setSermon({title:'Live Sunday Worship Preview',preacher:'Ambassadors of Jesus Christ Church',scripture:'Live from Kampala',date:'Demo Stream'});
+});
+document.querySelectorAll('[data-event-register]').forEach(btn=>btn.addEventListener('click',()=>{
+  const event=btn.dataset.eventRegister;
+  alert(`Demo registration: ${event}. In production this will save the member/visitor registration and send confirmation.`);
+}));
+const testimonialTrack=document.getElementById('testimonialTrack');
+document.getElementById('testNext')?.addEventListener('click',()=>testimonialTrack?.scrollBy({left:360,behavior:'smooth'}));
+document.getElementById('testPrev')?.addEventListener('click',()=>testimonialTrack?.scrollBy({left:-360,behavior:'smooth'}));
+</script>
+</body>
+</html>

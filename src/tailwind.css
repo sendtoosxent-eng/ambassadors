@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :focus-visible { outline: 3px solid #fe932c; outline-offset: 3px; }
+  button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+  img { background-color: #efeeea; }
+}
