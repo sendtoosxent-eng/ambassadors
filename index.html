@@ -595,23 +595,224 @@ button,a{min-height:44px}
     </div>
   </div>
 
-    <div class="mt-space-xl" data-reveal>
-      <div class="flex items-end justify-between gap-4 mb-4"><div><span class="text-label-caps text-secondary lowercase tracking-widest">Recently Uploaded</span><h3 class="text-headline-sm mt-1">Latest Messages from Church Leadership</h3></div><button data-open="sermonLibraryModal" class="text-label-md px-4 py-2 rounded-xl bg-primary-container text-white">Open Sermon Player</button></div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <button class="sermon-item text-left p-4 rounded-2xl bg-white shadow-md hover:-translate-y-1 transition" data-title="Walking in Victorious Faith" data-preacher="Pastor Daniel Kato" data-scripture="John 15:1-8" data-date="6 Oct 2026">
-          <div class="aspect-video rounded-xl overflow-hidden bg-primary-container relative"><img class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5TCbqE2FB3geekja1eXlN3PSdQosCi00CXmQvXdLO4Z1TY3ooMmOwHdYPHJrH2ygSFni2wMND-Yje8Y3hRUvaJ9q46wj658KDcmChEdMliybjC6nQrw2MstAkyOtAVRYZNM3DS7TY7VHA3AhffPsUCS12hfxv8VInBW0o_NE_ez46PJqHZ_4a8XCvXpuDG07_7VCW29UFMPXfwA6GtG_ivPoZm03Pu-AgQtP0MLQ"><span class="absolute inset-0 grid place-items-center"><span class="w-12 h-12 rounded-full bg-secondary-container grid place-items-center shadow-lg"><svg class="ic"><use href="#play"/></svg></span></span></div>
-          <h4 class="font-bold mt-3">Walking in Victorious Faith</h4><p class="text-body-sm text-on-surface-variant mt-1">Pastor Daniel Kato • John 15:1-8</p><p class="text-label-caps text-secondary mt-2">Uploaded 6 Oct 2026</p>
-        </button>
-        <button class="sermon-item text-left p-4 rounded-2xl bg-white shadow-md hover:-translate-y-1 transition" data-title="A Life of Prayer" data-preacher="Pr. Sarah Kato" data-scripture="Luke 11:1-13" data-date="29 Sep 2026">
-          <div class="aspect-video rounded-xl overflow-hidden bg-primary-container relative"><img class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV3cArSnkSsW-0im8RVit1Fmie4fXWUAoA-qDoKnwAdcwSFI2XexPYlCuAMOA9MBi7gc1DbX96zhzXaxc5zrTWhyhjjYH2MByBmww62lAKiO0FrIlMYr2gCatLIQKcSDIgc36ZTfp6MaABGpQd-AQdAZ-L0PFmxBIDPxXWx_74dz0X88UPN8hpg9nGV-jPqyQv4ZgnJs0crwaSMXeVNWZunWFofSiZlmO5pn4Ooyo"><span class="absolute inset-0 grid place-items-center"><span class="w-12 h-12 rounded-full bg-secondary-container grid place-items-center shadow-lg"><svg class="ic"><use href="#play"/></svg></span></span></div>
-          <h4 class="font-bold mt-3">A Life of Prayer</h4><p class="text-body-sm text-on-surface-variant mt-1">Pr. Sarah Kato • Luke 11:1-13</p><p class="text-label-caps text-secondary mt-2">Uploaded 29 Sep 2026</p>
-        </button>
-        <button class="sermon-item text-left p-4 rounded-2xl bg-white shadow-md hover:-translate-y-1 transition" data-title="Building a Christ-Centred Family" data-preacher="Pastor Daniel Kato" data-scripture="Joshua 24:15" data-date="21 Sep 2026">
-          <div class="aspect-video rounded-xl overflow-hidden bg-primary-container relative"><img class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtqbrdu0v_Dry_J0qfTtklWKln-goIYalEjqCcFfzfpBzsoOJR4wM24Or36FAr1eLBT1nfqwlvi7vlI_3NI2YV1_QDE82pPudVubnMVNFWyx9EB8B-vC3W2RKxeq_zlQIStGEQRBPnzh8H7eaGF-DVCZm8-pW9RDMSDRv2XqhxSKR2ADytJqigCM1dwEMST6PjO92BUZHeVkLtfU908_ESNZ7eyn3874t6sEifBCs"><span class="absolute inset-0 grid place-items-center"><span class="w-12 h-12 rounded-full bg-secondary-container grid place-items-center shadow-lg"><svg class="ic"><use href="#play"/></svg></span></span></div>
-          <h4 class="font-bold mt-3">Building a Christ-Centred Family</h4><p class="text-body-sm text-on-surface-variant mt-1">Pastor Daniel Kato • Joshua 24:15</p><p class="text-label-caps text-secondary mt-2">Uploaded 21 Sep 2026</p>
-        </button>
+    <!-- ============================================================
+     LATEST MESSAGES: 4-CARD GRID, CENTERED (Poppins & Orange Palette)
+     1 column on phones, 2 on tablets, 4 on desktop.
+     ============================================================ -->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+  .sg {
+    --sg-ink: #0f172a;
+    --sg-soft: #475569;
+    --sg-orange: #ff6b00;
+    --sg-orange-deep: #e05e00;
+    --sg-orange-light: rgba(255, 107, 0, 0.12);
+    --sg-line: rgba(15, 23, 42, .08);
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  /* ---------- Centered header ---------- */
+  .sg-head { text-align: center; max-width: 640px; margin: 0 auto 32px; }
+  .sg-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--sg-orange-deep);
+  }
+  .sg-eyebrow::before {
+    content: ""; width: 8px; height: 8px; border-radius: 50%; background: #ef4444;
+    animation: sg-live 1.8s infinite;
+  }
+  @keyframes sg-live {
+    0%   { box-shadow: 0 0 0 0 rgba(239, 68, 68, .6); }
+    70%  { box-shadow: 0 0 0 9px rgba(239, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+  }
+  .sg-title {
+    margin: 8px 0 0;
+    font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.25rem);
+    line-height: 1.15; font-weight: 800; letter-spacing: -.01em; color: var(--sg-ink);
+  }
+
+  /* ---------- Grid of 4 ---------- */
+  .sg-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-content: center;
+  }
+  @media (min-width: 600px)  { .sg-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .sg-grid { grid-template-columns: repeat(4, 1fr); gap: 24px; } }
+
+  /* ---------- Card ---------- */
+  .sg-card {
+    display: flex; flex-direction: column;
+    width: 100%; padding: 0; border: 1px solid var(--sg-line);
+    text-align: left; font: inherit; color: inherit; cursor: pointer;
+    background: #fff; border-radius: 22px; overflow: hidden;
+    box-shadow: 0 14px 30px -22px rgba(15, 23, 42, .5);
+    transition: transform .35s cubic-bezier(.2, .8, .2, 1), box-shadow .35s ease;
+  }
+  .sg-card:hover { transform: translateY(-6px); box-shadow: 0 28px 44px -24px rgba(255, 107, 0, .3); }
+  .sg-card:focus-visible { outline: 3px solid var(--sg-orange); outline-offset: 3px; }
+
+  .sg-media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: linear-gradient(135deg, #1e293b, #0f172a 60%, #334155); }
+  .sg-media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; }
+  .sg-card:hover .sg-media img { transform: scale(1.08); }
+  .sg-media::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(8, 12, 24, .55), transparent 60%);
+  }
+
+  .sg-play { position: absolute; inset: 0; display: grid; place-items: center; z-index: 1; pointer-events: none; }
+  .sg-play span {
+    width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; color: #fff;
+    background: rgba(255, 255, 255, .2); border: 1px solid rgba(255, 255, 255, .45);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .35);
+    transition: transform .3s ease, background .3s ease, color .3s ease, box-shadow .3s ease;
+  }
+  .sg-card:hover .sg-play span { 
+    background: var(--sg-orange); 
+    color: #fff; 
+    transform: scale(1.12);
+    box-shadow: 0 12px 30px rgba(255, 107, 0, .5);
+  }
+  .sg-play svg { width: 20px; height: 20px; fill: currentColor; margin-left: 3px; }
+
+  .sg-badge {
+    position: absolute; top: 12px; left: 12px; z-index: 2;
+    padding: 4px 10px; border-radius: 9999px;
+    font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+    background: var(--sg-orange); color: #fff;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, .4);
+  }
+
+  .sg-body { display: flex; flex-direction: column; flex: 1; padding: 16px 18px 18px; }
+  .sg-ref {
+    align-self: flex-start; margin-bottom: 10px; padding: 4px 10px; border-radius: 9999px;
+    font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    background: var(--sg-orange-light); color: var(--sg-orange-deep);
+  }
+  .sg-card h4 { margin: 0; font-size: 1.05rem; line-height: 1.3; font-weight: 700; color: var(--sg-ink); }
+  .sg-by { margin: 6px 0 0; font-size: 13.5px; color: var(--sg-soft); font-weight: 400; }
+  .sg-date {
+    margin-top: auto; padding-top: 14px;
+    font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--sg-orange-deep);
+  }
+
+  /* ---------- Centered button ---------- */
+  .sg-foot { display: flex; justify-content: center; margin-top: 32px; }
+  .sg-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 28px; border: 0; border-radius: 9999px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px; font-weight: 700; color: #fff; cursor: pointer;
+    background: linear-gradient(135deg, var(--sg-orange), #ff8833);
+    box-shadow: 0 10px 24px -8px rgba(255, 107, 0, .7);
+    transition: transform .2s ease, gap .2s ease, box-shadow .2s ease;
+  }
+  .sg-cta:hover { transform: translateY(-2px); gap: 14px; box-shadow: 0 16px 30px -10px rgba(255, 107, 0, .9); }
+  .sg-cta:focus-visible { outline: 3px solid rgba(15, 23, 42, .35); outline-offset: 3px; }
+  .sg-cta svg { width: 18px; height: 18px; fill: currentColor; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sg-card, .sg-media img, .sg-play span, .sg-cta { transition: none; }
+    .sg-eyebrow::before { animation: none; }
+  }
+</style>
+
+<!-- Icons (unique ids, no clash with your existing sprite) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="sg-play-new" viewBox="0 0 24 24"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l11-6.86a1 1 0 0 0 0-1.7l-11-6.86A1 1 0 0 0 8 5.14z"/></symbol>
+  <symbol id="sg-arrow-new" viewBox="0 0 24 24"><path d="M5 11h11.17l-4.88-4.88a1 1 0 1 1 1.42-1.42l6.59 6.59a1 1 0 0 1 0 1.42l-6.59 6.59a1 1 0 0 1-1.42-1.42L16.17 13H5a1 1 0 1 1 0-2z"/></symbol>
+</svg>
+
+<!-- ================= MARKUP ================= -->
+<div class="sg" data-reveal>
+
+  <div class="sg-head">
+    <h3 class="sg-title">Latest Messages from Church Leadership</h3>
+  </div>
+
+  <div class="sg-grid">
+
+    <!-- 1 -->
+    <button type="button" class="sermon-item sg-card"
+            data-title="Walking in Victorious Faith" data-preacher="Pastor Daniel Kato" data-scripture="John 15:1-8" data-date="6 Oct 2026">
+      <div class="sg-media">
+        <span class="sg-badge">New</span>
+        <img loading="lazy" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5TCbqE2FB3geekja1eXlN3PSdQosCi00CXmQvXdLO4Z1TY3ooMmOwHdYPHJrH2ygSFni2wMND-Yje8Y3hRUvaJ9q46wj658KDcmChEdMliybjC6nQrw2MstAkyOtAVRYZNM3DS7TY7VHA3AhffPsUCS12hfxv8VInBW0o_NE_ez46PJqHZ_4a8XCvXpuDG07_7VCW29UFMPXfwA6GtG_ivPoZm03Pu-AgQtP0MLQ">
+        <span class="sg-play"><span><svg aria-hidden="true"><use href="#sg-play-new"/></svg></span></span>
       </div>
-    </div>
+      <div class="sg-body">
+        <span class="sg-ref">John 15:1-8</span>
+        <h4>Walking in Victorious Faith</h4>
+        <p class="sg-by">Pastor Daniel Kato</p>
+        <span class="sg-date">Uploaded 6 Oct 2026</span>
+      </div>
+    </button>
+
+    <!-- 2 -->
+    <button type="button" class="sermon-item sg-card"
+            data-title="A Life of Prayer" data-preacher="Pr. Sarah Kato" data-scripture="Luke 11:1-13" data-date="29 Sep 2026">
+      <div class="sg-media">
+        <img loading="lazy" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV3cArSnkSsW-0im8RVit1Fmie4fXWUAoA-qDoKnwAdcwSFI2XexPYlCuAMOA9MBi7gc1DbX96zhzXaxc5zrTWhyhjjYH2MByBmww62lAKiO0FrIlMYr2gCatLIQKcSDIgc36ZTfp6MaABGpQd-AQdAZ-L0PFmxBIDPxXWx_74dz0X88UPN8hpg9nGV-jPqyQv4ZgnJs0crwaSMXeVNWZunWFofSiZlmO5pn4Ooyo">
+        <span class="sg-play"><span><svg aria-hidden="true"><use href="#sg-play-new"/></svg></span></span>
+      </div>
+      <div class="sg-body">
+        <span class="sg-ref">Luke 11:1-13</span>
+        <h4>A Life of Prayer</h4>
+        <p class="sg-by">Pr. Sarah Kato</p>
+        <span class="sg-date">Uploaded 29 Sep 2026</span>
+      </div>
+    </button>
+
+    <!-- 3 -->
+    <button type="button" class="sermon-item sg-card"
+            data-title="Building a Christ-Centred Family" data-preacher="Pastor Daniel Kato" data-scripture="Joshua 24:15" data-date="21 Sep 2026">
+      <div class="sg-media">
+        <img loading="lazy" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtqbrdu0v_Dry_J0qfTtklWKln-goIYalEjqCcFfzfpBzsoOJR4wM24Or36FAr1eLBT1nfqwlvi7vlI_3NI2YV1_QDE82pPudVubnMVNFWyx9EB8B-vC3W2RKxeq_zlQIStGEQRBPnzh8H7eaGF-DVCZm8-pW9RDMSDRv2XqhxSKR2ADytJqigCM1dwEMST6PjO92BUZHeVkLtfU908_ESNZ7eyn3874t6sEifBCs">
+        <span class="sg-play"><span><svg aria-hidden="true"><use href="#sg-play-new"/></svg></span></span>
+      </div>
+      <div class="sg-body">
+        <span class="sg-ref">Joshua 24:15</span>
+        <h4>Building a Christ-Centred Family</h4>
+        <p class="sg-by">Pastor Daniel Kato</p>
+        <span class="sg-date">Uploaded 21 Sep 2026</span>
+      </div>
+    </button>
+
+    <!-- 4 -->
+    <button type="button" class="sermon-item sg-card"
+            data-title="Faith That Moves Mountains" data-preacher="Pastor Daniel Kato" data-scripture="Matthew 17:20" data-date="14 Sep 2026">
+      <div class="sg-media">
+        <!-- <img loading="lazy" alt="" src="YOUR-THUMBNAIL-URL"> -->
+        <span class="sg-play"><span><svg aria-hidden="true"><use href="#sg-play-new"/></svg></span></span>
+      </div>
+      <div class="sg-body">
+        <span class="sg-ref">Matthew 17:20</span>
+        <h4>Faith That Moves Mountains</h4>
+        <p class="sg-by">Pastor Daniel Kato</p>
+        <span class="sg-date">Uploaded 14 Sep 2026</span>
+      </div>
+    </button>
+
+  </div>
+
+  <div class="sg-foot">
+    <button type="button" data-open="sermonLibraryModal" class="sg-cta">
+      Open Sermon Player
+      <svg aria-hidden="true"><use href="#sg-arrow-new"/></svg>
+    </button>
+  </div>
+</div>
 </section>
 
 
@@ -637,6 +838,343 @@ button,a{min-height:44px}
     </div>
   </div>
 </section>
+<!-- ============================================================
+     LIVE RADIO PLAYER: embeddable, centered, responsive
+     - No <html>/<head>/<body>, no Tailwind CDN: paste it straight into
+       your main source where you want the player (e.g. inside a section).
+     - All CSS/JS is scoped with the "rp-" prefix, so it can't clash with your site.
+     - Change the stream in:  data-stream="..."  on the .rp root element.
+     ============================================================ -->
+
+<style>
+  /* Optional: load Poppins once in your <head> if your site doesn't already use it:
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"> */
+
+  /* ---------- Centering wrapper ---------- */
+  .rp-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;      /* horizontal centering */
+    align-items: center;
+    padding: 24px 16px;
+    box-sizing: border-box;
+  }
+
+  .rp {
+    --rp-orange: #f97316;
+    --rp-orange-deep: #ea580c;
+    --rp-amber: #f59e0b;
+    --rp-text: #f8fafc;
+    --rp-muted: #94a3b8;
+    --rp-line: rgba(51, 65, 85, .8);
+    position: relative;
+    width: 100%;
+    max-width: 576px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid #1e293b;
+    background: rgba(15, 23, 42, .95);
+    color: var(--rp-text);
+    font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    box-shadow: 0 30px 60px -25px rgba(0, 0, 0, .7);
+    isolation: isolate;
+  }
+  .rp *, .rp *::before, .rp *::after { box-sizing: border-box; }
+
+  /* Decorative glows */
+  .rp::before, .rp::after {
+    content: ""; position: absolute; z-index: -1; pointer-events: none;
+    width: 290px; height: 290px; border-radius: 50%; filter: blur(60px);
+  }
+  .rp::before { top: -96px; right: -96px; background: rgba(234, 88, 12, .22); }
+  .rp::after  { bottom: -96px; left: -96px; background: rgba(217, 119, 6, .12); }
+
+  /* ---------- Header ---------- */
+  .rp-top {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--rp-line);
+  }
+  .rp-live {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 5px 12px; border-radius: 9999px;
+    background: rgba(239, 68, 68, .1); border: 1px solid rgba(239, 68, 68, .3);
+    font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #f87171;
+  }
+  .rp-live i {
+    width: 10px; height: 10px; border-radius: 50%; background: #ef4444; display: inline-block;
+    animation: rp-pulse 1.8s infinite;
+  }
+  @keyframes rp-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(239, 68, 68, .7); }
+    70%  { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+  }
+  .rp-global { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: var(--rp-muted); }
+  .rp-global svg { width: 16px; height: 16px; fill: var(--rp-orange); }
+
+  /* ---------- Body ---------- */
+  .rp-body {
+    display: flex; flex-direction: column; align-items: center; gap: 24px;
+    padding: 24px;
+  }
+  @media (min-width: 640px) {
+    .rp-body { flex-direction: row; }
+  }
+
+  .rp-art { position: relative; flex-shrink: 0; width: 144px; height: 144px; margin-right: 18px; }
+  @media (min-width: 640px) { .rp-art { width: 160px; height: 160px; margin-right: 26px; } }
+
+  .rp-disc {
+    position: absolute; inset: 0; z-index: 0; border-radius: 50%;
+    background: #000; border: 4px solid #1e293b;
+    transform: translateX(18px);
+    display: grid; place-items: center;
+    animation: rp-spin 12s linear infinite; animation-play-state: paused;
+  }
+  @media (min-width: 640px) { .rp-disc { transform: translateX(26px); } }
+  .rp-disc::before { content: ""; width: 78%; height: 78%; border-radius: 50%; border: 1px solid rgba(71, 85, 105, .6); position: absolute; }
+  .rp-disc::after  { content: ""; width: 55%; height: 55%; border-radius: 50%; border: 1px solid rgba(71, 85, 105, .4); position: absolute; }
+  .rp.is-playing .rp-disc { animation-play-state: running; }
+  @keyframes rp-spin { to { transform: translateX(18px) rotate(360deg); } }
+  @media (min-width: 640px) { @keyframes rp-spin { to { transform: translateX(26px) rotate(360deg); } } }
+
+  .rp-cover {
+    position: relative; z-index: 1; width: 100%; height: 100%;
+    border-radius: 16px; overflow: hidden;
+    border: 2px solid rgba(249, 115, 22, .4);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, .7);
+  }
+  .rp-cover img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+  .rp-art:hover .rp-cover img { transform: scale(1.06); }
+  .rp-cover::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, .7), transparent 55%);
+  }
+  .rp-hd {
+    position: absolute; left: 10px; bottom: 10px; z-index: 2;
+    padding: 2px 8px; border-radius: 4px;
+    font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+    color: #fb923c; background: rgba(0, 0, 0, .6);
+    -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  }
+
+  .rp-info { flex: 1; min-width: 0; text-align: center; }
+  @media (min-width: 640px) { .rp-info { text-align: left; } }
+  .rp-station {
+    display: inline-block; margin-bottom: 8px; padding: 4px 12px; border-radius: 9999px;
+    font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--rp-orange); background: rgba(249, 115, 22, .1); border: 1px solid rgba(249, 115, 22, .2);
+  }
+  .rp-title { margin: 0; font-size: clamp(1.15rem, 1rem + .9vw, 1.5rem); font-weight: 700; line-height: 1.3; letter-spacing: -.01em; color: #fff; }
+  .rp-artist { margin: 4px 0 0; font-size: 14px; color: var(--rp-muted); }
+
+  .rp-waves { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 16px; height: 30px; }
+  @media (min-width: 640px) { .rp-waves { justify-content: flex-start; } }
+  .rp-waves b {
+    display: block; width: 4px; height: 6px; border-radius: 9999px; background: var(--rp-orange);
+    animation: rp-bar .8s ease-in-out infinite; animation-play-state: paused;
+  }
+  .rp-waves b:nth-child(1) { animation-duration: .9s; }
+  .rp-waves b:nth-child(2) { animation-duration: .6s;  animation-delay: .1s; }
+  .rp-waves b:nth-child(3) { animation-duration: 1.1s; animation-delay: .2s; }
+  .rp-waves b:nth-child(4) { animation-duration: .7s;  animation-delay: .3s; }
+  .rp-waves b:nth-child(5) { animation-duration: .8s;  animation-delay: .15s; }
+  .rp.is-playing .rp-waves b { animation-play-state: running; }
+  @keyframes rp-bar { 0%, 100% { height: 6px; } 50% { height: 28px; } }
+  .rp-status { margin-left: 8px; font-size: 12px; font-weight: 500; color: var(--rp-muted); white-space: nowrap; }
+
+  /* ---------- Controls ---------- */
+  .rp-controls {
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 16px 24px;
+    background: rgba(2, 6, 23, .6);
+    border-top: 1px solid var(--rp-line);
+  }
+  @media (min-width: 640px) { .rp-controls { flex-direction: row; } }
+
+  .rp-play-group { display: flex; align-items: center; gap: 16px; }
+  .rp-play {
+    position: relative; display: grid; place-items: center; width: 56px; height: 56px; padding: 0;
+    border: 0; border-radius: 50%; cursor: pointer; color: #fff;
+    background: linear-gradient(45deg, var(--rp-orange-deep), var(--rp-amber));
+    box-shadow: 0 10px 24px -8px rgba(234, 88, 12, .6);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .rp-play:hover { transform: scale(1.06); box-shadow: 0 14px 30px -8px rgba(234, 88, 12, .8); }
+  .rp-play:active { transform: scale(.95); }
+  .rp-play:focus-visible { outline: 0; box-shadow: 0 0 0 4px rgba(249, 115, 22, .35); }
+  .rp-play svg { width: 24px; height: 24px; fill: currentColor; }
+  .rp-play .rp-i-pause { display: none; }
+  .rp.is-playing .rp-i-play { display: none; }
+  .rp.is-playing .rp-i-pause { display: block; }
+  .rp-play .rp-i-play { margin-left: 2px; }
+
+  .rp-state { text-align: left; }
+  .rp-state strong { display: block; font-size: 14px; font-weight: 700; color: #fff; }
+  .rp-state span { font-size: 12px; color: var(--rp-muted); }
+
+  .rp-vol { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; }
+  @media (min-width: 640px) { .rp-vol { width: auto; } }
+  .rp-mute {
+    display: grid; place-items: center; padding: 8px; border: 0; border-radius: 8px;
+    background: transparent; color: var(--rp-muted); cursor: pointer; transition: color .2s, background .2s;
+  }
+  .rp-mute:hover { color: #fff; background: rgba(30, 41, 59, .6); }
+  .rp-mute:focus-visible { outline: 2px solid var(--rp-orange); }
+  .rp-mute svg { width: 20px; height: 20px; fill: currentColor; }
+  .rp-slider { width: 112px; height: 6px; accent-color: var(--rp-orange); cursor: pointer; }
+  .rp-pct { width: 36px; text-align: right; font-size: 12px; font-weight: 600; color: var(--rp-muted); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rp-live i, .rp-disc, .rp-waves b { animation: none; }
+    .rp-waves b { height: 14px; }
+  }
+</style>
+
+<!-- ================= MARKUP ================= -->
+<div class="rp-wrap">
+  <div class="rp" id="radioPlayer" data-stream="https://icecast.omroep.nl/radio1-bb-mp3">
+
+    <div class="rp-top">
+      <span class="rp-live"><i></i>Live Service Broadcast</span>
+      <span class="rp-global">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        Global Stream
+      </span>
+    </div>
+
+    <div class="rp-body">
+      <div class="rp-art">
+        <div class="rp-disc" aria-hidden="true"></div>
+        <div class="rp-cover">
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80"
+               alt="Radio station thumbnail"
+               onerror="this.onerror=null;this.src='https://placehold.co/400x400/1e293b/f8fafc?text=Radio+Live'">
+          <span class="rp-hd">HD Audio</span>
+        </div>
+      </div>
+
+      <div class="rp-info">
+        <span class="rp-station">Grace &amp; Truth Radio</span>
+        <h3 class="rp-title">Sunday Worship &amp; Word Experience</h3>
+        <p class="rp-artist">Pastor Daniel Kato &amp; Live Choir</p>
+        <div class="rp-waves" aria-hidden="true">
+          <b></b><b></b><b></b><b></b><b></b>
+          <span class="rp-status" data-rp="status">Stream Paused</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rp-controls">
+      <div class="rp-play-group">
+        <button type="button" class="rp-play" data-rp="play" aria-label="Play or pause live stream">
+          <svg class="rp-i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l11-6.86a1 1 0 0 0 0-1.7l-11-6.86A1 1 0 0 0 8 5.14z"/></svg>
+          <svg class="rp-i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+        <div class="rp-state">
+          <strong data-rp="label" aria-live="polite">Tap to Listen</strong>
+          <span>128kbps AAC+ Live Stream</span>
+        </div>
+      </div>
+
+      <div class="rp-vol">
+        <button type="button" class="rp-mute" data-rp="mute" aria-label="Mute or unmute" title="Mute / Unmute">
+          <svg viewBox="0 0 24 24" data-rp="volIcon" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        </button>
+        <input type="range" class="rp-slider" data-rp="slider" min="0" max="1" step="0.05" value="0.8" aria-label="Volume">
+        <span class="rp-pct" data-rp="pct">80%</span>
+      </div>
+    </div>
+
+    <audio data-rp="audio" preload="none"></audio>
+  </div>
+</div>
+
+<!-- ================= SCRIPT (scoped to this player; supports several on one page) ================= -->
+<script>
+(function () {
+  'use strict';
+
+  var ICON_ON  = '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>';
+  var ICON_OFF = '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>';
+
+  function initPlayer(root) {
+    var $ = function (n) { return root.querySelector('[data-rp="' + n + '"]'); };
+    var audio = $('audio'), playBtn = $('play'), label = $('label'), status = $('status'),
+        slider = $('slider'), pct = $('pct'), muteBtn = $('mute'), volIcon = $('volIcon');
+    var streamUrl = root.getAttribute('data-stream');
+    var playing = false, lastVol = parseFloat(slider.value) || 0.8;
+
+    audio.volume = lastVol;
+
+    function setUI(state) {
+      root.classList.toggle('is-playing', state === 'playing');
+      if (state === 'playing')   { label.textContent = 'Now Playing Live'; status.textContent = 'Live Now • Streaming Audio'; }
+      if (state === 'paused')    { label.textContent = 'Playback Paused'; status.textContent = 'Stream Paused'; }
+      if (state === 'loading')   { label.textContent = 'Connecting to Stream...'; status.textContent = 'Buffering...'; }
+      if (state === 'error')     { label.textContent = 'Stream Error / Offline'; status.textContent = 'Unable to connect'; }
+    }
+
+    function start() {
+      setUI('loading');
+      // Reload the live stream fresh each time so you hear "live", not stale buffer
+      audio.src = streamUrl;
+      audio.load();
+      return audio.play().then(function () {
+        playing = true; setUI('playing');
+      }).catch(function (err) {
+        console.error('Audio playback error:', err);
+        playing = false; setUI('error');
+      });
+    }
+
+    function stop() {
+      audio.pause();
+      audio.removeAttribute('src');   // stop downloading the stream while paused
+      audio.load();
+      playing = false; setUI('paused');
+    }
+
+    playBtn.addEventListener('click', function () { playing ? stop() : start(); });
+
+    audio.addEventListener('waiting', function () { if (playing) setUI('loading'); });
+    audio.addEventListener('playing', function () { if (playing) setUI('playing'); });
+    audio.addEventListener('error',   function () { if (audio.getAttribute('src')) { playing = false; setUI('error'); } });
+
+    function showVolume(v) {
+      pct.textContent = Math.round(v * 100) + '%';
+      volIcon.innerHTML = v === 0 ? ICON_OFF : ICON_ON;
+    }
+
+    slider.addEventListener('input', function () {
+      var v = parseFloat(slider.value);
+      audio.volume = v;
+      if (v > 0) lastVol = v;
+      showVolume(v);
+    });
+
+    muteBtn.addEventListener('click', function () {
+      if (audio.volume > 0) {
+        lastVol = audio.volume; audio.volume = 0; slider.value = 0; showVolume(0);
+      } else {
+        audio.volume = lastVol; slider.value = lastVol; showVolume(lastVol);
+      }
+    });
+  }
+
+  function boot() {
+    var players = document.querySelectorAll('.rp');
+    for (var i = 0; i < players.length; i++) initPlayer(players[i]);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+</script>
+
 
 <!-- ============ EVENTS ============ -->
 <section id="events" class="section-anchor w-full px-4 sm:px-gutter-lg max-w-7xl mx-auto py-space-3xl space-y-space-2xl">
@@ -1408,10 +1946,10 @@ button,a{min-height:44px}
   </div>
   <div id="signupModal" class="app-modal hidden fixed inset-0 z-[135] modal-backdrop items-center justify-center p-3 sm:p-4">
     <div class="demo-modal membership-modal rounded-2xl shadow-2xl">
-      <aside class="membership-visual"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY2lUEWAUBHN3vO3IobZwWx-XzMH2xNt0e9QIXdwVg8ABNbL9WzuNLaFdiTSlFRkkp4fSIj8f9ESKgflExWY5BQho43NTPYa3n0CFKP2k9vGxdBFnjV5jDLJ63gZ7Kx5zfk7Wxrx6IAbcb1QbYEaoqYO6xrkWAaRUkwTepLNZdDzKdKaeE5Jr5EXrd-rU0I2u2naGlnxHVh7y0kfUbsXgTHsNmDB2D7bigynvWt1M" alt="Church members worshipping and serving together"><div class="membership-visual-content"><div class="flex items-center gap-3"><img src="assets/logo.jpg" alt="" class="h-11 w-11 rounded-xl object-cover ring-1 ring-white/20"><div><b class="block text-sm">Ambassadors of Jesus Christ</b><span class="text-xs text-white/60">Membership &amp; service team</span></div></div><div><span class="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-semibold backdrop-blur">You belong here</span><h3 class="mt-4 text-2xl font-bold leading-tight">Grow in faith.<br>Serve with purpose.</h3><p class="mt-3 text-sm leading-6 text-white/65">Help us know your story so our ministry team can welcome you well and help you find your place to serve.</p></div></div></aside>
+      <aside class="membership-visual"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY2lUEWAUBHN3vO3IobZwWx-XzMH2xNt0e9QIXdwVg8ABNbL9WzuNLaFdiTSlFRkkp4fSIj8f9ESKgflExWY5BQho43NTPYa3n0CFKP2k9vGxdBFnjV5jDLJ63gZ7Kx5zfk7Wxrx6IAbcb1QbYEaoqYO6xrkWAaRUkwTepLNZdDzKdKaeE5Jr5EXrd-rU0I2u2naGlnxHVh7y0kfUbsXgTHsNmDB2D7bigynvWt1M" alt="Church members worshipping and serving together"><div class="membership-visual-content"><div class="flex items-center gap-3"><img src="assets/join.jpg" alt="" class="h-11 w-11 rounded-xl object-cover ring-1 ring-white/20"><div><b class="block text-sm">Ambassadors of Jesus Christ</b><span class="text-xs text-white/60">Membership &amp; service team</span></div></div><div><h3 class="mt-4 text-2xl font-bold leading-tight">Grow in faith.<br>Serve with purpose.</h3><p class="mt-3 text-sm leading-6 text-white/65">Help us know your story so our ministry team can welcome you well and help you find your place to serve.</p></div></div></aside>
       <section class="membership-form-panel relative p-7 sm:p-8">
         <button class="modal-close absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full bg-surface-container-low text-xl hover:bg-surface-container">×</button>
-        <div class="pr-12"><span class="text-xs font-bold uppercase tracking-[.16em] text-secondary">Membership application</span><h3 class="mt-1 text-2xl font-bold tracking-tight">Join our church family</h3><p class="mt-1 text-sm text-on-surface-variant">Complete the three short steps below.</p></div>
+        <div class="pr-12"><span class="text-xs font-bold uppercase tracking-[.16em] text-secondary"></span><h3 class="mt-1 text-2xl font-bold tracking-tight">Join our church family</h3><p class="mt-1 text-sm text-on-surface-variant">Complete the three short steps below.</p></div>
         <div class="signup-progress mt-5" aria-label="Registration progress"><div class="signup-progress-item active" data-signup-progress="1">1. About you</div><div class="signup-progress-item" data-signup-progress="2">2. Faith</div><div class="signup-progress-item" data-signup-progress="3">3. Purpose</div></div>
 
         <form id="signupForm" class="mt-6" novalidate>
